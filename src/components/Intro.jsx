@@ -6,7 +6,7 @@ export default function Intro() {
     <div className="flex items-start gap-4">
       {/* Foto */}
       <motion.img
-        src="/Faiz.png"
+        img src={`${process.env.PUBLIC_URL}/Faiz.png`} alt="Faiz"
         alt="profile"
         className="w-24 h-24 rounded-full object-cover"
         whileHover={{ scale: 1.1 }}
