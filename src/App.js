@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import About from "./components/About";
+import Experience from "./components/Experience";
+import Projects from "./components/Projects";
+import Links from "./components/Links";
+import Intro from "./components/Intro";
+import Education from "./components/Education";
+import Skills from "./components/Skills";
+import GitHubStats from "./components/GitHubStats";
+import ScrollButtons from "./components/ScrollButtons";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      className="min-h-screen bg-black text-white font-sans"
+      style={{
+        backgroundImage: "url('/background.gif')", // pastikan nama file GIF kamu benar
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      {/* Overlay gelap agar teks tetap terbaca */}
+      <div className="bg-black/70 backdrop-blur-sm">
+        <div className="max-w-md mx-auto px-4 py-12 space-y-12">
+          <Intro />
+          <About />
+          <GitHubStats />
+          <Experience />
+          <Education />
+          <Projects />
+          <Skills />
+          <Links />
+        </div>
+      </div>
+
+      {/* Tombol scroll up/down */}
+      <ScrollButtons />
     </div>
   );
 }
-
-export default App;
