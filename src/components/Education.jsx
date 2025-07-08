@@ -4,7 +4,7 @@ function Education() {
   const education = [
     {
       year: "2023 – Present",
-      logo: "/Untirta.png",
+      logo: "{`${process.env.PUBLIC_URL}/Untirta.png`}",
       institution: "Universitas Sultan Ageng Tirtayasa",
       degree: "S1 Informatika",
       desc: "GPA 3.85 / 4.0",
