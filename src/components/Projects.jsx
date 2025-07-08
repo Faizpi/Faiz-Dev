@@ -18,7 +18,7 @@ function Projects() {
       desc: "Aplikasi mobile pelatihan dan kebugaran dengan fitur hitung kalori dan plan harian.",
       stack: "React Native • Firebase • Expo",
       link: "https://github.com/Faizpi/bugarin",
-      platform: "GitHub",
+      platform: "Figma",
     },
     {
       year: "2025",
@@ -45,7 +45,7 @@ function Projects() {
       desc: "Task management sederhana berbasis web dengan sistem kategori dan progres bar.",
       stack: "React • Zustand • Tailwind • Vite",
       link: "https://figma.com/file/xxxxx/Taskflow",
-      platform: "Figma",
+      platform: "Github",
     },
     {
       year: "2024",
@@ -54,7 +54,7 @@ function Projects() {
       desc: "Website pembelajaran interaktif berbasis poin dan kuis untuk siswa SD, SMP, dan SMA.",
       stack: "Laravel • Vue • Bootstrap",
       link: "https://figma.com/file/xxxxx/PointCademy",
-      platform: "Figma",
+      platform: "Github",
     },
     {
       year: "2024",
@@ -72,22 +72,34 @@ function Projects() {
       desc: "Simulasi jaringan kabel berbasis web untuk edukasi dasar topologi dan transmisi data.",
       stack: "Next.js • SVG • DiagramJS",
       link: "https://github.com/Faizpi/kabel-network-simulator",
-      platform: "GitHub",
+      platform: "Figma",
     },
   ];
+
+  const getPlatformIcon = (platform) => {
+    switch (platform.toLowerCase()) {
+      case "github":
+        return "https://cdn.simpleicons.org/github/FFFFFF";
+      case "figma":
+        return "https://cdn.simpleicons.org/figma/F24E1E";
+      default:
+        return null;
+    }
+  };
 
   return (
     <section className="space-y-8">
       <Reveal>
         <h2 className="text-sm font-bold text-white">Side Projects</h2>
       </Reveal>
-      
 
       {projects.map((project, i) => (
         <Reveal delay={i * 0.07} key={i}>
           <div className="grid grid-cols-12 gap-4 items-start py-3">
             {/* Tahun */}
-            <div className="col-span-2 text-xs text-gray-500 pt-1">{project.year}</div>
+            <div className="col-span-2 text-xs text-gray-500 pt-1">
+              {project.year}
+            </div>
 
             {/* Logo */}
             <div className="col-span-2">
@@ -101,15 +113,23 @@ function Projects() {
             {/* Detail */}
             <div className="col-span-8 space-y-1">
               <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="text-sm font-semibold text-white">{project.title}</h3>
+                <h3 className="text-sm font-semibold text-white">
+                  {project.title}
+                </h3>
+
                 {project.link && (
                   <a
                     href={project.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-xs text-blue-400 hover:underline"
+                    className="flex items-center gap-1 text-xs text-blue-400 hover:underline"
                   >
-                    ↗ {project.platform}
+                    {project.platform} ↗
+                    <img
+                      src={getPlatformIcon(project.platform)}
+                      alt={project.platform}
+                      className="w-4 h-4"
+                    />
                   </a>
                 )}
               </div>
@@ -124,7 +144,8 @@ function Projects() {
       <Reveal delay={projects.length * 0.13}>
         <div className="pt-6">
           <p className="text-xs text-gray-500">
-            Ingin melihat lebih banyak project saya? Silakan akses portofolio lengkap saya dalam bentuk PDF di sini:{" "}
+            Ingin melihat lebih banyak project saya? Silakan akses portofolio
+            lengkap saya dalam bentuk PDF di sini:{" "}
             <a
               href="https://drive.google.com/drive/folders/xxxxx"
               target="_blank"

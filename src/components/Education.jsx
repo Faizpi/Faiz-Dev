@@ -4,7 +4,7 @@ function Education() {
   const education = [
     {
       year: "2023 – Present",
-      logo: "{`${process.env.PUBLIC_URL}/Untirta.png`}",
+      logo: `${process.env.PUBLIC_URL}/Untirta.png`,
       institution: "Universitas Sultan Ageng Tirtayasa",
       degree: "S1 Informatika",
       desc: "GPA 3.85 / 4.0",
@@ -21,21 +21,21 @@ function Education() {
     },
     {
       year: "Januari 2025",
-      logo: "/udemy.png",
+      logo: `${process.env.PUBLIC_URL}/udemy.png`,
       institution: "Udemy",
       degree: "The Complete 2024 Web Development Bootcamp",
       desc: "Covers HTML, CSS, JS, Node.js, MongoDB, Express.js, React.js, APIs, and deployment.",
     },
     {
       year: "Januari 2025",
-      logo: "/udemy.png",
+      logo: `${process.env.PUBLIC_URL}/udemy.png`,
       institution: "Udemy",
       degree: "Front-End Web Developer Bootcamp",
       desc: "Frontend mastery using modern tools and best practices.",
     },
     {
       year: "Desember 2024",
-      logo: "/udemy.png",
+      logo: `${process.env.PUBLIC_URL}/udemy.png`,
       institution: "Udemy",
       degree: "Basics of Database Design & Development",
       desc: "Covers relational databases, ERD, normalization, and SQL.",

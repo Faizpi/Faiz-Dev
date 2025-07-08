@@ -12,7 +12,7 @@ function Experience() {
           {/* Kolom Kiri: Logo di atas, tahun di bawah */}
           <div className="flex flex-col items-center w-28 text-center">
             <img
-              src={`${process.env.PUBLIC_URL}/Faiz.png`}
+              src={`${process.env.PUBLIC_URL}/HMIF.png`}
               alt="HMIF Logo"
               className="w-12 h-12 mb-2 object-contain"
             />
