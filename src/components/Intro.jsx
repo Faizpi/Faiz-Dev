@@ -7,7 +7,6 @@ export default function Intro() {
       {/* Foto */}
       <motion.img
         img src={`${process.env.PUBLIC_URL}/Faiz.png`} alt="Faiz"
-        alt="profile"
         className="w-24 h-24 rounded-full object-cover"
         whileHover={{ scale: 1.1 }}
         transition={{ duration: 0.3 }}
