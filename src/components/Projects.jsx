@@ -1,77 +1,86 @@
-import Reveal from "./Reveal"; 
+import Reveal from "./Reveal";
 
 function Projects() {
   const projects = [
     {
       year: "Ongoing",
-      logo: "/logos/pendanaan.png",
+      logo: "https://cdn.simpleicons.org/github/FFFFFF",
+      title: (
+        <a
+          href="https://faizpi.github.io/Faiz-Dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-sm font-semibold text-white underline hover:text-blue-400"
+        >
+          Faiz-Dev
+        </a>
+      ),
+      desc: "Personal portfolio website yang menampilkan profil, skill, project, serta informasi kontak secara interaktif dan modern.",
+      stack: "React • Tailwind CSS • Framer Motion • GitHub Pages",
+      link: "https://github.com/Faizpi/Faiz-Dev",
+      platform: "GitHub",
+    },
+    {
+      year: "Ongoing",
+      logo: "https://cdn.simpleicons.org/github/FFFFFF",
       title: "Pendanaan Daerah",
       desc: "Web platform simulasi dana desa menggunakan konsep blockchain dan validasi tahapan.",
       stack: "MERN • Tailwind • Smart UI Flow",
-      link: "https://github.com/Faizpi/pendanaan-daerah",
+      link: "https://github.com/Faizpi/KTI-pendanaan_daerah",
       platform: "GitHub",
     },
     {
       year: "2025",
-      logo: "/logos/bugarin.png",
+      logo: "https://cdn.simpleicons.org/figma/FFFFFF",
       title: "Bugarin",
-      desc: "Aplikasi mobile pelatihan dan kebugaran dengan fitur hitung kalori dan plan harian.",
-      stack: "React Native • Firebase • Expo",
-      link: "https://github.com/Faizpi/bugarin",
+      desc: "Aplikasi mobile pelatihan dan kebugaran dengan fitur workout dan plan harian.",
+      stack: "Figma • UI/UX Design • Prototyping • Wireframing",
+      link: "https://www.figma.com/design/GWSnsK9ECzJ7fct4MomEcZ/BUGARIN?node-id=0-1&t=CHPPLCgQfDHsDayR-1",
       platform: "Figma",
     },
     {
       year: "2025",
-      logo: "/Game.png",
-      title: "Mini Games",
-      desc: "Web mini-games arcade buatan sendiri dengan leaderboard dan logout system.",
-      stack: "PHP • JavaScript • MySQL • Tailwind",
-      link: "https://github.com/Faizpi/mini-games",
-      platform: "GitHub",
-    },
-    {
-      year: "2025",
-      logo: "/logos/nusantara.png",
+      logo: "https://cdn.simpleicons.org/github/FFFFFF",
       title: "Nusantara Hop",
       desc: "Game platformer edukatif bertema nusantara dan gunung-gunung di Indonesia + Kuis.",
       stack: "Unity 2D • C# • Tilemap",
-      link: "https://github.com/Faizpi/nusantara-hop",
+      link: "https://github.com/Faizpi/Nusantara-Hop",
       platform: "GitHub",
     },
     {
       year: "2024",
-      logo: "/logos/taskflow.png",
+      logo: "https://cdn.simpleicons.org/github/FFFFFF",
       title: "Taskflow",
-      desc: "Task management sederhana berbasis web dengan sistem kategori dan progres bar.",
-      stack: "React • Zustand • Tailwind • Vite",
-      link: "https://figma.com/file/xxxxx/Taskflow",
-      platform: "Github",
+      desc: "Task management sederhana berbasis web dengan sistem kategori dan kalender serta notifikasi.",
+      stack: "Laravel • MySQL",
+      link: "https://github.com/Faizpi/Task-Flow",
+      platform: "Figma",
     },
     {
       year: "2024",
-      logo: "/logos/pointcademy.png",
+      logo: "https://cdn.simpleicons.org/github/FFFFFF",
+      title: "Mini Games",
+      desc: "Web mini-games dashboard dengan login dan logout system.",
+      stack: "PHP • JavaScript • MySQL",
+      link: "https://github.com/Faizpi/Login-and-Regist-form-to-Game-Dashboard",
+      platform: "GitHub",
+    },
+    {
+      year: "2024",
+      logo: "https://cdn.simpleicons.org/github/FFFFFF",
       title: "PointCademy",
       desc: "Website pembelajaran interaktif berbasis poin dan kuis untuk siswa SD, SMP, dan SMA.",
-      stack: "Laravel • Vue • Bootstrap",
-      link: "https://figma.com/file/xxxxx/PointCademy",
+      stack: "Html • Css • Javascript • Figma",
+      link: "https://github.com/Faizpi/PointCademy",
       platform: "Github",
-    },
-    {
-      year: "2024",
-      logo: "/logos/barca.png",
-      title: "FC Barcelona",
-      desc: "Website tribute interaktif bertema FC Barcelona dengan embed Spotify dan jadwal.",
-      stack: "HTML • CSS • PHP • Spotify API",
-      link: "https://github.com/Faizpi/fc-barcelona",
-      platform: "GitHub",
     },
     {
       year: "2023",
-      logo: "/logos/kabel.png",
+      logo: "https://cdn.simpleicons.org/figma/FFFFFF",
       title: "K@bel",
-      desc: "Simulasi jaringan kabel berbasis web untuk edukasi dasar topologi dan transmisi data.",
-      stack: "Next.js • SVG • DiagramJS",
-      link: "https://github.com/Faizpi/kabel-network-simulator",
+      desc: "Aplikasi mobile kantin dengan fitur login seller dan buyer.",
+      stack: "Figma • UI/UX Design • Prototyping • Wireframing",
+      link: "https://www.figma.com/design/3tysDmv7A60w33iGLOGwtT/Kantin_jawir?node-id=0-1&t=4NR5hczjUVlDKiRl-1",
       platform: "Figma",
     },
   ];
@@ -81,7 +90,7 @@ function Projects() {
       case "github":
         return "https://cdn.simpleicons.org/github/FFFFFF";
       case "figma":
-        return "https://cdn.simpleicons.org/figma/F24E1E";
+        return "https://cdn.simpleicons.org/figma/FFFFFF";
       default:
         return null;
     }
@@ -90,7 +99,7 @@ function Projects() {
   return (
     <section className="space-y-8">
       <Reveal>
-        <h2 className="text-sm font-bold text-white">Side Projects</h2>
+        <h2 className="text-sm font-bold text-white">Projects</h2>
       </Reveal>
 
       {projects.map((project, i) => (
@@ -105,7 +114,9 @@ function Projects() {
             <div className="col-span-2">
               <img
                 src={project.logo}
-                alt={project.title}
+                alt={
+                  typeof project.title === "string" ? project.title : "Project"
+                }
                 className="w-10 h-10 object-contain"
               />
             </div>
@@ -147,7 +158,7 @@ function Projects() {
             Ingin melihat lebih banyak project saya? Silakan akses portofolio
             lengkap saya dalam bentuk PDF di sini:{" "}
             <a
-              href="https://drive.google.com/drive/folders/xxxxx"
+              href="https://bit.ly/Faiz-Pratama-Portofolio"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:underline"

@@ -19,7 +19,7 @@ function Links() {
     },
     {
       label: "WhatsApp",
-      name: "+62 878-71656326",
+      name: "+62 87871656326",
       href: "https://wa.me/6287871656326",
     },
     {

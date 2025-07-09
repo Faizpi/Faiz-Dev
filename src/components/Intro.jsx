@@ -34,7 +34,7 @@ export default function Intro() {
         </p>
 
         <motion.a
-          href={`${process.env.PUBLIC_URL}/CV_Muhammad Faiz Bintang Pratama.pdf`}
+          href={`${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`}
           download
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}

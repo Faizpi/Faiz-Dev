@@ -12,6 +12,7 @@ function Skills() {
         { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
         { name: "C#", icon: "https://img.icons8.com/color/48/000000/c-sharp-logo.png" },
         { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus/00599C" },
+        { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
       ],
     },
     {
