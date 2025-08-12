@@ -7,34 +7,40 @@ import Education from "./components/Education";
 import Skills from "./components/Skills";
 import GitHubStats from "./components/GitHubStats";
 import ScrollButtons from "./components/ScrollButtons";
+import BottomNavbar from "./components/BottomNavbar";
 
 export default function App() {
   return (
     <div
-      className="min-h-screen bg-black text-white font-sans"
+      className="min-h-screen bg-black text-white font-sans relative"
       style={{
-        backgroundImage: "url('/background.gif')", // pastikan nama file GIF kamu benar
+        backgroundImage: "url('/background.gif')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Overlay gelap agar teks tetap terbaca */}
+      {/* Overlay gelap */}
       <div className="bg-black/70 backdrop-blur-sm">
-        <div className="max-w-md mx-auto px-4 py-12 space-y-12">
-          <Intro />
-          <About />
-          <GitHubStats />
-          <Experience />
-          <Education />
-          <Projects />
-          <Skills />
-          <Links />
+        <div className="max-w-md mx-auto px-4 py-12 space-y-12 pb-24">
+          
+          {/* Setiap section dibungkus <section> dengan id */}
+          <section id="Intro"><Intro /></section>
+          <section id="About"><About /></section>
+          <section id="GitHubStats"><GitHubStats /></section>
+          <section id="Experience"><Experience /></section>
+          <section id="Education"><Education /></section>
+          <section id="Projects"><Projects /></section>
+          <section id="Skills"><Skills /></section>
+          <section id="Links"><Links /></section>
         </div>
       </div>
 
-      {/* Tombol scroll up/down */}
+      {/* Tombol scroll */}
       <ScrollButtons />
+
+      {/* Navbar bawah */}
+      <BottomNavbar />
     </div>
   );
 }

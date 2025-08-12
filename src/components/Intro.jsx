@@ -33,15 +33,18 @@ export default function Intro() {
           />
         </p>
 
-        <motion.a
-          href={`${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`}
-          download
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-          className="inline-block text-xs px-3 py-1 border border-white rounded bg-white text-black hover:bg-gray-200 transition-all duration-300 mt-2"
-        >
-          Download CV ↗
-        </motion.a>
+      <motion.a
+        href={`${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`}
+        download
+        whileHover={{ scale: 1.05 }}
+        transition={{ duration: 0.2 }}
+        className="inline-block text-xs px-3 py-1 border border-white/30 rounded-lg 
+                  bg-white/10 backdrop-blur-md shadow-lg shadow-white/5 
+                  text-white hover:bg-white/20 transition-all duration-300 mt-2"
+      >
+        Download CV ↗
+      </motion.a>
+
       </div>
     </div>
   );

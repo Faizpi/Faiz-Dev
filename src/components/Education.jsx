@@ -7,7 +7,7 @@ function Education() {
       logo: `${process.env.PUBLIC_URL}/Untirta.png`,
       institution: "Universitas Sultan Ageng Tirtayasa",
       degree: "S1 Informatika",
-      desc: "GPA 3.85 / 4.0",
+      desc: "GPA 3.87 / 4.0",
     },
   ];
 

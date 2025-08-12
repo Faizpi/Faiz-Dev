@@ -9,14 +9,14 @@ function ScrollButtons() {
     <div className="fixed bottom-5 right-5 flex flex-col gap-3 z-50">
       <button
         onClick={scrollToTop}
-        className="bg-white text-black p-2 rounded-full shadow hover:scale-110 transition-transform"
+        className="bg-white/10 backdrop-blur-xl border border-white/20 p-2 rounded-full shadow-lg hover:bg-white/20 hover:scale-105 transition-all duration-300"
         aria-label="Scroll to top"
       >
         <ArrowUp size={14} />
       </button>
       <button
         onClick={scrollToBottom}
-        className="bg-white text-black p-2 rounded-full shadow hover:scale-110 transition-transform"
+        className="bg-white/10 backdrop-blur-xl border border-white/20 p-2 rounded-full shadow-lg hover:bg-white/20 hover:scale-105 transition-all duration-300"
         aria-label="Scroll to bottom"
       >
         <ArrowDown size={14} />
