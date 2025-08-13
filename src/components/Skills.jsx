@@ -5,54 +5,54 @@ function Skills() {
     {
       title: "Programming Languages",
       skills: [
-        { name: "HTML", icon: "https://cdn.simpleicons.org/html5/E34F26" },
-        { name: "CSS", icon: "https://cdn.simpleicons.org/css3/1572B6" },
-        { name: "JavaScript", icon: "https://cdn.simpleicons.org/javascript/F7DF1E" },
-        { name: "PHP", icon: "https://cdn.simpleicons.org/php/777BB4" },
-        { name: "Python", icon: "https://cdn.simpleicons.org/python/3776AB" },
-        { name: "C#", icon: "https://img.icons8.com/color/48/000000/c-sharp-logo.png" },
-        { name: "C++", icon: "https://cdn.simpleicons.org/cplusplus/00599C" },
+        { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+        { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+        { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+        { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+        { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" },
+        { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
         { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
       ],
     },
     {
       title: "Frameworks & Libraries",
       skills: [
-        { name: "React.js", icon: "https://cdn.simpleicons.org/react/61DAFB" },
-        { name: "Node.js", icon: "https://cdn.simpleicons.org/nodedotjs/339933" },
+        { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
         { name: "Express.js", icon: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" },
-        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/38BDF8" },
-        { name: "Bootstrap", icon: "https://cdn.simpleicons.org/bootstrap/7952B3" },
-        { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20" },
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/38BDF8" }, // dikembalikan
+        { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+        { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20" }, // dikembalikan
       ],
     },
     {
       title: "Databases",
       skills: [
-        { name: "MySQL", icon: "https://cdn.simpleicons.org/mysql/4479A1" },
-        { name: "MongoDB", icon: "https://cdn.simpleicons.org/mongodb/47A248" },
+        { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
       ],
     },
     {
       title: "Version Control",
       skills: [
-        { name: "Git", icon: "https://cdn.simpleicons.org/git/F05032" },
-        { name: "GitHub", icon: "https://cdn.simpleicons.org/github/FFFFFF" },
+        { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+        { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
       ],
     },
     {
       title: "UI/UX & Tools",
       skills: [
-        { name: "Figma", icon: "https://cdn.simpleicons.org/figma/F24E1E" },
-        { name: "Canva", icon: "https://cdn.simpleicons.org/canva/00C4CC" },
+        { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+        { name: "Canva", icon: "https://cdn.simpleicons.org/canva/00C4CC" }, // dikembalikan
       ],
     },
     {
       title: "Languages",
       skills: [
-        { name: "Indonesia", icon: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg"},
-        { name: "Inggris", icon: "https://cdn-icons-png.flaticon.com/512/197/197374.png" },
-        { name: "Arab", icon: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" },
+        { name: "Indonesia", icon: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" }, // dikembalikan
+        { name: "Inggris", icon: "https://cdn-icons-png.flaticon.com/512/197/197374.png" }, // dikembalikan
+        { name: "Arab", icon: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" }, // dikembalikan
       ],
     },
   ];
@@ -69,7 +69,10 @@ function Skills() {
             <h3 className="text-sm font-semibold text-gray-300">{category.title}</h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {category.skills.map((skill, i) => (
-                <div key={i} className="flex items-center gap-3 group transition-transform hover:scale-[1.02] duration-200">
+                <div
+                  key={i}
+                  className="flex items-center gap-3 group transition-transform hover:scale-[1.02] duration-200"
+                >
                   {skill.icon && (
                     <img
                       src={skill.icon}
