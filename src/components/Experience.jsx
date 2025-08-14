@@ -15,7 +15,7 @@ function Experience() {
             <img
               src={`${process.env.PUBLIC_URL}/SIK.png`}
               alt="Sumi Indo Kabel Logo"
-              className="w-12 h-12 mb-2 object-contain"
+              className="w-10 h-10 mb-2 object-contain rounded-full"
             />
             <p className="text-xs text-gray-500 leading-relaxed mt-auto">
               Aug 2025 –<br />Present
