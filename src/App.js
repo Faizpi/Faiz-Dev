@@ -9,6 +9,9 @@ import GitHubStats from "./components/GitHubStats";
 import ScrollButtons from "./components/ScrollButtons";
 import BottomNavbar from "./components/BottomNavbar";
 
+// Tambahkan import Cursor
+import Cursor from "./components/Cursor";
+
 export default function App() {
   return (
     <div
@@ -18,9 +21,12 @@ export default function App() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        cursor: "none", // Hide default cursor
       }}
     >
-      
+      {/* Custom Cursor */}
+      <Cursor />
+
       {/* Overlay gelap */}
       <div className="bg-black/70 backdrop-blur-sm relative z-10">
         <div className="max-w-md mx-auto px-4 py-12 space-y-12 pb-24">

@@ -15,7 +15,7 @@ export default function Experience() {
   return (
     <div className="flex flex-col md:flex-row gap-8">
       {/* Sidebar */}
-      <div className="flex md:flex-col gap-4 md:w-16">
+      <div className="flex md:flex-col gap-4 md:w-10">
         {tabs.map((tab) => (
           <button
             key={tab.name}
