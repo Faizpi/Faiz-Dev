@@ -4,7 +4,6 @@ import Experience from "./components/Experience";
 import Projects from "./components/Projects";
 import Links from "./components/Links";
 import Intro from "./components/Intro";
-import Education from "./components/Education";
 import Skills from "./components/Skills";
 import GitHubStats from "./components/GitHubStats";
 import ScrollButtons from "./components/ScrollButtons";
@@ -29,7 +28,6 @@ export default function App() {
           <section id="About"><About /></section>
           <section id="GitHubStats"><GitHubStats /></section>
           <section id="Experience"><Experience /></section>
-          <section id="Education"><Education /></section>
           <section id="Projects"><Projects /></section>
           <section id="Skills"><Skills /></section>
           <section id="Links"><Links /></section>
