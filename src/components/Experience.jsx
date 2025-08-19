@@ -4,8 +4,8 @@ import { GraduationCap, Users, Briefcase, Mic, Award } from "lucide-react";
 
 export default function Experience() {
   const tabs = [
-    { name: "Education", icon: <GraduationCap size={20} /> },
     { name: "Work Experience", icon: <Briefcase size={20} /> },
+    { name: "Education", icon: <GraduationCap size={20} /> },
     { name: "Organizations", icon: <Users size={20} /> },
     { name: "Speaker", icon: <Mic size={20} /> },
     { name: "Awards", icon: <Award size={20} /> },
@@ -140,11 +140,12 @@ export default function Experience() {
                     </p>
                   </div>
                   <ul className="list-disc list-inside text-sm text-gray-400 space-y-1">
-                    <li>Building a web-based application to support engineers’ requirements</li>
-                    <li>Assisted in daily IT operational tasks and troubleshooting.</li>
-                    <li>Helped maintain hardware, software, and network systems.</li>
-                    <li>Provided technical support for internal departments.</li>
-                  </ul>
+                        <li>Developed web-based applications to support engineers’ requirements.</li>
+                        <li>Created posters and banners for company projects.</li>
+                        <li>Assisted in daily IT operations and troubleshooting.</li>
+                        <li>Maintained hardware, software, and network systems.</li>
+                        <li>Provided technical support for internal departments.</li>
+                 </ul>
                 </div>
               </div>
             </Reveal>
