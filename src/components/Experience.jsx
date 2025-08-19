@@ -140,6 +140,7 @@ export default function Experience() {
                     </p>
                   </div>
                   <ul className="list-disc list-inside text-sm text-gray-400 space-y-1">
+                    <li>Building a web-based application to support engineers’ requirements</li>
                     <li>Assisted in daily IT operational tasks and troubleshooting.</li>
                     <li>Helped maintain hardware, software, and network systems.</li>
                     <li>Provided technical support for internal departments.</li>

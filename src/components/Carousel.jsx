@@ -18,7 +18,16 @@ const Reveal = ({ children, delay = 0 }) => {
 
 // 🔹 Data Projects
 const PROJECTS = [
-{
+    {
+      year: "Ongoing",
+      logo: "https://cdn.simpleicons.org/github/FFFFFF",
+      title: "Bunching Label Automobile Cable Plane 2",
+      desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dan bisa di scan melalui barcode.",
+      stack: "Laravel • Bootsrtap",
+      link: "https://github.com/Faizpi/bunching-label-2",
+      platform: "GitHub",
+    },
+    {
       year: "Ongoing",
       logo: "https://cdn.simpleicons.org/github/FFFFFF",
       title: (
