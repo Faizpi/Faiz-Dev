@@ -10,7 +10,7 @@ export default function Experience() {
     { name: "Speaker", icon: <Mic size={20} /> },
     { name: "Awards", icon: <Award size={20} /> },
   ];
-  const [activeTab, setActiveTab] = useState("Education");
+  const [activeTab, setActiveTab] = useState("Work Experience");
 
   return (
     <div className="flex flex-col md:flex-row gap-8">
