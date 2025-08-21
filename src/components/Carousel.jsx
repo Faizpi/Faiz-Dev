@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// 🔹 Komponen Reveal (fade + slide + sekali muncul)
+//Komponen Reveal (fade + slide + sekali muncul)
 const Reveal = ({ children, delay = 0 }) => {
   return (
     <motion.div
@@ -16,7 +16,7 @@ const Reveal = ({ children, delay = 0 }) => {
   );
 };
 
-// 🔹 Data Projects
+//Data Projects
 const PROJECTS = [
     {
       year: "Ongoing",
