@@ -24,7 +24,7 @@ const PROJECTS = [
       title: "Bunching Label Automobile Cable Plant 1",
       desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dan bisa di scan melalui barcode. Terdapat fitur laporan yang memungkinkan admin atau operator bisa export data ke excel atau pdf.",
       stack: "Laravel • Bootsrtap • MySQL",
-      link: "https://github.com/Faizpi/bunching-label-2",
+      link: "https://github.com/Faizpi/bunching-label-1",
       platform: "GitHub",
     },
     {
