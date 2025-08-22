@@ -38,7 +38,7 @@ const PROJECTS = [
     },
     {
       year: "Ongoing",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
+      logo: `${process.env.PUBLIC_URL}/Faiz.png`,
       title: (
         <a
           href="https://faizpi.github.io/Faiz-Dev/"
