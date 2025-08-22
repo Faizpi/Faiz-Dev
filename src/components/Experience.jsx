@@ -140,11 +140,11 @@ export default function Experience() {
                     </p>
                   </div>
                   <ul className="list-disc list-inside text-sm text-gray-400 space-y-1">
-                        <li>Developed web-based applications to support engineers’ requirements.</li>
-                        <li>Created posters and banners for company projects.</li>
-                        <li>Assisted in daily IT operations and troubleshooting.</li>
-                        <li>Maintained hardware, software, and network systems.</li>
-                        <li>Provided technical support for internal departments.</li>
+                    <li>Developed and maintained web-based applications to support engineering requirements, optimizing workflows and efficiency.</li>
+                    <li>Created and managed digital content for corporate publications, improving communication and brand visibility.</li>
+                    <li>Supported daily IT operations, troubleshooting hardware, software, and network issues to reduce downtime.</li>
+                    <li>Administered and maintained IT infrastructure, including servers, workstations, and network systems, ensuring high availability.</li>
+                    <li>Delivered technical support and end-user assistance across internal departments, enhancing productivity and system adoption.</li>
                  </ul>
                 </div>
               </div>
