@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Faiz-Dev/static/css/main.bd32b184.css",
-    "main.js": "/Faiz-Dev/static/js/main.c5c04661.js",
+    "main.js": "/Faiz-Dev/static/js/main.d538a014.js",
     "index.html": "/Faiz-Dev/index.html",
     "main.bd32b184.css.map": "/Faiz-Dev/static/css/main.bd32b184.css.map",
-    "main.c5c04661.js.map": "/Faiz-Dev/static/js/main.c5c04661.js.map"
+    "main.d538a014.js.map": "/Faiz-Dev/static/js/main.d538a014.js.map"
   },
   "entrypoints": [
     "static/css/main.bd32b184.css",
-    "static/js/main.c5c04661.js"
+    "static/js/main.d538a014.js"
   ]
 }
