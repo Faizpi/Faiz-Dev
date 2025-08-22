@@ -20,7 +20,7 @@ const Reveal = ({ children, delay = 0 }) => {
 const PROJECTS = [
       {
       year: "Ongoing",
-      logo: `${process.env.PUBLIC_URL}/mylogo.png`,
+      logo: `${process.env.PUBLIC_URL}/SIK.png`,
       title: "Bunching Label Automobile Cable Plant 1",
       desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dan bisa di scan melalui barcode. Terdapat fitur laporan yang memungkinkan admin atau operator bisa export data ke excel atau pdf.",
       stack: "Laravel • Bootsrtap",
@@ -29,7 +29,7 @@ const PROJECTS = [
     },
     {
       year: "Ongoing",
-      logo: `${process.env.PUBLIC_URL}/mylogo.png`,
+      logo: `${process.env.PUBLIC_URL}/SIK.png`,
       title: "Bunching Label Automobile Cable Plant 2",
       desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dan bisa di scan melalui barcode. Terdapat fitur laporan yang memungkinkan admin atau operator bisa export data ke excel atau pdf.",
       stack: "Laravel • Bootsrtap",
