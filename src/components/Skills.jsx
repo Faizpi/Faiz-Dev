@@ -44,15 +44,15 @@ function Skills() {
       title: "UI/UX & Tools",
       skills: [
         { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-        { name: "Canva", icon: "https://cdn.simpleicons.org/canva/00C4CC" }, // dikembalikan
+        { name: "Canva", icon: "https://cdn.simpleicons.org/canva/00C4CC" }, 
       ],
     },
     {
       title: "Languages",
       skills: [
-        { name: "Indonesia", icon: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" }, // dikembalikan
-        { name: "Inggris", icon: "https://cdn-icons-png.flaticon.com/512/197/197374.png" }, // dikembalikan
-        { name: "Arab", icon: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" }, // dikembalikan
+        { name: "Indonesia", icon: "https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" },
+        { name: "Inggris", icon: "https://cdn-icons-png.flaticon.com/512/197/197374.png" },
+        { name: "Arab", icon: "https://upload.wikimedia.org/wikipedia/commons/0/0d/Flag_of_Saudi_Arabia.svg" },
       ],
     },
   ];
