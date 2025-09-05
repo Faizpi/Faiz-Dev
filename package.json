@@ -2,7 +2,7 @@
   "name": "my-portofolio",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://Faizpi.github.io/Faiz-Dev",
+  "homepage": "",
   "dependencies": {
     "@lottiefiles/react-lottie-player": "^3.6.0",
     "@react-three/drei": "^10.6.1",
