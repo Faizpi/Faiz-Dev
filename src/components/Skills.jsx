@@ -82,7 +82,7 @@ function Skills() {
                       src={skill.icon}
                       alt={skill.name}
                       className={`w-5 h-5 object-contain ${
-                        skill.name === "GitHub" || skill.name === "Figma"
+                        skill.name === "GitHub"
                           ? "dark:invert"
                           : ""
                       }`}
