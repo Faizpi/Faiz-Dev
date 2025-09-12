@@ -2,6 +2,22 @@
 
 > A modern, interactive portfolio website showcasing my work as a **UI/UX Designer** and **Web Developer**.
 
+---
+
+## 📸 Screenshots
+
+### 📱 Mobile View
+| Home | About / Stats |
+|------|---------------|
+| ![Mobile 1](./mobile1.png) | ![Mobile 2](./mobile2.png) |
+
+### 💻 Desktop View
+| Home | About / Stats |
+|------|---------------|
+| ![Desktop 1](./deks1.png) | ![Desktop 2](./deks2.png) |
+
+---
+
 ## 🚀 Live Demo
 [View Portfolio](your-portfolio-url.com) • [GitHub Repository](https://github.com/Faizpi/portfolio)
 
