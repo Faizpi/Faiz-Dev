@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# 🌌 Personal Portfolio - Muhammad Faiz Bintang Pratama
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> A modern, interactive portfolio website showcasing my work as a **UI/UX Designer** and **Web Developer**.
 
-## Available Scripts
+## 🚀 Live Demo
+[View Portfolio](your-portfolio-url.com) • [GitHub Repository](https://github.com/Faizpi/portfolio)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## ✨ Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### 🎨 **Modern UI/UX**
+- **Dark & Light Mode Toggle** - Smooth theme switching with ripple animation
+- **Custom Cursor** - Interactive dot and trailing ring cursor
+- **Responsive Design** - Optimized for all screen sizes
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🎬 **Interactive Animations**
+- **Typewriter Effect** - Dynamic role showcase animation
+- **Reveal Animations** - Smooth section transitions using Framer Motion
+- **Real-time Clock** - Live digital clock display
 
-### `npm test`
+### 📊 **GitHub Integration**
+- Live contribution graph
+- Dynamic stats cards
+- Streak statistics
+- Automatic theme synchronization
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🛠️ Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Frontend | Animation | Icons | Tools |
+|----------|-----------|--------|-------|
+| React  | Framer Motion | Lucide Icons | Tailwind CSS |
+| JavaScript | CSS Transitions | React Icons | NPM |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Key Dependencies
+- **[React](https://react.dev/)** - UI library
+- **[Tailwind CSS](https://tailwindcss.com/)** - Utility-first CSS framework
+- **[Framer Motion](https://framer.com/motion/)** - Animation library
+- **[react-simple-typewriter](https://npmjs.com/package/react-simple-typewriter)** - Typewriter effect
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🚀 Quick Start
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/Faizpi/portfolio.git
+   cd portfolio
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 🤝 Connect With Me
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](your-linkedin-url)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Faizpi)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@gmail.com)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](your-whatsapp-url)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](your-instagram-url)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 📄 License
 
-### Making a Progressive Web App
+This project is open source and available under the [MIT License](LICENSE).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## ⭐ Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+If you found this project helpful, please give it a ⭐ on GitHub and share it with others!
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<div align="center">
+  <strong>Made with ❤️ by Muhammad Faiz Bintang Pratama</strong>
+</div>
