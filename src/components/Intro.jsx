@@ -1,6 +1,35 @@
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaLinkedin, FaGithub, FaFileAlt, FaEnvelope } from "react-icons/fa";
+import { useEffect, useState } from "react";
+
+function Clock() {
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const interval = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const formattedDate = time.toLocaleDateString("id-ID", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+
+  const formattedTime = time.toLocaleTimeString("id-ID", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+
+  return (
+    <div className="mt-2 text-xs font-mono text-gray-700 dark:text-gray-400 space-y-0.5">
+      <div>{formattedDate}</div>
+      <div>{formattedTime}</div>
+    </div>
+  );
+}
 
 export default function Intro() {
   return (
@@ -16,11 +45,9 @@ export default function Intro() {
 
       {/* Teks dan tombol */}
       <div className="pt-[2px]">
-      <h1
-        className="text-lg font-semibold leading-tight text-black dark:text-white"
-      >
-        Muhammad Faiz Bintang Pratama
-      </h1>
+        <h1 className="text-lg font-semibold leading-tight text-black dark:text-white">
+          Muhammad Faiz Bintang Pratama
+        </h1>
 
         {/* Typewriter Effect */}
         <p className="text-sm mt-1 leading-tight text-gray-700 dark:text-gray-400">
@@ -35,8 +62,11 @@ export default function Intro() {
           />
         </p>
 
+        {/* Clock */}
+        <Clock />
+
         {/* Tombol actions */}
-        <div className="flex flex-wrap gap-2 mt-2">
+        <div className="flex flex-wrap gap-2 mt-3">
           {[
             {
               href: "https://www.linkedin.com/in/faiz-pratama/",

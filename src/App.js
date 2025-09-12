@@ -9,7 +9,7 @@ import ScrollButtons from "./components/ScrollButtons";
 import BottomNavbar from "./components/BottomNavbar";
 import Cursor from "./components/Cursor";
 import Carousel from "./components/Carousel";
-import ThemeToggle from "./components/ThemeToggle"; // import dulu
+import ThemeToggle from "./components/ThemeToggle"; 
 
 export default function App() {
   return (
