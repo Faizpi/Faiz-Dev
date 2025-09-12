@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Typewriter } from 'react-simple-typewriter';
+import { Typewriter } from "react-simple-typewriter";
 import { FaLinkedin, FaGithub, FaFileAlt, FaEnvelope } from "react-icons/fa";
 
 export default function Intro() {
@@ -16,16 +16,16 @@ export default function Intro() {
 
       {/* Teks dan tombol */}
       <div className="pt-[2px]">
-        <h1
-          className="text-lg font-semibold hover-text-shine leading-tight"
-          data-text="Muhammad Faiz Bintang Pratama"
-        >
-          Muhammad Faiz Bintang Pratama
-        </h1>
+      <h1
+        className="text-lg font-semibold leading-tight text-black dark:text-white"
+      >
+        Muhammad Faiz Bintang Pratama
+      </h1>
 
-        <p className="text-sm text-gray-400 mt-1 leading-tight">
+        {/* Typewriter Effect */}
+        <p className="text-sm mt-1 leading-tight text-gray-700 dark:text-gray-400">
           <Typewriter
-            words={['UI/UX Designer', 'Web Developer']}
+            words={["UI/UX Designer", "Web Developer"]}
             loop={0}
             cursor
             cursorStyle="_*"
@@ -37,58 +37,49 @@ export default function Intro() {
 
         {/* Tombol actions */}
         <div className="flex flex-wrap gap-2 mt-2">
-          {/* LinkedIn */}
-          <motion.a
-            href="https://www.linkedin.com/in/faiz-pratama/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-            className="flex items-center gap-2 text-xs px-3 py-1 border border-white/30 rounded-lg 
-                       bg-white/10 backdrop-blur-md shadow-lg shadow-white/5 
-                       text-white hover:bg-white/20 transition-all duration-300"
-          >
-            <FaLinkedin size={12} /> Connect LinkedIn ↗
-          </motion.a>
-
-          {/* GitHub */}
-          <motion.a
-            href="https://github.com/Faizpi"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-            className="flex items-center gap-2 text-xs px-3 py-1 border border-white/30 rounded-lg 
-                       bg-white/10 backdrop-blur-md shadow-lg shadow-white/5 
-                       text-white hover:bg-white/20 transition-all duration-300"
-          >
-            <FaGithub size={12} /> GitHub ↗
-          </motion.a>
-
-          {/* Download CV */}
-          <motion.a
-            href={`${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`}
-            download
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-            className="flex items-center gap-2 text-xs px-3 py-1 border border-white/30 rounded-lg 
-                       bg-white/10 backdrop-blur-md shadow-lg shadow-white/5 
-                       text-white hover:bg-white/20 transition-all duration-300"
-          >
-            <FaFileAlt size={12} /> Download CV ↗
-          </motion.a>
-
-          {/* Email */}
-          <motion.a
-            href="mailto:faizbintang1244@gmail.com"
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.2 }}
-            className="flex items-center gap-2 text-xs px-3 py-1 border border-white/30 rounded-lg 
-                       bg-white/10 backdrop-blur-md shadow-lg shadow-white/5 
-                       text-white hover:bg-white/20 transition-all duration-300"
-          >
-            <FaEnvelope size={12} /> Email Me ↗
-          </motion.a>
+          {[
+            {
+              href: "https://www.linkedin.com/in/faiz-pratama/",
+              label: "Connect LinkedIn ↗",
+              icon: <FaLinkedin size={12} />,
+            },
+            {
+              href: "https://github.com/Faizpi",
+              label: "GitHub ↗",
+              icon: <FaGithub size={12} />,
+            },
+            {
+              href: `${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`,
+              label: "Download CV ↗",
+              icon: <FaFileAlt size={12} />,
+              download: true,
+            },
+            {
+              href: "mailto:faizbintang1244@gmail.com",
+              label: "Email Me ↗",
+              icon: <FaEnvelope size={12} />,
+            },
+          ].map((btn, i) => (
+            <motion.a
+              key={i}
+              href={btn.href}
+              target={btn.download ? undefined : "_blank"}
+              rel={btn.download ? undefined : "noopener noreferrer"}
+              download={btn.download}
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.2 }}
+              className="flex items-center gap-2 text-xs px-3 py-1 rounded-lg 
+                         border border-gray-400/40 dark:border-white/30
+                         bg-black/5 dark:bg-white/10 
+                         backdrop-blur-md 
+                         text-black dark:text-white
+                         shadow-lg shadow-black/5 dark:shadow-white/5
+                         hover:bg-black/10 dark:hover:bg-white/20 
+                         transition-all duration-300"
+            >
+              {btn.icon} {btn.label}
+            </motion.a>
+          ))}
         </div>
       </div>
     </div>

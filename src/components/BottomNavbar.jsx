@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { 
-  Home, 
-  User, 
-  BarChart3, 
-  Briefcase, 
-  Code, 
-  Lightbulb, 
-  Mail, 
-  Menu, 
-  X 
+import {
+  Home,
+  User,
+  BarChart3,
+  Briefcase,
+  Code,
+  Lightbulb,
+  Mail,
+  Menu,
+  X,
 } from "lucide-react";
 
 const BottomNavbar = () => {
@@ -42,50 +42,51 @@ const BottomNavbar = () => {
       {/* Tombol burger */}
       <button
         onClick={() => setIsVisible(!isVisible)}
-        className="fixed top-4 right-4 z-50 bg-white/10 backdrop-blur-xl border border-white/20 text-white p-2 rounded-lg shadow-lg hover:bg-white/20 transition-all"
+        className="fixed top-4 right-4 z-50 dark:bg-white/10 bg-black/10 backdrop-blur-xl dark:border-white/20 border-black/20 dark:text-white text-gray-900 p-2 rounded-lg shadow-lg hover:scale-105 transition-all"
         aria-label="Toggle Navbar"
       >
         {isVisible ? <X size={20} /> : <Menu size={20} />}
       </button>
 
       {/* Navbar */}
-        <div
-            className="fixed bottom-6 left-1/2 z-40 transition-all duration-[1200ms] ease-in-out"
-            style={{
-            transform: isVisible
-                ? "translate(-50%, 0) scale(1)"
-                : "translate(calc(50vw - 2rem), calc(-100vh + 1rem)) scale(0.05)",
-            opacity: isVisible ? 1 : 0,
-            pointerEvents: isVisible ? "auto" : "none",
-            }}
-        >
-        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-full px-3 py-2 shadow-md">
-        <div className="flex items-center space-x-2">
+      <div
+        className="fixed bottom-6 left-1/2 z-40 transition-all duration-[1200ms] ease-in-out"
+        style={{
+          transform: isVisible
+            ? "translate(-50%, 0) scale(1)"
+            : "translate(calc(50vw - 2rem), calc(-100vh + 1rem)) scale(0.05)",
+          opacity: isVisible ? 1 : 0,
+          pointerEvents: isVisible ? "auto" : "none",
+        }}
+      >
+        <div className="dark:bg-white/10 bg-black/10 backdrop-blur-xl dark:border-white/20 border-black/20 rounded-full px-3 py-2 shadow-md">
+          <div className="flex items-center space-x-2">
             {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = activeSection === item.id;
+              const Icon = item.icon;
+              const isActive = activeSection === item.id;
 
-            return (
+              return (
                 <button
-                key={item.id}
-                onClick={() => scrollToSection(item.section)}
-                className={`relative p-2 rounded-full transition-all duration-300 ${
+                  key={item.id}
+                  onClick={() => scrollToSection(item.section)}
+                  className={`group relative p-2 rounded-full transition-all duration-300 ${
                     isActive
-                    ? "bg-white/20 text-white shadow-md"
-                    : "text-gray-200 hover:text-white hover:bg-white/10"
-                }`}
-                aria-label={item.label}
+                      ? "dark:bg-white/20 bg-black/20 dark:text-white text-gray-900 shadow-md"
+                      : "dark:text-gray-200 text-gray-700 hover:dark:text-white hover:text-gray-900 hover:dark:bg-white/10 hover:bg-black/10"
+                  }`}
+                  aria-label={item.label}
                 >
-                <Icon size={14} strokeWidth={2} />
-                <div
+                  <Icon size={14} strokeWidth={2} />
+
+                  {/* Tooltip */}
+                  <div
                     className={`absolute -top-8 left-1/2 transform -translate-x-1/2 px-1.5 py-0.5 
-                                bg-black/70 text-white text-[10px] rounded opacity-0 
-                                transition-opacity duration-200 whitespace-nowrap ${
-                                isActive ? "opacity-100" : "group-hover:opacity-100"
-                                }`}
-                >
+                                dark:bg-black/70 bg-white/90 dark:text-white text-gray-900 text-[10px] rounded opacity-0 
+                                transition-opacity duration-200 whitespace-nowrap pointer-events-none
+                                ${isActive ? "opacity-100" : "group-hover:opacity-100"}`}
+                  >
                     {item.label}
-                </div>
+                  </div>
                 </button>
               );
             })}

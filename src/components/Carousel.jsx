@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-//Komponen Reveal (fade + slide + sekali muncul)
+// Komponen Reveal (fade + slide + sekali muncul)
 const Reveal = ({ children, delay = 0 }) => {
   return (
     <motion.div
@@ -16,107 +16,98 @@ const Reveal = ({ children, delay = 0 }) => {
   );
 };
 
-//Data Projects
+// Data Projects
 const PROJECTS = [
-      {
-      year: "Ongoing",
-      logo: `${process.env.PUBLIC_URL}/SIK.png`,
-      title: "Bunching Label Automobile Cable Plant 1",
-      desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dan bisa di scan melalui barcode. Terdapat fitur laporan yang memungkinkan admin atau operator bisa export data ke excel atau pdf.",
-      stack: "Laravel • Bootsrtap • MySQL",
-      link: "https://github.com/Faizpi/bunching-label-1",
-      platform: "GitHub",
-    },
-    {
-      year: "Ongoing",
-      logo: `${process.env.PUBLIC_URL}/SIK.png`,
-      title: "Bunching Label Automobile Cable Plant 2",
-      desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dan bisa di scan melalui barcode. Terdapat fitur laporan yang memungkinkan admin atau operator bisa export data ke excel atau pdf.",
-      stack: "Laravel • Bootsrtap • MySQL",
-      link: "https://github.com/Faizpi/bunching-label-2",
-      platform: "GitHub",
-    },
-    {
-      year: "Ongoing",
-      logo: `${process.env.PUBLIC_URL}/Faiz.png`,
-      title: (
-        <a
-          href="https://faizpi.github.io/Faiz-Dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-semibold text-white underline hover:text-blue-400"
-        >
-          Faiz-Dev
-        </a>
-      ),
-      desc: "Personal portfolio website yang menampilkan profil, skill, project, serta informasi kontak secara interaktif dan modern.",
-      stack: "React • Tailwind CSS • Framer Motion • GitHub Pages",
-      link: "https://github.com/Faizpi/Faiz-Dev",
-      platform: "GitHub",
-    },
-    {
-      year: "Ongoing",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
-      title: "Pendanaan Daerah",
-      desc: "Web platform simulasi dana desa menggunakan konsep blockchain dan validasi tahapan.",
-      stack: "MERN • Tailwind • Smart UI Flow",
-      link: "https://github.com/Faizpi/KTI-pendanaan_daerah",
-      platform: "GitHub",
-    },
-    {
-      year: "2025",
-      logo: "https://cdn.simpleicons.org/figma/FFFFFF",
-      title: "Bugarin",
-      desc: "Aplikasi mobile pelatihan dan kebugaran dengan fitur workout dan plan harian.",
-      stack: "Figma • UI/UX Design • Prototyping • Wireframing",
-      link: "https://www.figma.com/design/GWSnsK9ECzJ7fct4MomEcZ/BUGARIN?node-id=0-1&t=CHPPLCgQfDHsDayR-1",
-      platform: "Figma",
-    },
-    {
-      year: "2025",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
-      title: "Nusantara Hop",
-      desc: "Game platformer edukatif bertema nusantara dan gunung-gunung di Indonesia + Kuis.",
-      stack: "Unity 2D • C# • Tilemap",
-      link: "https://github.com/Faizpi/Nusantara-Hop",
-      platform: "GitHub",
-    },
-    {
-      year: "2024",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
-      title: "Taskflow",
-      desc: "Task management sederhana berbasis web dengan sistem kategori dan kalender serta notifikasi.",
-      stack: "Laravel • MySQL",
-      link: "https://github.com/Faizpi/Task-Flow",
-      platform: "Figma",
-    },
-    {
-      year: "2024",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
-      title: "Mini Games",
-      desc: "Web mini-games dashboard dengan login dan logout system.",
-      stack: "PHP • JavaScript • MySQL",
-      link: "https://github.com/Faizpi/Login-and-Regist-form-to-Game-Dashboard",
-      platform: "GitHub",
-    },
-    {
-      year: "2024",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
-      title: "PointCademy",
-      desc: "Website pembelajaran interaktif berbasis poin dan kuis untuk siswa SD, SMP, dan SMA.",
-      stack: "Html • Css • Javascript • Figma",
-      link: "https://github.com/Faizpi/PointCademy",
-      platform: "Github",
-    },
-    {
-      year: "2023",
-      logo: "https://cdn.simpleicons.org/figma/FFFFFF",
-      title: "K@bel",
-      desc: "Aplikasi mobile kantin dengan fitur login seller dan buyer.",
-      stack: "Figma • UI/UX Design • Prototyping • Wireframing",
-      link: "https://www.figma.com/design/3tysDmv7A60w33iGLOGwtT/Kantin_jawir?node-id=0-1&t=4NR5hczjUVlDKiRl-1",
-      platform: "Figma",
-    },
+  {
+    year: "Ongoing",
+    logo: `${process.env.PUBLIC_URL}/SIK.png`,
+    title: "Bunching Label Automobile Cable Plant 1",
+    desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dan bisa di scan melalui barcode. Terdapat fitur laporan yang memungkinkan admin atau operator bisa export data ke excel atau pdf.",
+    stack: "Laravel • Bootstrap • MySQL",
+    link: "https://github.com/Faizpi/bunching-label-1",
+    platform: "GitHub",
+  },
+  {
+    year: "Ongoing",
+    logo: `${process.env.PUBLIC_URL}/SIK.png`,
+    title: "Bunching Label Automobile Cable Plant 2",
+    desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dan bisa di scan melalui barcode. Terdapat fitur laporan yang memungkinkan admin atau operator bisa export data ke excel atau pdf.",
+    stack: "Laravel • Bootstrap • MySQL",
+    link: "https://github.com/Faizpi/bunching-label-2",
+    platform: "GitHub",
+  },
+  {
+    year: "Ongoing",
+    logo: `${process.env.PUBLIC_URL}/Faiz.png`,
+    title: "Faiz-Dev",
+    desc: "Personal portfolio website yang menampilkan profil, skill, project, serta informasi kontak secara interaktif dan modern.",
+    stack: "React • Tailwind CSS • Framer Motion • GitHub Pages",
+    link: "https://faizpi.github.io/Faiz-Dev/",
+    platform: "Website",
+  },
+  {
+    year: "Ongoing",
+    logo: "https://cdn.simpleicons.org/github",
+    title: "Pendanaan Daerah",
+    desc: "Web platform simulasi dana desa menggunakan konsep blockchain dan validasi tahapan.",
+    stack: "MERN • Tailwind • Smart UI Flow",
+    link: "https://github.com/Faizpi/KTI-pendanaan_daerah",
+    platform: "GitHub",
+  },
+  {
+    year: "2025",
+    logo: "https://cdn.simpleicons.org/figma",
+    title: "Bugarin",
+    desc: "Aplikasi mobile pelatihan dan kebugaran dengan fitur workout dan plan harian.",
+    stack: "Figma • UI/UX Design • Prototyping • Wireframing",
+    link: "https://www.figma.com/design/GWSnsK9ECzJ7fct4MomEcZ/BUGARIN",
+    platform: "Figma",
+  },
+  {
+    year: "2025",
+    logo: "https://cdn.simpleicons.org/github",
+    title: "Nusantara Hop",
+    desc: "Game platformer edukatif bertema nusantara dan gunung-gunung di Indonesia + Kuis.",
+    stack: "Unity 2D • C# • Tilemap",
+    link: "https://github.com/Faizpi/Nusantara-Hop",
+    platform: "GitHub",
+  },
+  {
+    year: "2024",
+    logo: "https://cdn.simpleicons.org/github",
+    title: "Taskflow",
+    desc: "Task management sederhana berbasis web dengan sistem kategori dan kalender serta notifikasi.",
+    stack: "Laravel • MySQL",
+    link: "https://github.com/Faizpi/Task-Flow",
+    platform: "GitHub",
+  },
+  {
+    year: "2024",
+    logo: "https://cdn.simpleicons.org/github",
+    title: "Mini Games",
+    desc: "Web mini-games dashboard dengan login dan logout system.",
+    stack: "PHP • JavaScript • MySQL",
+    link: "https://github.com/Faizpi/Login-and-Regist-form-to-Game-Dashboard",
+    platform: "GitHub",
+  },
+  {
+    year: "2024",
+    logo: "https://cdn.simpleicons.org/github",
+    title: "PointCademy",
+    desc: "Website pembelajaran interaktif berbasis poin dan kuis untuk siswa SD, SMP, dan SMA.",
+    stack: "Html • Css • Javascript • Figma",
+    link: "https://github.com/Faizpi/PointCademy",
+    platform: "GitHub",
+  },
+  {
+    year: "2023",
+    logo: "https://cdn.simpleicons.org/figma",
+    title: "K@bel",
+    desc: "Aplikasi mobile kantin dengan fitur login seller dan buyer.",
+    stack: "Figma • UI/UX Design • Prototyping • Wireframing",
+    link: "https://www.figma.com/design/3tysDmv7A60w33iGLOGwtT/Kantin_jawir",
+    platform: "Figma",
+  },
 ];
 
 const GAP = 18;
@@ -142,7 +133,7 @@ export default function ProjectsCarousel({
 
   const containerRef = useRef(null);
 
-  // 🔹 Hover pause
+  // Hover pause
   useEffect(() => {
     if (pauseOnHover && containerRef.current) {
       const container = containerRef.current;
@@ -157,7 +148,7 @@ export default function ProjectsCarousel({
     }
   }, [pauseOnHover]);
 
-  // 🔹 Autoplay
+  // Autoplay
   useEffect(() => {
     if (autoplay && (!pauseOnHover || !isHovered) && !isDragging && !isResetting) {
       const timer = setInterval(() => {
@@ -166,6 +157,16 @@ export default function ProjectsCarousel({
       return () => clearInterval(timer);
     }
   }, [autoplay, autoplayDelay, isHovered, loop, pauseOnHover, isDragging, isResetting, currentIndex]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKey = (e) => {
+      if (e.key === "ArrowRight") nextSlide();
+      if (e.key === "ArrowLeft") prevSlide();
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  }, []);
 
   const effectiveTransition = isResetting ? { duration: 0 } : SPRING_OPTIONS;
 
@@ -187,7 +188,6 @@ export default function ProjectsCarousel({
     return useTransform(x, range, [90, 0, -90], { clamp: false });
   });
 
-  // 🔹 Navigasi manual
   const nextSlide = () => {
     if (isDragging) return;
     setCurrentIndex((prev) => {
@@ -205,7 +205,6 @@ export default function ProjectsCarousel({
     });
   };
 
-  // 🔹 Handle drag
   const handleDragStart = () => setIsDragging(true);
 
   const handleDragEnd = (event, info) => {
@@ -215,16 +214,9 @@ export default function ProjectsCarousel({
 
     if (Math.abs(offset) > threshold || Math.abs(velocity) > 500) {
       if (offset > 0 || velocity > 500) {
-        setCurrentIndex((prev) => {
-          if (prev === 0) return loop ? PROJECTS.length - 1 : 0;
-          return prev - 1;
-        });
+        prevSlide();
       } else if (offset < 0 || velocity < -500) {
-        setCurrentIndex((prev) => {
-          if (prev === PROJECTS.length - 1 && loop) return prev + 1;
-          if (prev === carouselItems.length - 1) return loop ? 0 : prev;
-          return prev + 1;
-        });
+        nextSlide();
       }
     }
     setTimeout(() => setIsDragging(false), 100);
@@ -232,18 +224,17 @@ export default function ProjectsCarousel({
 
   return (
     <section id="Projects" className="w-full flex flex-col gap-6">
-      {/* Judul kiri */}
       <Reveal>
-        <h2 className="text-sm font-bold text-white">Projects</h2>
+        <h2 className="text-sm font-bold dark:text-white text-gray-900">Projects</h2>
       </Reveal>
 
-      {/* Wrapper biar carousel center */}
       <div className="flex justify-center">
         <div className="relative flex items-center">
           {/* Tombol kiri */}
           <button
+            aria-label="Previous Slide"
             onClick={prevSlide}
-            className="absolute left-[-60px] top-1/2 -translate-y-1/2 p-3 text-white hover:text-blue-400 transition-colors duration-200 z-10"
+            className="absolute left-[-60px] top-1/2 -translate-y-1/2 p-3 dark:text-white text-gray-700 hover:text-blue-400 transition-colors duration-200 z-10"
             disabled={!loop && currentIndex === 0}
           >
             <ChevronLeft className="w-6 h-6" />
@@ -252,8 +243,8 @@ export default function ProjectsCarousel({
           {/* Container carousel */}
           <div
             ref={containerRef}
-            className="relative overflow-hidden p-4 rounded-[24px] border border-[#222] bg-[#111]"
-            style={{ width: `${baseWidth}px` }}
+            className="relative overflow-hidden p-4 rounded-[24px] border dark:border-[#222] border-gray-300 dark:bg-[#111] bg-white"
+            style={{ width: `clamp(300px, 80vw, ${baseWidth}px)` }}
           >
             {/* Track */}
             <motion.div
@@ -272,21 +263,43 @@ export default function ProjectsCarousel({
               {carouselItems.map((item, index) => (
                 <Reveal key={index} delay={index * 0.1}>
                   <motion.div
-                    className="relative shrink-0 flex flex-col items-start justify-between bg-[#1c1c1c] border border-[#333] rounded-[12px] overflow-hidden cursor-grab active:cursor-grabbing"
+                    className="relative shrink-0 flex flex-col items-start justify-between dark:bg-[#1c1c1c] bg-gray-100 dark:border-[#333] border-gray-300 rounded-[12px] overflow-hidden cursor-grab active:cursor-grabbing"
                     style={{ width: itemWidth, rotateY: rotateTransforms[index] }}
                     transition={effectiveTransition}
                   >
                     {/* Logo & Year */}
                     <div className="p-5 flex items-center gap-2">
-                      <img src={item.logo} alt={item.title} className="w-8 h-8 object-contain" />
-                      <span className="text-xs text-gray-400">{item.year}</span>
+                      <img
+                        src={item.logo}
+                        alt={item.title}
+                        className={`w-8 h-8 object-contain ${
+                          item.logo.includes("github")
+                            ? "dark:invert"
+                            : ""
+                        }`}
+                      />
+                      <span className="text-xs dark:text-gray-400 text-gray-700">{item.year}</span>
                     </div>
 
                     {/* Content */}
                     <div className="p-5">
-                      <div className="mb-1 font-bold text-lg text-white">{item.title}</div>
-                      <p className="text-sm text-gray-300">{item.desc}</p>
-                      <p className="text-xs text-gray-500 mt-1">{item.stack}</p>
+                      <div className="mb-1 font-bold text-lg dark:text-white text-gray-900">
+                        {item.link ? (
+                          <a
+                            href={item.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="underline hover:text-blue-400"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            {item.title}
+                          </a>
+                        ) : (
+                          item.title
+                        )}
+                      </div>
+                      <p className="text-sm dark:text-gray-300 text-gray-700">{item.desc}</p>
+                      <p className="text-xs dark:text-gray-500 text-gray-500 mt-1">{item.stack}</p>
 
                       {item.link && (
                         <a
@@ -307,15 +320,17 @@ export default function ProjectsCarousel({
 
             {/* Indicators */}
             <div className="flex w-full justify-center mt-4">
-              <div className="flex w-[150px] justify-between px-8">
+              <div className="flex gap-2">
                 {PROJECTS.map((_, index) => (
                   <motion.div
                     key={index}
-                    className={`h-2 w-2 rounded-full cursor-pointer transition-colors duration-150 ${
-                      currentIndex % PROJECTS.length === index
-                        ? "bg-white"
-                        : "bg-[rgba(255,255,255,0.3)]"
-                    }`}
+                    className="h-2 w-2 rounded-full cursor-pointer"
+                    style={{
+                      background:
+                        currentIndex % PROJECTS.length === index
+                          ? "white"
+                          : "rgba(255,255,255,0.3)",
+                    }}
                     animate={{ scale: currentIndex % PROJECTS.length === index ? 1.2 : 1 }}
                     onClick={() => setCurrentIndex(index)}
                     transition={{ duration: 0.15 }}
@@ -327,8 +342,9 @@ export default function ProjectsCarousel({
 
           {/* Tombol kanan */}
           <button
+            aria-label="Next Slide"
             onClick={nextSlide}
-            className="absolute right-[-60px] top-1/2 -translate-y-1/2 p-3 text-white hover:text-blue-400 transition-colors duration-200 z-10"
+            className="absolute right-[-60px] top-1/2 -translate-y-1/2 p-3 dark:text-white text-gray-700 hover:text-blue-400 transition-colors duration-200 z-10"
             disabled={!loop && currentIndex === PROJECTS.length - 1}
           >
             <ChevronRight className="w-6 h-6" />

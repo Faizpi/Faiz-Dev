@@ -22,8 +22,8 @@ export default function Experience() {
             onClick={() => setActiveTab(tab.name)}
             className={`flex items-center justify-center p-2 rounded-lg transition-colors duration-200 ${
               activeTab === tab.name
-                ? "bg-white/10 text-white"
-                : "text-gray-400 hover:text-white hover:bg-white/5"
+                ? "bg-white/10 dark:text-white text-black"
+                : "dark:text-gray-400 text-gray-700 hover:dark:text-white hover:text-black hover:bg-white/5"
             }`}
             title={tab.name}
           >
@@ -38,12 +38,12 @@ export default function Experience() {
         {activeTab === "Education" && (
           <section className="space-y-8">
             <Reveal>
-              <h2 className="text-sm font-bold text-white">Education</h2>
+              <h2 className="text-sm font-bold dark:text-white text-black">Education</h2>
             </Reveal>
             {/* S1 */}
             <Reveal>
               <div className="grid grid-cols-12 gap-4 items-start py-2">
-                <div className="col-span-2 text-xs text-gray-500 pt-2">
+                <div className="col-span-2 text-xs dark:text-gray-400 text-gray-700 pt-2">
                   2023 – Present
                 </div>
                 <div className="col-span-2 flex justify-center">
@@ -54,14 +54,12 @@ export default function Experience() {
                   />
                 </div>
                 <div className="col-span-8 space-y-1">
-                  <h3 className="text-sm font-semibold text-white">
+                  <h3 className="text-sm font-semibold dark:text-white text-black">
                     Universitas Sultan Ageng Tirtayasa
                   </h3>
-                  <p className="text-xs text-gray-500">
-                      Cilegon, Banten
-                  </p>
-                  <p className="text-xs text-gray-400">S1 Informatika</p>
-                  <p className="text-xs text-gray-500">GPA 3.87 / 4.00</p>
+                  <p className="text-xs dark:text-gray-400 text-gray-700">Cilegon, Banten</p>
+                  <p className="text-xs dark:text-gray-400 text-gray-700">S1 Informatika</p>
+                  <p className="text-xs dark:text-gray-400 text-gray-700">GPA 3.87 / 4.00</p>
                 </div>
               </div>
             </Reveal>
@@ -72,7 +70,7 @@ export default function Experience() {
         {activeTab === "Organizations" && (
           <section className="space-y-8">
             <Reveal>
-              <h2 className="text-sm font-bold text-white">Organizations</h2>
+              <h2 className="text-sm font-bold dark:text-white text-black">Organizations</h2>
             </Reveal>
             <Reveal>
               <div className="flex gap-6 items-start">
@@ -82,29 +80,23 @@ export default function Experience() {
                     alt="HMIF Logo"
                     className="w-12 h-12 mb-2 object-contain"
                   />
-                  <p className="text-xs text-gray-500 leading-relaxed mt-auto">
+                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
                     Mar 2025 –<br />Present
                   </p>
                 </div>
                 <div className="space-y-3 flex-1">
                   <div className="space-y-1">
-                    <h3 className="text-sm font-semibold text-white">
+                    <h3 className="text-sm font-semibold dark:text-white text-black">
                       Communications and Information Department – Informatics Student Association
                     </h3>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs dark:text-gray-400 text-gray-700">
                       Sultan Ageng Tirtayasa University · Cilegon, Banten
                     </p>
                   </div>
-                  <ul className="list-disc list-inside text-sm text-gray-400 space-y-1">
-                    <li>
-                      Produced digital content for internal and public organizational publications.
-                    </li>
-                    <li>
-                      Designed visuals for national holidays, campaigns, and tech-related educational content.
-                    </li>
-                    <li>
-                      Documented all organizational activities (photo/video), creating a digital archive.
-                    </li>
+                  <ul className="list-disc list-inside text-sm dark:text-gray-400 text-gray-700 space-y-1">
+                    <li>Produced digital content for internal and public organizational publications.</li>
+                    <li>Designed visuals for national holidays, campaigns, and tech-related educational content.</li>
+                    <li>Documented all organizational activities (photo/video), creating a digital archive.</li>
                   </ul>
                 </div>
               </div>
@@ -116,7 +108,7 @@ export default function Experience() {
         {activeTab === "Work Experience" && (
           <section className="space-y-8">
             <Reveal>
-              <h2 className="text-sm font-bold text-white">Work Experience</h2>
+              <h2 className="text-sm font-bold dark:text-white text-black">Work Experience</h2>
             </Reveal>
             <Reveal>
               <div className="flex gap-6 items-start">
@@ -126,26 +118,26 @@ export default function Experience() {
                     alt="Sumi Indo Kabel Logo"
                     className="w-10 h-10 mb-2 object-contain rounded-full"
                   />
-                  <p className="text-xs text-gray-500 leading-relaxed mt-auto">
+                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
                     Aug 2025 –<br />Present
                   </p>
                 </div>
                 <div className="space-y-3 flex-1">
                   <div className="space-y-1">
-                    <h3 className="text-sm font-semibold text-white">
+                    <h3 className="text-sm font-semibold dark:text-white text-black">
                       IT Department – Internship
                     </h3>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs dark:text-gray-400 text-gray-700">
                       PT Sumi Indo Kabel Tbk · Tangerang, Banten
                     </p>
                   </div>
-                  <ul className="list-disc list-inside text-sm text-gray-400 space-y-1">
+                  <ul className="list-disc list-inside text-sm dark:text-gray-400 text-gray-700 space-y-1">
                     <li>Developed and maintained web-based applications to support engineering requirements, optimizing workflows and efficiency.</li>
                     <li>Created and managed digital content for corporate publications, improving communication and brand visibility.</li>
                     <li>Supported daily IT operations, troubleshooting hardware, software, and network issues to reduce downtime.</li>
                     <li>Administered and maintained IT infrastructure, including servers, workstations, and network systems, ensuring high availability.</li>
                     <li>Delivered technical support and end-user assistance across internal departments, enhancing productivity and system adoption.</li>
-                 </ul>
+                  </ul>
                 </div>
               </div>
             </Reveal>
@@ -155,7 +147,7 @@ export default function Experience() {
         {/* Speaker */}
         {activeTab === "Speaker" && (
           <Reveal>
-            <p className="text-gray-400">Belum ada data speaker.</p>
+            <p className="dark:text-gray-400 text-gray-700">Belum ada data speaker.</p>
           </Reveal>
         )}
 
@@ -163,7 +155,7 @@ export default function Experience() {
         {activeTab === "Awards" && (
           <section className="space-y-8">
             <Reveal>
-              <h2 className="text-sm font-bold text-white">Certifications & Trainings</h2>
+              <h2 className="text-sm font-bold dark:text-white text-black">Certifications & Trainings</h2>
             </Reveal>
             {[
               {
@@ -197,7 +189,7 @@ export default function Experience() {
             ].map((item, i) => (
               <Reveal delay={i * 0.2} key={i}>
                 <div className="grid grid-cols-12 gap-4 items-start py-2">
-                  <div className="col-span-2 text-xs text-gray-500 pt-2">
+                  <div className="col-span-2 text-xs dark:text-gray-400 text-gray-700 pt-2">
                     {item.year}
                   </div>
                   <div className="col-span-2 flex justify-center">
@@ -208,11 +200,11 @@ export default function Experience() {
                     />
                   </div>
                   <div className="col-span-8 space-y-1">
-                    <h3 className="text-sm font-semibold text-white">
+                    <h3 className="text-sm font-semibold dark:text-white text-black">
                       {item.institution}
                     </h3>
-                    <p className="text-xs text-gray-400">{item.degree}</p>
-                    <p className="text-xs text-gray-500">{item.desc}</p>
+                    <p className="text-xs dark:text-gray-400 text-gray-700">{item.degree}</p>
+                    <p className="text-xs dark:text-gray-400 text-gray-700">{item.desc}</p>
                   </div>
                 </div>
               </Reveal>

@@ -21,9 +21,9 @@ function Skills() {
         { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
         { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
         { name: "Express.js", icon: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" },
-        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/38BDF8" }, // dikembalikan
+        { name: "Tailwind CSS", icon: "https://cdn.simpleicons.org/tailwindcss/38BDF8" },
         { name: "Bootstrap", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
-        { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20" }, // dikembalikan
+        { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20" },
       ],
     },
     {
@@ -60,13 +60,17 @@ function Skills() {
   return (
     <section className="space-y-8">
       <Reveal>
-        <h2 className="text-sm font-bold text-white">Skills</h2>
+        <h2 className="text-sm font-bold dark:text-white text-gray-900">
+          Skills
+        </h2>
       </Reveal>
 
       {categories.map((category, index) => (
         <Reveal delay={index * 0.15} key={index}>
           <div className="space-y-2">
-            <h3 className="text-sm font-semibold text-gray-300">{category.title}</h3>
+            <h3 className="text-sm font-semibold dark:text-gray-300 text-gray-600">
+              {category.title}
+            </h3>
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
               {category.skills.map((skill, i) => (
                 <div
@@ -77,10 +81,14 @@ function Skills() {
                     <img
                       src={skill.icon}
                       alt={skill.name}
-                      className="w-5 h-5 object-contain"
+                      className={`w-5 h-5 object-contain ${
+                        skill.name === "GitHub" || skill.name === "Figma"
+                          ? "dark:invert"
+                          : ""
+                      }`}
                     />
                   )}
-                  <span className="text-sm text-gray-300 group-hover:text-white">
+                  <span className="text-sm dark:text-gray-400 text-gray-700 group-hover:dark:text-white group-hover:text-black">
                     {skill.name}
                   </span>
                 </div>

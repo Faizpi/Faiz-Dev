@@ -5,12 +5,21 @@ export default function Cursor() {
     const dot = document.createElement("div");
     const ring = document.createElement("div");
 
+    // Function buat update warna sesuai tema
+    const updateColors = () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      const color = isDark ? "#fff" : "#000"; // putih untuk dark, hitam untuk light
+
+      dot.style.background = color;
+      ring.style.border = `2px solid ${color}`;
+    };
+
     // Titik kecil
     Object.assign(dot.style, {
       position: "fixed",
       width: "6px",
       height: "6px",
-      background: "#ccc",
+      background: "#fff",
       borderRadius: "50%",
       pointerEvents: "none",
       zIndex: "9999",
@@ -22,7 +31,7 @@ export default function Cursor() {
       position: "fixed",
       width: "30px",
       height: "30px",
-      border: "2px solid #ccc",
+      border: "2px solid #fff",
       borderRadius: "50%",
       pointerEvents: "none",
       zIndex: "9999",
@@ -65,6 +74,14 @@ export default function Cursor() {
       ring.style.transform = "translate(-50%, -50%) scale(1)";
     };
 
+    // Update warna pertama kali & setiap theme berubah
+    updateColors();
+    const observer = new MutationObserver(updateColors);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
     window.addEventListener("mousemove", move);
     window.addEventListener("mousedown", onMouseDown);
     window.addEventListener("mouseup", onMouseUp);
@@ -76,6 +93,7 @@ export default function Cursor() {
       window.removeEventListener("mouseup", onMouseUp);
       dot.remove();
       ring.remove();
+      observer.disconnect();
     };
   }, []);
 

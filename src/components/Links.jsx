@@ -32,19 +32,26 @@ function Links() {
   return (
     <section className="space-y-6">
       <Reveal>
-        <h2 className="text-sm font-bold text-white">Links</h2>
+        <h2 className="text-sm font-bold dark:text-white text-gray-900">
+          Links
+        </h2>
       </Reveal>
 
       <div className="space-y-2">
         {links.map((link, i) => (
           <Reveal delay={i * 0.1} key={i}>
             <div className="flex gap-6">
-              <span className="text-sm text-gray-500 w-24">{link.label}</span>
+              {/* Label kiri */}
+              <span className="text-sm dark:text-gray-400 text-gray-700 w-24">
+                {link.label}
+              </span>
+
+              {/* Nama link */}
               <a
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-white transition-colors hover:text-blue-400 hover:underline"
+                className="text-sm dark:text-white text-gray-900 transition-colors hover:text-blue-400 hover:underline"
               >
                 {link.name} ↗
               </a>
