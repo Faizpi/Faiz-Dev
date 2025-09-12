@@ -7,19 +7,19 @@
 ## 📸 Screenshots
 
 ### 📱 Mobile View
-| Home | About / Stats |
+| Home | Home |
 |------|---------------|
 | ![Mobile 1](./mobile1.png) | ![Mobile 2](./mobile2.png) |
 
 ### 💻 Desktop View
-| Home | About / Stats |
+| Home | Home |
 |------|---------------|
 | ![Desktop 1](./deks1.png) | ![Desktop 2](./deks2.png) |
 
 ---
 
 ## 🚀 Live Demo
-[View Portfolio](your-portfolio-url.com) • [GitHub Repository](https://github.com/Faizpi/portfolio)
+[View Portfolio](faizpi.vercel.app)
 
 ---
 
@@ -91,11 +91,9 @@
 
 ## 🤝 Connect With Me
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](your-linkedin-url)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/faiz-pratama/)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Faizpi)
-[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:your-email@gmail.com)
-[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](your-whatsapp-url)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](your-instagram-url)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:faizbintang1244@gmail.com)
 
 ---
 
@@ -112,5 +110,5 @@ If you found this project helpful, please give it a ⭐ on GitHub and share it w
 ---
 
 <div align="center">
-  <strong>Made with ❤️ by Muhammad Faiz Bintang Pratama</strong>
+  <strong>Made with ⭐ by Muhammad Faiz Bintang Pratama</strong>
 </div>
