@@ -2,18 +2,21 @@ import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
 
 export default function GitHubStats() {
-  const [isDark, setIsDark] = useState(
-    document.documentElement.classList.contains("dark")
-  );
+  const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
+    // cek kondisi awal
+    setIsDark(document.documentElement.classList.contains("dark"));
+
     const observer = new MutationObserver(() => {
       setIsDark(document.documentElement.classList.contains("dark"));
     });
+
     observer.observe(document.documentElement, {
       attributes: true,
       attributeFilter: ["class"],
     });
+
     return () => observer.disconnect();
   }, []);
 
