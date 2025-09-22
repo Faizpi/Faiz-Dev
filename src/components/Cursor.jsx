@@ -5,10 +5,9 @@ export default function Cursor() {
     const dot = document.createElement("div");
     const ring = document.createElement("div");
 
-    // Function buat update warna sesuai tema
     const updateColors = () => {
       const isDark = document.documentElement.classList.contains("dark");
-      const color = isDark ? "#fff" : "#000"; // putih untuk dark, hitam untuk light
+      const color = isDark ? "#fff" : "#000"; 
 
       dot.style.background = color;
       ring.style.border = `2px solid ${color}`;
