@@ -1,5 +1,4 @@
 import Reveal from "./Reveal";
-// TIDAK PERLU IMPORT GAMBAR DI SINI
 
 function About() {
   return (
@@ -8,7 +7,12 @@ function About() {
         <h2 className="text-sm font-bold dark:text-white text-black">About</h2>
       </Reveal>
 
-      <div className="flex flex-col md:flex-row items-start md:items-center gap-8">
+      {/* Diubah dari 'flex-col' menjadi 'flex-col-reverse'.
+        Ini akan menempatkan gambar di atas teks pada tampilan mobile.
+      */}
+      <div className="flex flex-col-reverse md:flex-row items-center gap-8">
+        
+        {/* Kolom Teks */}
         <div className="flex-1">
           <Reveal delay={0.2}>
             <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-400">
@@ -21,9 +25,9 @@ function About() {
           </Reveal>
         </div>
 
+        {/* Kolom Gambar */}
         <div className="flex-shrink-0">
-          <Reveal delay={0.4}>
-            {/* Langsung panggil path dari public URL di sini */}
+          <Reveal delay={0.2}>
             <img
               src={`${process.env.PUBLIC_URL}/Faiz2.png`}
               alt="Foto Faiz"
@@ -36,6 +40,7 @@ function About() {
             />
           </Reveal>
         </div>
+        
       </div>
     </section>
   );
