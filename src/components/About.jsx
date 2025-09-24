@@ -6,11 +6,9 @@ function About() {
       <Reveal>
         <h2 className="text-sm font-bold dark:text-white text-black">About</h2>
       </Reveal>
-
-      {/* Diubah dari 'flex-col' menjadi 'flex-col-reverse'.
-        Ini akan menempatkan gambar di atas teks pada tampilan mobile.
-      */}
-      <div className="flex flex-col-reverse md:flex-row items-center gap-8">
+      
+      {/* Cukup gunakan 'flex-row' agar selalu berdampingan */}
+      <div className="flex flex-row items-center gap-6"> {/* Jarak (gap) bisa disesuaikan */}
         
         {/* Kolom Teks */}
         <div className="flex-1">
