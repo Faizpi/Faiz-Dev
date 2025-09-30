@@ -1,19 +1,26 @@
 // tailwind.config.js
 module.exports = {
-  darkMode: "class", // ✅ tambahkan ini
+  darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
       keyframes: {
-        shine: {
-          "0%": { backgroundPosition: "-200% center" },
-          "100%": { backgroundPosition: "200% center" },
+        // Animasi untuk baris pertama (kiri ke kanan)
+        "scroll-left": {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
+        // Animasi untuk baris kedua (kanan ke kiri)
+        "scroll-right": {
+          "0%": { transform: "translateX(-50%)" },
+          "100%": { transform: "translateX(0)" },
         },
       },
       animation: {
-        shine: "shine 1.2s ease-out forwards",
+        "scroll-left": "scroll-left 40s linear infinite",
+        "scroll-right": "scroll-right 40s linear infinite",
       },
     },
   },
-  plugins: [],
+  plugins: [], // Plugin `paused` tidak kita perlukan lagi, kita akan pakai class dari Tailwind
 };
