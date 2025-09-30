@@ -93,7 +93,7 @@ export default function Experience() {
                       Sultan Ageng Tirtayasa University · Cilegon, Banten
                     </p>
                   </div>
-                  <ul className="list-disc list-inside text-sm dark:text-gray-400 text-gray-700 space-y-1">
+                  <ul className="list-disc list-inside text-sm text-justify dark:text-gray-400 text-gray-700 space-y-1">
                     <li>Produced digital content for internal and public organizational publications.</li>
                     <li>Designed visuals for national holidays, campaigns, and tech-related educational content.</li>
                     <li>Documented all organizational activities (photo/video), creating a digital archive.</li>
@@ -131,7 +131,7 @@ export default function Experience() {
                       PT Sumi Indo Kabel Tbk · Tangerang, Banten
                     </p>
                   </div>
-                  <ul className="list-disc list-inside text-sm dark:text-gray-400 text-gray-700 space-y-1">
+                  <ul className="list-disc list-inside text-sm text-justify dark:text-gray-400 text-gray-700 space-y-1">
                     <li>Assisted in developing and maintaining simple web applications to support team projects.</li>
                     <li>Created a small website to help another division improve their workflow and productivity.</li>
                     <li>Helped organize digital content for internal use and publications.</li>
