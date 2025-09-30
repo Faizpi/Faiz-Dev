@@ -14,11 +14,7 @@ function About() {
         <div className="flex-1">
           <Reveal delay={0.2}>
             <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-400">
-              Informatics student at Sultan Ageng Tirtayasa University, focused
-              on UI/UX Design and Web Development. Passionate about crafting
-              intuitive, functional, and visually engaging digital experiences.
-              Experienced with modern web technologies and design tools, and eager
-              to keep learning and building impactful solutions.
+              Informatics student at Sultan Ageng Tirtayasa University (GPA: 3.87), a versatile developer passionate about both web and mobile development. Skilled in building interactive and user-friendly applications, with a strong drive to keep learning and adapting to new technologies. Dedicated to crafting impactful digital solutions that blend functionality, performance, and great user experience.  
             </p>
           </Reveal>
         </div>
