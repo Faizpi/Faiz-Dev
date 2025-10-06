@@ -52,7 +52,7 @@ export default function Intro() {
         {/* Typewriter Effect */}
         <p className="text-sm mt-1 leading-tight text-gray-700 dark:text-gray-400">
           <Typewriter
-            words={["UI/UX Designer", "Web Developer"]}
+            words={["UI/UX Designer", "Web Developer", "Mobile Developer"]}
             loop={0}
             cursor
             cursorStyle="_*"
