@@ -30,11 +30,11 @@ const PROJECTS = [
   {
     year: "2023",
     image: {
-      src: "https://cdn.simpleicons.org/flutter"
+      src: `${process.env.PUBLIC_URL}/livescore.jpg`
     },
     title: "Sports Live Score",
     desc: "Aplikasi mobile untuk melihat skor pertandingan olahraga secara langsung dengan update real-time dari berbagai cabang.",
-    tags: ["Flutter", "Dart", "API"],
+    tags: ["Flutter", "Dart", "UI/UX"],
     link: "https://github.com/Faizpi/", // Ganti dengan link repository Anda
     platform: "GitHub",
   },
