@@ -30,7 +30,7 @@ const PROJECTS = [
   {
     year: "2023",
     image: {
-      src: `${process.env.PUBLIC_URL}/livescore.jpg`
+      src: `${process.env.PUBLIC_URL}/livesc.jpg`
     },
     title: "Sports Live Score",
     desc: "Aplikasi mobile untuk melihat skor pertandingan olahraga secara langsung dengan update real-time dari berbagai cabang.",
