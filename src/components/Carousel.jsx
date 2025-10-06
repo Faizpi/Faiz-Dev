@@ -63,7 +63,7 @@ const PROJECTS = [
   {
     year: "Ongoing",
     image: {
-      src: "https://cdn.simpleicons.org/github"
+      src: `${process.env.PUBLIC_URL}/cat.png`
     },
     title: "Pendanaan Daerah",
     desc: "Web platform simulasi dana desa menggunakan konsep blockchain dan validasi tahapan.",
@@ -74,7 +74,7 @@ const PROJECTS = [
   {
     year: "2025",
     image: {
-      src: "https://cdn.simpleicons.org/figma"
+      src: `${process.env.PUBLIC_URL}/cat.png`
     },
     title: "Bugarin",
     desc: "Aplikasi mobile pelatihan dan kebugaran dengan fitur workout dan plan harian.",
@@ -85,7 +85,7 @@ const PROJECTS = [
   {
     year: "2025",
     image: {
-      src: "https://cdn.simpleicons.org/github"
+      src: `${process.env.PUBLIC_URL}/cat.png`
     },
     title: "Nusantara Hop",
     desc: "Game platformer edukatif bertema nusantara dan gunung-gunung di Indonesia + Kuis.",
@@ -96,7 +96,7 @@ const PROJECTS = [
   {
     year: "2024",
     image: {
-      src: "https://cdn.simpleicons.org/github"
+      src: `${process.env.PUBLIC_URL}/cat.png`
     },
     title: "Taskflow",
     desc: "Task management sederhana berbasis web dengan sistem kategori dan kalender serta notifikasi.",
@@ -107,7 +107,7 @@ const PROJECTS = [
   {
     year: "2024",
     image: {
-      src: "https://cdn.simpleicons.org/github"
+      src: `${process.env.PUBLIC_URL}/cat.png`
     },
     title: "Mini Games",
     desc: "Web mini-games dashboard dengan login dan logout system.",
@@ -118,7 +118,7 @@ const PROJECTS = [
   {
     year: "2024",
     image: {
-      src: "https://cdn.simpleicons.org/github"
+      src: `${process.env.PUBLIC_URL}/cat.png`
     },
     title: "PointCademy",
     desc: "Website pembelajaran interaktif berbasis poin dan kuis untuk siswa SD, SMP, dan SMA.",
@@ -129,7 +129,7 @@ const PROJECTS = [
   {
     year: "2023",
     image: {
-      src: "https://cdn.simpleicons.org/figma"
+      src: `${process.env.PUBLIC_URL}/cat.png`
     },
     title: "K@bel",
     desc: "Aplikasi mobile kantin dengan fitur login seller dan buyer.",
