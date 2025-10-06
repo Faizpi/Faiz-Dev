@@ -1,355 +1,385 @@
 import { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowUpRight } from "lucide-react";
+import Reveal from "./Reveal";
 
-const Reveal = ({ children, delay = 0 }) => {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.6, delay }}
-    >
-      {children}
-    </motion.div>
-  );
-};
-
-// Data Projects
+// 🎨 Data Project
 const PROJECTS = [
+    {
+    year: "Ongoing",
+    image: {
+      src: `${process.env.PUBLIC_URL}/ppf.jpg`
+    },
+    title: "Faiz-Dev",
+    desc: "Personal portfolio website yang menampilkan profil, skill, project, serta informasi kontak secara interaktif dan modern.",
+    tags: ["React", "Tailwind CSS", "Framer Motion", "GitHub Pages"],
+    link: "https://github.com/Faizpi/Faiz-Dev",
+    platform: "Website",
+    },
+    {
+    year: "2023",
+    image: {
+      src: `${process.env.PUBLIC_URL}/kny.jpg`
+    },
+    title: "Kimetsu no Yaiba Gallery",
+    desc: "Aplikasi mobile galeri karakter dari anime Kimetsu no Yaiba, dibangun untuk menampilkan gambar dan detail karakter.",
+    tags: ["Flutter", "Dart", "Mobile App"],
+    link: "https://github.com/Faizpi/", // Ganti dengan link repository Anda
+    platform: "GitHub",
+  },
+  {
+    year: "2023",
+    image: {
+      src: "https://cdn.simpleicons.org/flutter"
+    },
+    title: "Sports Live Score",
+    desc: "Aplikasi mobile untuk melihat skor pertandingan olahraga secara langsung dengan update real-time dari berbagai cabang.",
+    tags: ["Flutter", "Dart", "API"],
+    link: "https://github.com/Faizpi/", // Ganti dengan link repository Anda
+    platform: "GitHub",
+  },
   {
     year: "Ongoing",
-    logo: `${process.env.PUBLIC_URL}/SIK.png`,
+    image: {
+      src: `${process.env.PUBLIC_URL}/sik1.png`
+    },
     title: "Bunching Label Automobile Cable Plant 1",
     desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dan bisa di scan melalui barcode. Terdapat fitur laporan yang memungkinkan admin bisa export data ke excel atau print view.",
-    stack: "Laravel • Bootstrap • MySQL",
+    tags: ["Laravel", "Bootstrap", "MySQL"],
     link: "https://github.com/Faizpi/bunching-label-tugas-akhir",
     platform: "GitHub",
   },
   {
     year: "Ongoing",
-    logo: `${process.env.PUBLIC_URL}/SIK.png`,
+    image: {
+      src: `${process.env.PUBLIC_URL}/sik1.png`
+    },
     title: "Bunching Label Automobile Cable Plant 2",
     desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dan bisa di scan melalui barcode. Terdapat fitur laporan yang memungkinkan admin bisa export data ke excel atau print view.",
-    stack: "Laravel • Bootstrap • MySQL",
+    tags: ["Laravel", "Bootstrap", "MySQL"],
     link: "https://github.com/Faizpi/bunching-label-cable-plant2",
     platform: "GitHub",
   },
   {
     year: "Ongoing",
-    logo: `${process.env.PUBLIC_URL}/Faiz.png`,
-    title: "Faiz-Dev",
-    desc: "Personal portfolio website yang menampilkan profil, skill, project, serta informasi kontak secara interaktif dan modern.",
-    stack: "React • Tailwind CSS • Framer Motion • GitHub Pages",
-    link: "https://github.com/Faizpi/Faiz-Dev",
-    platform: "Website",
-  },
-  {
-    year: "Ongoing",
-    logo: "https://cdn.simpleicons.org/github",
+    image: {
+      src: "https://cdn.simpleicons.org/github"
+    },
     title: "Pendanaan Daerah",
     desc: "Web platform simulasi dana desa menggunakan konsep blockchain dan validasi tahapan.",
-    stack: "MERN • Tailwind • Smart UI Flow",
+    tags: ["MERN", "Tailwind", "Smart UI Flow"],
     link: "https://github.com/Faizpi/KTI-pendanaan_daerah",
     platform: "GitHub",
   },
   {
     year: "2025",
-    logo: "https://cdn.simpleicons.org/figma",
+    image: {
+      src: "https://cdn.simpleicons.org/figma"
+    },
     title: "Bugarin",
     desc: "Aplikasi mobile pelatihan dan kebugaran dengan fitur workout dan plan harian.",
-    stack: "Figma • UI/UX Design • Prototyping • Wireframing",
+    tags: ["Figma", "UI/UX Design", "Prototyping", "Wireframing"],
     link: "https://www.figma.com/design/GWSnsK9ECzJ7fct4MomEcZ/BUGARIN",
     platform: "Figma",
   },
   {
     year: "2025",
-    logo: "https://cdn.simpleicons.org/github",
+    image: {
+      src: "https://cdn.simpleicons.org/github"
+    },
     title: "Nusantara Hop",
     desc: "Game platformer edukatif bertema nusantara dan gunung-gunung di Indonesia + Kuis.",
-    stack: "Unity 2D • C# • Tilemap",
+    tags: ["Unity 2D", "C#", "Tilemap"],
     link: "https://github.com/Faizpi/Nusantara-Hop",
     platform: "GitHub",
   },
   {
     year: "2024",
-    logo: "https://cdn.simpleicons.org/github",
+    image: {
+      src: "https://cdn.simpleicons.org/github"
+    },
     title: "Taskflow",
     desc: "Task management sederhana berbasis web dengan sistem kategori dan kalender serta notifikasi.",
-    stack: "Laravel • MySQL",
+    tags: ["Laravel", "MySQL"],
     link: "https://github.com/Faizpi/Task-Flow",
     platform: "GitHub",
   },
   {
     year: "2024",
-    logo: "https://cdn.simpleicons.org/github",
+    image: {
+      src: "https://cdn.simpleicons.org/github"
+    },
     title: "Mini Games",
     desc: "Web mini-games dashboard dengan login dan logout system.",
-    stack: "PHP • JavaScript • MySQL",
+    tags: ["PHP", "JavaScript", "MySQL"],
     link: "https://github.com/Faizpi/Login-and-Regist-form-to-Game-Dashboard",
     platform: "GitHub",
   },
   {
     year: "2024",
-    logo: "https://cdn.simpleicons.org/github",
+    image: {
+      src: "https://cdn.simpleicons.org/github"
+    },
     title: "PointCademy",
     desc: "Website pembelajaran interaktif berbasis poin dan kuis untuk siswa SD, SMP, dan SMA.",
-    stack: "Html • Css • Javascript • Figma",
+    tags: ["Html", "Css", "Javascript", "Figma"],
     link: "https://github.com/Faizpi/PointCademy",
     platform: "GitHub",
   },
   {
     year: "2023",
-    logo: "https://cdn.simpleicons.org/figma",
+    image: {
+      src: "https://cdn.simpleicons.org/figma"
+    },
     title: "K@bel",
     desc: "Aplikasi mobile kantin dengan fitur login seller dan buyer.",
-    stack: "Figma • UI/UX Design • Prototyping • Wireframing",
+    tags: ["Figma", "UI/UX Design", "Prototyping", "Wireframing"],
     link: "https://www.figma.com/design/3tysDmv7A60w33iGLOGwtT/Kantin_jawir",
     platform: "Figma",
   },
 ];
 
-const GAP = 18;
-const SPRING_OPTIONS = { type: "spring", stiffness: 300, damping: 30 };
+// 🧩 Kartu Project
+const ProjectCard = ({ item, style }) => (
+  <motion.div
+    style={style}
+    className="relative shrink-0 flex flex-col rounded-2xl overflow-hidden cursor-grab active:cursor-grabbing dark:bg-neutral-900 bg-neutral-100"
+  >
+    {/* Gambar */}
+    <div className="w-full aspect-video overflow-hidden">
+      <img
+        src={item.image.src}
+        alt={item.title}
+        className="w-full h-full object-cover"
+        draggable="false"
+      />
+    </div>
 
+    {/* Konten */}
+    <div className="flex-grow flex flex-col p-5">
+      <h3 className="text-lg font-bold dark:text-white text-gray-900 mb-2">
+        {item.title}
+      </h3>
+      <p className="text-sm dark:text-gray-300 text-gray-700 mb-4 text-balance">
+        {item.desc}
+      </p>
+      <div className="flex flex-wrap gap-2 mb-4">
+        {item.tags.map((tag) => (
+          <span
+            key={tag}
+            className="text-xs dark:bg-neutral-800 bg-neutral-200 dark:text-neutral-300 text-neutral-700 px-2 py-1 rounded-full"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      {/* Footer */}
+      <div className="flex justify-between items-center mt-auto pt-4 border-t dark:border-neutral-800 border-neutral-200">
+        <span className="text-xs dark:text-gray-400 text-gray-600">
+          {item.year}
+        </span>
+        {item.link && (
+          <a
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="flex items-center gap-1 text-sm text-blue-400 hover:underline"
+          >
+            {item.platform}
+            <ArrowUpRight className="w-4 h-4" />
+          </a>
+        )}
+      </div>
+    </div>
+  </motion.div>
+);
+
+// 🌀 Carousel Utama
 export default function ProjectsCarousel({
-  baseWidth = 320,
   autoplay = true,
-  autoplayDelay = 3000,
+  autoplayDelay = 4000,
   pauseOnHover = true,
   loop = true,
 }) {
-  const containerPadding = 18;
-  const itemWidth = baseWidth - containerPadding * 2;
+  const baseWidth = 500;
+  const itemWidth = baseWidth * 0.8;
+  const GAP = 24;
   const trackItemOffset = itemWidth + GAP;
+  const initialOffset = (baseWidth - itemWidth) / 2-42;
 
-  const carouselItems = loop ? [...PROJECTS, PROJECTS[0]] : PROJECTS;
+  const carouselItems = loop
+    ? [...PROJECTS, ...PROJECTS.slice(0, 1)]
+    : PROJECTS;
   const [currentIndex, setCurrentIndex] = useState(0);
   const x = useMotionValue(0);
   const [isHovered, setIsHovered] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
-
   const containerRef = useRef(null);
 
   // Hover pause
   useEffect(() => {
-    if (pauseOnHover && containerRef.current) {
-      const container = containerRef.current;
-      const handleMouseEnter = () => setIsHovered(true);
-      const handleMouseLeave = () => setIsHovered(false);
-      container.addEventListener("mouseenter", handleMouseEnter);
-      container.addEventListener("mouseleave", handleMouseLeave);
-      return () => {
-        container.removeEventListener("mouseenter", handleMouseEnter);
-        container.removeEventListener("mouseleave", handleMouseLeave);
-      };
-    }
+    const container = containerRef.current;
+    if (!container || !pauseOnHover) return;
+    const handleMouseEnter = () => setIsHovered(true);
+    const handleMouseLeave = () => setIsHovered(false);
+    container.addEventListener("mouseenter", handleMouseEnter);
+    container.addEventListener("mouseleave", handleMouseLeave);
+    return () => {
+      container.removeEventListener("mouseenter", handleMouseEnter);
+      container.removeEventListener("mouseleave", handleMouseLeave);
+    };
   }, [pauseOnHover]);
 
   // Autoplay
   useEffect(() => {
-    if (autoplay && (!pauseOnHover || !isHovered) && !isDragging && !isResetting) {
-      const timer = setInterval(() => {
-        nextSlide();
-      }, autoplayDelay);
+    if (autoplay && !isHovered && !isDragging) {
+      const timer = setInterval(() => nextSlide(), autoplayDelay);
       return () => clearInterval(timer);
     }
-  }, [autoplay, autoplayDelay, isHovered, loop, pauseOnHover, isDragging, isResetting, currentIndex]);
+  }, [autoplay, autoplayDelay, isHovered, isDragging, currentIndex]);
 
-  // Keyboard navigation
-  useEffect(() => {
-    const handleKey = (e) => {
-      if (e.key === "ArrowRight") nextSlide();
-      if (e.key === "ArrowLeft") prevSlide();
-    };
-    window.addEventListener("keydown", handleKey);
-    return () => window.removeEventListener("keydown", handleKey);
-  }, []);
-
-  const effectiveTransition = isResetting ? { duration: 0 } : SPRING_OPTIONS;
+  const effectiveTransition = isResetting
+    ? { duration: 0 }
+    : { type: "spring", stiffness: 400, damping: 40 };
 
   const handleAnimationComplete = () => {
-    if (loop && currentIndex === carouselItems.length - 1) {
+    if (loop && currentIndex === PROJECTS.length) {
       setIsResetting(true);
-      x.set(0);
+      x.set(initialOffset);
       setCurrentIndex(0);
-      setTimeout(() => setIsResetting(false), 80);
+      setTimeout(() => setIsResetting(false), 50);
     }
   };
 
-  const rotateTransforms = carouselItems.map((_, index) => {
+  // Transformasi untuk efek kedalaman
+  const transforms = carouselItems.map((_, index) => {
     const range = [
       -(index + 1) * trackItemOffset,
       -index * trackItemOffset,
       -(index - 1) * trackItemOffset,
     ];
-    return useTransform(x, range, [90, 0, -90], { clamp: false });
+    const relativeX = useMotionValue(x.get() - initialOffset);
+    x.onChange((v) => relativeX.set(v - initialOffset));
+    const scale = useTransform(relativeX, range, [0.85, 1, 0.85]);
+    const opacity = useTransform(relativeX, range, [0.4, 1, 0.4]);
+    return { scale, opacity };
   });
 
-  const nextSlide = () => {
-    if (isDragging) return;
-    setCurrentIndex((prev) => {
-      if (prev === PROJECTS.length - 1 && loop) return prev + 1;
-      if (prev === carouselItems.length - 1) return loop ? 0 : prev;
-      return prev + 1;
-    });
-  };
-
-  const prevSlide = () => {
-    if (isDragging) return;
-    setCurrentIndex((prev) => {
-      if (prev === 0) return loop ? PROJECTS.length - 1 : 0;
-      return prev - 1;
-    });
-  };
-
-  const handleDragStart = () => setIsDragging(true);
+  const nextSlide = () =>
+    setCurrentIndex((prev) => (prev === PROJECTS.length ? 0 : prev + 1));
+  const prevSlide = () =>
+    setCurrentIndex((prev) =>
+      prev === 0 ? PROJECTS.length - 1 : prev - 1
+    );
 
   const handleDragEnd = (event, info) => {
-    const threshold = 50;
-    const velocity = info.velocity.x;
     const offset = info.offset.x;
-
-    if (Math.abs(offset) > threshold || Math.abs(velocity) > 500) {
-      if (offset > 0 || velocity > 500) {
-        prevSlide();
-      } else if (offset < 0 || velocity < -500) {
-        nextSlide();
-      }
+    const velocity = info.velocity.x;
+    const threshold = trackItemOffset / 3;
+    if (Math.abs(velocity) > 500 || Math.abs(offset) > threshold) {
+      offset < 0 ? nextSlide() : prevSlide();
     }
     setTimeout(() => setIsDragging(false), 100);
   };
 
   return (
-    <section id="Projects" className="w-full flex flex-col gap-6">
-      <Reveal>
-        <h2 className="text-sm font-bold dark:text-white text-gray-900">Projects</h2>
-      </Reveal>
+    <section id="Projects" className="space-y-6 py-6"> {/* spacing atas-bawah konsisten */}
+  <Reveal>
+    <h2 className="text-sm font-bold dark:text-white text-gray-900 px-4 sm:px-0">
+      Projects
+    </h2>
+  </Reveal>
 
-      <div className="flex justify-center">
-        <div className="relative flex items-center">
-          {/* Tombol kiri */}
-          <button
-            aria-label="Previous Slide"
-            onClick={prevSlide}
-            className="absolute left-[-60px] top-1/2 -translate-y-1/2 p-3 dark:text-white text-gray-700 hover:text-blue-400 transition-colors duration-200 z-10"
-            disabled={!loop && currentIndex === 0}
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
-
-          {/* Container carousel */}
+  {/* Container Carousel */}
+  <div
+    ref={containerRef}
+    className="relative mx-auto group"
+    style={{ width: `clamp(300px, 100%, ${baseWidth}px)`, height: "550px" }}
+  >
+    {/* Track Carousel */}
+    <div className="relative h-full overflow-hidden rounded-2xl">
+      <motion.div
+        className="flex absolute top-0 left-0 h-full"
+        drag="x"
+        dragConstraints={{
+          right: initialOffset,
+          left: initialOffset - (carouselItems.length - 1) * trackItemOffset,
+        }}
+        dragElastic={0.2}
+        onDragStart={() => setIsDragging(true)}
+        onDragEnd={handleDragEnd}
+        style={{ x }}
+        animate={{ x: initialOffset - currentIndex * trackItemOffset }}
+        transition={effectiveTransition}
+        onAnimationComplete={handleAnimationComplete}
+      >
+        {carouselItems.map((item, index) => (
           <div
-            ref={containerRef}
-            className="relative overflow-hidden p-4 rounded-[24px] border dark:border-[#222] border-gray-300 dark:bg-[#111] bg-white"
-            style={{ width: `clamp(300px, 80vw, ${baseWidth}px)` }}
+            key={index}
+            className="shrink-0"
+            style={{ width: itemWidth, marginRight: `${GAP}px` }}
           >
-            {/* Track */}
-            <motion.div
-              className="flex"
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.3}
-              dragMomentum={false}
-              onDragStart={handleDragStart}
-              onDragEnd={handleDragEnd}
-              style={{ gap: `${GAP}px`, perspective: 1000, x }}
-              animate={{ x: -(currentIndex * trackItemOffset) }}
-              transition={effectiveTransition}
-              onAnimationComplete={handleAnimationComplete}
-            >
-              {carouselItems.map((item, index) => (
-                <Reveal key={index} delay={index * 0.1}>
-                  <motion.div
-                    className="relative shrink-0 flex flex-col items-start justify-between dark:bg-[#1c1c1c] bg-gray-100 dark:border-[#333] border-gray-300 rounded-[12px] overflow-hidden cursor-grab active:cursor-grabbing"
-                    style={{ width: itemWidth, rotateY: rotateTransforms[index] }}
-                    transition={effectiveTransition}
-                  >
-                    {/* Logo & Year */}
-                    <div className="p-5 flex items-center gap-2">
-                      <img
-                        src={item.logo}
-                        alt={item.title}
-                        className={`w-8 h-8 object-contain ${
-                          item.logo.includes("github")
-                            ? "dark:invert"
-                            : ""
-                        }`}
-                      />
-                      <span className="text-xs dark:text-gray-400 text-gray-700">{item.year}</span>
-                    </div>
-
-                    {/* Content */}
-                    <div className="p-5">
-                      <div className="mb-1 font-bold text-lg dark:text-white text-gray-900">
-                        {item.link ? (
-                          <a
-                            href={item.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline hover:text-blue-400"
-                            onClick={(e) => e.stopPropagation()}
-                          >
-                            {item.title}
-                          </a>
-                        ) : (
-                          item.title
-                        )}
-                      </div>
-                      <p className="text-sm dark:text-gray-300 text-gray-700">{item.desc}</p>
-                      <p className="text-xs dark:text-gray-500 text-gray-500 mt-1">{item.stack}</p>
-
-                      {item.link && (
-                        <a
-                          href={item.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs text-blue-400 hover:underline mt-2 block"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          {item.platform} ↗
-                        </a>
-                      )}
-                    </div>
-                  </motion.div>
-                </Reveal>
-              ))}
-            </motion.div>
-
-            {/* Indicators */}
-            <div className="flex w-full justify-center mt-4">
-              <div className="flex gap-2">
-                {PROJECTS.map((_, index) => (
-                  <motion.div
-                    key={index}
-                    className="h-2 w-2 rounded-full cursor-pointer"
-                    style={{
-                      background:
-                        currentIndex % PROJECTS.length === index
-                          ? "white"
-                          : "rgba(255,255,255,0.3)",
-                    }}
-                    animate={{ scale: currentIndex % PROJECTS.length === index ? 1.2 : 1 }}
-                    onClick={() => setCurrentIndex(index)}
-                    transition={{ duration: 0.15 }}
-                  />
-                ))}
-              </div>
-            </div>
+            <Reveal delay={index * 0.05}>
+            <ProjectCard
+              item={item}
+              style={{
+                scale: transforms[index].scale,
+                opacity: transforms[index].opacity,
+              }}
+            />
+            </Reveal>
           </div>
+        ))}
+      </motion.div>
+    </div>
 
-          {/* Tombol kanan */}
+    {/* Tombol Panah */}
+    <button
+      aria-label="Previous Slide"
+      onClick={prevSlide}
+      className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full 
+        flex items-center justify-center bg-white/50 dark:bg-black/50 
+        backdrop-blur-sm text-gray-900 dark:text-white z-20 shadow-md 
+        opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      <ChevronLeft className="w-6 h-6" />
+    </button>
+
+    <button
+      aria-label="Next Slide"
+      onClick={nextSlide}
+      className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full 
+        flex items-center justify-center bg-white/50 dark:bg-black/50 
+        backdrop-blur-sm text-gray-900 dark:text-white z-20 shadow-md 
+        opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+    >
+      <ChevronRight className="w-6 h-6" />
+    </button>
+
+    {/* Indikator Titik */}
+    <div className="absolute bottom-4 w-full flex justify-center"> {/* jarak bawah konsisten */}
+      <div className="flex gap-2 px-3 py-1 bg-gray-100/80 dark:bg-neutral-800/80 backdrop-blur-md rounded-full shadow-md">
+        {PROJECTS.map((_, index) => (
           <button
-            aria-label="Next Slide"
-            onClick={nextSlide}
-            className="absolute right-[-60px] top-1/2 -translate-y-1/2 p-3 dark:text-white text-gray-700 hover:text-blue-400 transition-colors duration-200 z-10"
-            disabled={!loop && currentIndex === PROJECTS.length - 1}
+            key={index}
+            onClick={() => setCurrentIndex(index)}
+            className="relative h-3 w-3 rounded-full bg-gray-400 dark:bg-gray-600 transition-all duration-300 hover:scale-110"
           >
-            <ChevronRight className="w-6 h-6" />
+            {currentIndex % PROJECTS.length === index && (
+              <motion.div
+                layoutId="active-indicator"
+                className="absolute inset-0 rounded-full bg-blue-500 shadow-[0_0_8px_2px_rgba(59,130,246,0.6)]"
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+              />
+            )}
           </button>
-        </div>
+        ))}
       </div>
-    </section>
+    </div>
+  </div>
+</section>
   );
 }
