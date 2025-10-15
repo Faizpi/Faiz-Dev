@@ -38,14 +38,7 @@ export default function App() {
           <section id="Experience"><Experience /></section>
 
           <section id="Projects">
-            <Carousel
-              baseWidth={300}
-              autoplay={true}
-              autoplayDelay={3000}
-              pauseOnHover={true}
-              loop={true}
-              round={false}
-            />
+            <Carousel />
           </section>
 
           <section id="Skills"><Skills /></section>
