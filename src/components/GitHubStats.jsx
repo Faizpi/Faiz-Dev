@@ -57,7 +57,7 @@ export default function GitHubStats() {
 
           <Reveal delay={0.6}>
             <img
-              src={`https://github-readme-streak-stats.herokuapp.com/?user=Faizpi&theme=${
+              src={`https://streak-stats.demolab.com/?user=Faizpi&theme=${
                 isDark ? "tokyonight" : "default"
               }&hide_border=true&background=00000000&ring=2196f3&fire=2196f3&currStreakLabel=2196f3`}
               alt="GitHub Streak"
