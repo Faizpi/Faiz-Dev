@@ -46,7 +46,7 @@ const PROJECTS = [
     title: "Sports Live Score",
     desc: "Aplikasi mobile untuk melihat skor pertandingan olahraga secara langsung dengan update real-time dari berbagai cabang.",
     tags: ["Flutter", "Dart", "UI/UX"],
-    link: "https://github.com/Faizpi/", // Ganti dengan link repository Anda
+    link: "https://github.com/Faizpi/", // Ganti dengan link repository
     platform: "GitHub",
   },
   {
