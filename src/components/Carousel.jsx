@@ -17,6 +17,17 @@ const PROJECTS = [
     platform: "Website",
     },
     {
+    year: "2025",
+    image: {
+      src: `${process.env.PUBLIC_URL}/targetku.jpg`
+    },
+    title: "TargetKu",
+    desc: "Aplikasi mobile untuk mengelola tabungan target secara menyenangkan, efektif dan efisien.",
+    tags: ["Flutter", "Dart", "Firebase", "Mobile App"],
+    link: "https://github.com/Faizpi/", // Ganti dengan link repository Anda
+    platform: "GitHub",
+    },
+    {
     year: "2023",
     image: {
       src: `${process.env.PUBLIC_URL}/kny.jpg`
