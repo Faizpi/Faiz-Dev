@@ -40,7 +40,6 @@ export default function Experience() {
             <Reveal>
               <h2 className="text-sm font-bold dark:text-white text-black">Education</h2>
             </Reveal>
-            {/* S1 */}
             <Reveal>
               <div className="grid grid-cols-12 gap-4 items-start py-2">
                 <div className="col-span-2 text-xs dark:text-gray-400 text-gray-700 pt-2">
