@@ -1,6 +1,6 @@
 # 🌌 Personal Portfolio - Muhammad Faiz Bintang Pratama
 
-> A modern, interactive portfolio website showcasing my work as a **UI/UX Designer** and **Web Developer**.
+> A modern, interactive portfolio website showcasing my work as a **Developer**.
 
 ---
 
