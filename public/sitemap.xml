@@ -15,7 +15,7 @@
 
   <!-- Tentang saya -->
   <url>
-    <loc>https://faizpratama.me/about</loc>
+    <loc>https://faizpratama.me/</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -23,7 +23,7 @@
 
   <!-- Proyek -->
   <url>
-    <loc>https://faizpratama.me/projects</loc>
+    <loc>https://faizpratama.me/</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -31,7 +31,7 @@
 
   <!-- Kontak -->
   <url>
-    <loc>https://faizpratama.me/contact</loc>
+    <loc>https://faizpratama.me/</loc>
     <lastmod>2025-10-15</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
