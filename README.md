@@ -1,4 +1,4 @@
-# 🌌 Personal Portfolio - Muhammad Faiz Bintang Pratama
+# 🌌 Personal Portfolio - Muhammad Faiz Bintang Pratama.
 
 > A modern, interactive portfolio website showcasing my work as a **Developer**.
 
