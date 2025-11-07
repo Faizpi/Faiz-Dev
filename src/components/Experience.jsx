@@ -92,11 +92,11 @@ export default function Experience() {
                       Sultan Ageng Tirtayasa University · Cilegon, Banten
                     </p>
                   </div>
-                  <ul className="list-disc list-inside text-sm text-justify dark:text-gray-400 text-gray-700 space-y-1">
-                    <li>Produced digital content for internal and public organizational publications.</li>
-                    <li>Designed visuals for national holidays, campaigns, and tech-related educational content.</li>
-                    <li>Documented all organizational activities (photo/video), creating a digital archive.</li>
-                  </ul>
+                    <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
+                      <li>Produced digital content for internal and public organizational publications.</li>
+                      <li>Designed visuals for national holidays, campaigns, and tech-related educational content.</li>
+                      <li>Documented all organizational activities (photo/video), creating a digital archive.</li>
+                    </ul>
                 </div>
               </div>
             </Reveal>
@@ -131,12 +131,7 @@ export default function Experience() {
                     </p>
                   </div>
                   <ul className="list-disc list-inside text-sm text-justify dark:text-gray-400 text-gray-700 space-y-1">
-                    <li>Assisted in developing and maintaining simple web applications to support team projects.</li>
-                    <li>Created a small website to help another division improve their workflow and productivity.</li>
-                    <li>Helped organize digital content for internal use and publications.</li>
-                    <li>Provided support in troubleshooting basic hardware, software, and network issues.</li>
-                    <li>Assisted with maintaining IT infrastructure under supervision of senior staff.</li>
-                    <li>Supported daily IT tasks and provided help to team members when needed.</li>
+                    <p>Developed Website System STB Label for Automobile Cable Plant 1 using Laravel.</p>
                   </ul>
                 </div>
               </div>
