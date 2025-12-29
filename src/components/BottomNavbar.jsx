@@ -10,7 +10,6 @@ import {
   Menu,
   X,
 } from "lucide-react";
-import GlassSurface from "./GlassSurface";
 
 const BottomNavbar = () => {
   const [activeSection, setActiveSection] = useState("Intro");
@@ -41,19 +40,17 @@ const BottomNavbar = () => {
   return (
     <>
       {/* Tombol burger */}
-      <GlassSurface
-        borderRadius={12}
-        brightness={45}
-        opacity={0.9}
-        blur={14}
-        backgroundOpacity={0.1}
-        className="fixed top-4 right-4 z-50 cursor-pointer hover:scale-105 transition-transform"
+      <button
         onClick={() => setIsVisible(!isVisible)}
+        className="fixed top-4 right-4 z-50 p-2 rounded-xl 
+                   bg-white/10 dark:bg-white/10 backdrop-blur-xl 
+                   border border-white/20 dark:border-white/20
+                   shadow-lg hover:scale-105 transition-all
+                   dark:text-white text-gray-900"
+        aria-label="Toggle Navbar"
       >
-        <div className="p-2 dark:text-white text-gray-900">
-          {isVisible ? <X size={20} /> : <Menu size={20} />}
-        </div>
-      </GlassSurface>
+        {isVisible ? <X size={20} /> : <Menu size={20} />}
+      </button>
 
       {/* Navbar */}
       <div
@@ -66,19 +63,8 @@ const BottomNavbar = () => {
           pointerEvents: isVisible ? "auto" : "none",
         }}
       >
-        <GlassSurface
-          borderRadius={9999}
-          brightness={50}
-          opacity={0.92}
-          blur={16}
-          displace={2}
-          backgroundOpacity={0.05}
-          distortionScale={-160}
-          redOffset={3}
-          greenOffset={12}
-          blueOffset={22}
-        >
-          <div className="flex items-center space-x-2 px-3 py-2">
+        <div className="bg-white/10 dark:bg-white/10 backdrop-blur-xl border border-white/20 dark:border-white/20 rounded-full px-3 py-2 shadow-lg">
+          <div className="flex items-center space-x-2">
             {navItems.map((item) => {
               const Icon = item.icon;
               const isActive = activeSection === item.id;
@@ -89,8 +75,8 @@ const BottomNavbar = () => {
                   onClick={() => scrollToSection(item.section)}
                   className={`group relative p-2 rounded-full transition-all duration-300 ${
                     isActive
-                      ? "dark:bg-white/25 bg-black/20 dark:text-white text-gray-900 shadow-lg"
-                      : "dark:text-gray-200 text-gray-700 hover:dark:text-white hover:text-gray-900 hover:dark:bg-white/15 hover:bg-black/10"
+                      ? "dark:bg-white/20 bg-black/20 dark:text-white text-gray-900 shadow-md"
+                      : "dark:text-gray-200 text-gray-700 hover:dark:text-white hover:text-gray-900 hover:dark:bg-white/10 hover:bg-black/10"
                   }`}
                   aria-label={item.label}
                 >
@@ -98,9 +84,9 @@ const BottomNavbar = () => {
 
                   {/* Tooltip */}
                   <div
-                    className={`absolute -top-8 left-1/2 transform -translate-x-1/2 px-2 py-1 
-                                dark:bg-black/80 bg-white/95 dark:text-white text-gray-900 text-[10px] rounded-lg opacity-0 
-                                transition-opacity duration-200 whitespace-nowrap pointer-events-none backdrop-blur-sm
+                    className={`absolute -top-8 left-1/2 transform -translate-x-1/2 px-1.5 py-0.5 
+                                dark:bg-black/70 bg-white/90 dark:text-white text-gray-900 text-[10px] rounded opacity-0 
+                                transition-opacity duration-200 whitespace-nowrap pointer-events-none
                                 ${isActive ? "opacity-100" : "group-hover:opacity-100"}`}
                   >
                     {item.label}
@@ -109,7 +95,7 @@ const BottomNavbar = () => {
               );
             })}
           </div>
-        </GlassSurface>
+        </div>
       </div>
     </>
   );
