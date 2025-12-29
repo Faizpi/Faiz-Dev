@@ -8,7 +8,7 @@ import GitHubStats from "./components/GitHubStats";
 import ScrollButtons from "./components/ScrollButtons";
 import BottomNavbar from "./components/BottomNavbar";
 import Cursor from "./components/Cursor";
-import Carousel from "./components/Carousel";
+import BentoProjects from "./components/BentoProjects";
 import ThemeToggle from "./components/ThemeToggle"; 
 
 export default function App() {
@@ -32,7 +32,7 @@ export default function App() {
           <section id="About"><About /></section>
           <section id="GitHubStats"><GitHubStats /></section>
           <section id="Experience"><Experience /></section>
-          <section id="Projects"><Carousel /></section>
+          <section id="Projects"><BentoProjects /></section>
           <section id="Skills"><Skills /></section>
           <section id="Links"><Links /></section>
         </div>
