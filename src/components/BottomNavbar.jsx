@@ -11,6 +11,18 @@ import {
   X,
 } from "lucide-react";
 
+// Glass effect styles
+const glassStyle = {
+  background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+  backdropFilter: 'blur(20px) saturate(180%)',
+  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+  boxShadow: `
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1)
+  `,
+};
+
 const BottomNavbar = () => {
   const [activeSection, setActiveSection] = useState("Intro");
   const [isVisible, setIsVisible] = useState(true);
@@ -43,10 +55,10 @@ const BottomNavbar = () => {
       <button
         onClick={() => setIsVisible(!isVisible)}
         className="fixed top-4 right-4 z-50 p-2 rounded-xl 
-                   bg-white/10 dark:bg-white/10 backdrop-blur-xl 
-                   border border-white/20 dark:border-white/20
-                   shadow-lg hover:scale-105 transition-all
+                   border border-white/30 dark:border-white/20
+                   hover:scale-105 hover:border-white/50 transition-all
                    dark:text-white text-gray-900"
+        style={glassStyle}
         aria-label="Toggle Navbar"
       >
         {isVisible ? <X size={20} /> : <Menu size={20} />}
@@ -63,7 +75,10 @@ const BottomNavbar = () => {
           pointerEvents: isVisible ? "auto" : "none",
         }}
       >
-        <div className="bg-white/10 dark:bg-white/10 backdrop-blur-xl border border-white/20 dark:border-white/20 rounded-full px-3 py-2 shadow-lg">
+        <div 
+          className="rounded-full px-3 py-2 border border-white/30 dark:border-white/20"
+          style={glassStyle}
+        >
           <div className="flex items-center space-x-2">
             {navItems.map((item) => {
               const Icon = item.icon;
