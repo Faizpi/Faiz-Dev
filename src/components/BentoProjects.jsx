@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
@@ -178,6 +178,18 @@ const PROJECTS = [
 
 // 🧩 Masonry Card Component (Pinterest Style)
 const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick, isDragging }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if mobile on mount
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Variasi tinggi berdasarkan konten untuk efek masonry
   const getAspectRatio = () => {
     switch (project.size) {
@@ -205,13 +217,12 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
         damping: 25,
         delay: index * 0.03 
       }}
-      draggable
-      onDragStart={(e) => onDragStart(e, index)}
+      draggable={!isMobile}
+      onDragStart={(e) => !isMobile && onDragStart(e, index)}
       onDragOver={onDragOver}
-      onDrop={(e) => onDrop(e, index)}
+      onDrop={(e) => !isMobile && onDrop(e, index)}
       onClick={() => onClick(project)}
-      className="break-inside-avoid mb-3 group cursor-grab active:cursor-grabbing select-none"
-      style={{ touchAction: 'none' }}
+      className={`break-inside-avoid mb-3 group select-none ${!isMobile ? 'cursor-grab active:cursor-grabbing' : ''}`}
     >
       <div className={`relative rounded-2xl overflow-hidden 
         dark:bg-neutral-900 bg-neutral-100
