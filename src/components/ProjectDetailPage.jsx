@@ -1,10 +1,10 @@
-import { useState, useCallback } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, Calendar, Tag, ChevronLeft, ChevronRight } from "lucide-react";
 import Reveal from "./Reveal";
 
-// 🎨 Data Project
-const PROJECTS = [
+// 🎨 Data Project (same as BentoProjects)
+export const PROJECTS = [
   {
     id: 1,
     year: "Ongoing",
@@ -176,173 +176,203 @@ const PROJECTS = [
   },
 ];
 
-// 🧩 Masonry Card Component (Pinterest Style)
-const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick }) => {
-  // Variasi tinggi berdasarkan konten untuk efek masonry
-  const getAspectRatio = () => {
-    switch (project.size) {
-      case "large": return "aspect-[3/4]";
-      case "medium": return "aspect-[4/3]";
-      default: return "aspect-square";
-    }
+export default function ProjectDetailPage({ projectId, onBack }) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  useEffect(() => {
+    const index = PROJECTS.findIndex(p => p.id === projectId);
+    if (index !== -1) setCurrentIndex(index);
+    window.scrollTo(0, 0);
+  }, [projectId]);
+
+  const project = PROJECTS[currentIndex];
+  const hasPrev = currentIndex > 0;
+  const hasNext = currentIndex < PROJECTS.length - 1;
+
+  const goToPrev = () => {
+    if (hasPrev) setCurrentIndex(currentIndex - 1);
   };
+
+  const goToNext = () => {
+    if (hasNext) setCurrentIndex(currentIndex + 1);
+  };
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onBack();
+      if (e.key === "ArrowLeft") goToPrev();
+      if (e.key === "ArrowRight") goToNext();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [currentIndex]);
+
+  if (!project) return null;
 
   return (
     <motion.div
-      layout
-      layoutId={`project-${project.id}`}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ 
-        type: "spring", 
-        stiffness: 300, 
-        damping: 25,
-        delay: index * 0.03 
-      }}
-      draggable
-      onDragStart={(e) => onDragStart(e, index)}
-      onDragOver={onDragOver}
-      onDrop={(e) => onDrop(e, index)}
-      onClick={() => onClick(project)}
-      className="break-inside-avoid mb-3 group cursor-pointer"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="space-y-8"
     >
-      <div className={`relative rounded-2xl overflow-hidden 
-        dark:bg-neutral-900 bg-neutral-100
-        hover:ring-2 hover:ring-blue-500/50 
-        transition-all duration-300 transform hover:scale-[1.02]`}
-      >
-        {/* Image Container */}
-        <div className={`relative ${getAspectRatio()} overflow-hidden`}>
+      {/* Back Button */}
+      <Reveal>
+        <button
+          onClick={onBack}
+          className="flex items-center gap-2 text-sm dark:text-gray-400 text-gray-600 
+            hover:text-blue-500 dark:hover:text-blue-400 transition-colors group"
+        >
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
+          Kembali ke Projects
+        </button>
+      </Reveal>
+
+      {/* Project Image */}
+      <Reveal delay={0.1}>
+        <div className="relative rounded-2xl overflow-hidden">
           <img
             src={project.image.src}
             alt={project.title}
-            className="w-full h-full object-cover transition-transform duration-500 
-              group-hover:scale-110"
-            draggable="false"
+            className="w-full aspect-video object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-          
-          {/* Year Badge */}
-          <span className="absolute top-3 left-3 px-2.5 py-1 text-xs font-medium 
-            rounded-full bg-black/40 backdrop-blur-md text-white border border-white/10">
-            {project.year}
-          </span>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+          <div className="absolute bottom-4 left-4">
+            <span className="px-3 py-1.5 text-xs font-medium rounded-full 
+              bg-blue-500/90 text-white backdrop-blur-sm">
+              {project.platform}
+            </span>
+          </div>
+        </div>
+      </Reveal>
 
-          {/* Link Icon */}
-          {project.link && (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={(e) => e.stopPropagation()}
-              className="absolute top-3 right-3 p-2 rounded-full 
-                bg-black/40 backdrop-blur-md text-white border border-white/10
-                opacity-0 group-hover:opacity-100 transition-all duration-300
-                hover:bg-white/20 hover:scale-110"
-            >
-              <ArrowUpRight className="w-4 h-4" />
-            </a>
-          )}
-
-          {/* Content Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-4">
-            <h3 className="font-bold text-white text-base leading-tight mb-1">
+      {/* Project Info */}
+      <div className="space-y-6">
+        {/* Header */}
+        <Reveal delay={0.2}>
+          <div>
+            <h1 className="text-2xl font-bold dark:text-white text-gray-900 mb-2">
               {project.title}
-            </h3>
-            <p className="text-xs text-gray-300 line-clamp-2 mb-2">
-              {project.desc}
+            </h1>
+            <div className="flex items-center gap-2 text-sm dark:text-gray-400 text-gray-600">
+              <Calendar className="w-4 h-4" />
+              <span>{project.year}</span>
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Description */}
+        <Reveal delay={0.3}>
+          <div className="space-y-3">
+            <h2 className="text-sm font-semibold dark:text-white text-gray-900">
+              Deskripsi
+            </h2>
+            <p className="dark:text-gray-300 text-gray-700 leading-relaxed text-sm">
+              {project.fullDesc || project.desc}
             </p>
-            <div className="flex flex-wrap gap-1">
-              {project.tags.slice(0, 3).map((tag) => (
+          </div>
+        </Reveal>
+
+        {/* Features */}
+        {project.features && (
+          <Reveal delay={0.4}>
+            <div className="space-y-3">
+              <h2 className="text-sm font-semibold dark:text-white text-gray-900 flex items-center gap-2">
+                <Tag className="w-4 h-4" />
+                Fitur Utama
+              </h2>
+              <div className="grid grid-cols-1 gap-2">
+                {project.features.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 text-sm dark:text-gray-300 text-gray-700
+                      p-3 rounded-xl dark:bg-neutral-900/50 bg-neutral-100/50"
+                  >
+                    <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0" />
+                    {feature}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        )}
+
+        {/* Tech Stack */}
+        <Reveal delay={0.5}>
+          <div className="space-y-3">
+            <h2 className="text-sm font-semibold dark:text-white text-gray-900">
+              Tech Stack
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="px-2 py-0.5 text-[10px] rounded-full 
-                    bg-white/15 backdrop-blur-sm text-white/90"
+                  className="px-3 py-1.5 text-xs font-medium rounded-full 
+                    dark:bg-neutral-800 bg-neutral-200 
+                    dark:text-neutral-300 text-neutral-700"
                 >
                   {tag}
                 </span>
               ))}
-              {project.tags.length > 3 && (
-                <span className="px-2 py-0.5 text-[10px] rounded-full 
-                  bg-white/15 backdrop-blur-sm text-white/90">
-                  +{project.tags.length - 3}
-                </span>
-              )}
             </div>
           </div>
-        </div>
+        </Reveal>
+
+        {/* Action Button */}
+        {project.link && (
+          <Reveal delay={0.6}>
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full 
+                bg-blue-500 hover:bg-blue-600 text-white font-medium text-sm
+                transition-colors w-full justify-center"
+            >
+              {project.platform === "GitHub" ? (
+                <Github className="w-5 h-5" />
+              ) : (
+                <ExternalLink className="w-5 h-5" />
+              )}
+              Lihat di {project.platform}
+            </a>
+          </Reveal>
+        )}
+
+        {/* Navigation */}
+        <Reveal delay={0.7}>
+          <div className="flex items-center justify-between pt-6 border-t dark:border-neutral-800 border-neutral-200">
+            <button
+              onClick={goToPrev}
+              disabled={!hasPrev}
+              className={`flex items-center gap-2 text-sm transition-colors
+                ${hasPrev 
+                  ? "dark:text-gray-300 text-gray-700 hover:text-blue-500" 
+                  : "dark:text-gray-700 text-gray-300 cursor-not-allowed"}`}
+            >
+              <ChevronLeft className="w-4 h-4" />
+              Sebelumnya
+            </button>
+            
+            <span className="text-xs dark:text-gray-500 text-gray-400">
+              {currentIndex + 1} / {PROJECTS.length}
+            </span>
+            
+            <button
+              onClick={goToNext}
+              disabled={!hasNext}
+              className={`flex items-center gap-2 text-sm transition-colors
+                ${hasNext 
+                  ? "dark:text-gray-300 text-gray-700 hover:text-blue-500" 
+                  : "dark:text-gray-700 text-gray-300 cursor-not-allowed"}`}
+            >
+              Selanjutnya
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </Reveal>
       </div>
     </motion.div>
-  );
-};
-
-// 🌐 Main Bento Grid Component
-export default function ProjectsBento({ onProjectClick }) {
-  const [projects, setProjects] = useState(PROJECTS);
-  const [draggedIndex, setDraggedIndex] = useState(null);
-
-  // Drag handlers
-  const handleDragStart = useCallback((e, index) => {
-    setDraggedIndex(index);
-    e.dataTransfer.effectAllowed = "move";
-    e.dataTransfer.setData("text/plain", index);
-  }, []);
-
-  const handleDragOver = useCallback((e) => {
-    e.preventDefault();
-    e.dataTransfer.dropEffect = "move";
-  }, []);
-
-  const handleDrop = useCallback((e, dropIndex) => {
-    e.preventDefault();
-    if (draggedIndex === null || draggedIndex === dropIndex) return;
-
-    setProjects((prev) => {
-      const newProjects = [...prev];
-      const [draggedItem] = newProjects.splice(draggedIndex, 1);
-      newProjects.splice(dropIndex, 0, draggedItem);
-      return newProjects;
-    });
-    setDraggedIndex(null);
-  }, [draggedIndex]);
-
-  // Handle project click - navigate to detail page
-  const handleProjectClick = useCallback((project) => {
-    if (onProjectClick) {
-      onProjectClick(project.id);
-    }
-  }, [onProjectClick]);
-
-  return (
-    <section className="space-y-6 py-6">
-      <Reveal>
-        <div className="flex items-center justify-between px-1">
-          <h2 className="text-sm font-bold dark:text-white text-gray-900">
-            Projects
-          </h2>
-          <span className="text-xs dark:text-gray-500 text-gray-400">
-            {projects.length} projects
-          </span>
-        </div>
-      </Reveal>
-
-      {/* Masonry Grid (Pinterest Style) */}
-      <Reveal>
-        <div className="columns-2 gap-3">
-          {projects.map((project, index) => (
-            <MasonryCard
-              key={project.id}
-              project={project}
-              index={index}
-              onDragStart={handleDragStart}
-              onDragOver={handleDragOver}
-              onDrop={handleDrop}
-              onClick={handleProjectClick}
-            />
-          ))}
-        </div>
-      </Reveal>
-    </section>
   );
 }

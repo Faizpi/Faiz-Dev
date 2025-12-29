@@ -20,6 +20,8 @@ export default function GitHubStats() {
     return () => observer.disconnect();
   }, []);
 
+  const theme = isDark ? "dark" : "light";
+
   return (
     <section className="space-y-6">
       <Reveal>
@@ -36,32 +38,29 @@ export default function GitHubStats() {
       >
         <Reveal delay={0.2}>
           <img
-            src="https://ghchart.rshah.org/2196f3/Faizpi"
+            src={`https://ghchart.rshah.org/${isDark ? "2196f3" : "2563eb"}/Faizpi`}
             alt="GitHub Contributions"
             className="w-full rounded-lg"
+            loading="lazy"
           />
         </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 gap-4">
           <Reveal delay={0.4}>
             <img
-              src={`https://github-readme-stats.vercel.app/api?username=Faizpi&show_icons=true&theme=${
-                isDark ? "tokyonight" : "default"
-              }&hide_border=true&bg_color=00000000&title_color=2196f3&icon_color=2196f3&text_color=${
-                isDark ? "ffffff" : "000000"
-              }&layout=compact`}
+              src={`https://github-readme-stats.vercel.app/api?username=Faizpi&show_icons=true&hide_border=true&bg_color=${isDark ? "00000000" : "ffffff00"}&title_color=2196f3&icon_color=2196f3&text_color=${isDark ? "ffffff" : "1f2937"}&rank_icon=github`}
               alt="GitHub Stats"
               className="w-full rounded-lg"
+              loading="lazy"
             />
           </Reveal>
 
           <Reveal delay={0.6}>
             <img
-              src={`https://streak-stats.demolab.com/?user=Faizpi&theme=${
-                isDark ? "tokyonight" : "default"
-              }&hide_border=true&background=00000000&ring=2196f3&fire=2196f3&currStreakLabel=2196f3`}
+              src={`https://github-readme-streak-stats.herokuapp.com/?user=Faizpi&hide_border=true&background=${isDark ? "00000000" : "ffffff00"}&ring=2196f3&fire=2196f3&currStreakLabel=${isDark ? "ffffff" : "1f2937"}&sideLabels=${isDark ? "ffffff" : "1f2937"}&currStreakNum=${isDark ? "ffffff" : "1f2937"}&sideNums=${isDark ? "ffffff" : "1f2937"}&dates=${isDark ? "9ca3af" : "6b7280"}`}
               alt="GitHub Streak"
               className="w-full rounded-lg"
+              loading="lazy"
             />
           </Reveal>
         </div>
