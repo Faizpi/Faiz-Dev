@@ -2,7 +2,7 @@ import React from "react";
 import About from "./components/About";
 import Experience from "./components/Experience";
 import Links from "./components/Links";
-import Intro from "./components/Intro/Intro"; // ⬅️ ini dia
+import Intro from "./components/Intro/Intro"; 
 import Skills from "./components/Skills";
 import GitHubStats from "./components/GitHubStats";
 import ScrollButtons from "./components/ScrollButtons";

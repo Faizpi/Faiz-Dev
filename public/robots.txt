@@ -1,3 +1,15 @@
+# Portfolio Muhammad Faiz Bintang Pratama
+# https://faizpratama.me/
+
 User-agent: *
 Allow: /
+
+# Sitemaps
 Sitemap: https://faizpratama.me/sitemap.xml
+
+# Disallow unnecessary paths
+Disallow: /static/js/*.map
+Disallow: /static/css/*.map
+
+# Host
+Host: https://faizpratama.me/
