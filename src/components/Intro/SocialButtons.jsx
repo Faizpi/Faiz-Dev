@@ -1,6 +1,17 @@
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaFileAlt, FaEnvelope } from "react-icons/fa";
 
+const glassStyle = {
+  background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
+  backdropFilter: 'blur(20px) saturate(180%)',
+  WebkitBackdropFilter: 'blur(20px) saturate(180%)',
+  boxShadow: `
+    0 8px 32px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.1)
+  `,
+};
+
 export default function SocialButtons() {
   const buttons = [
     {
@@ -37,15 +48,13 @@ export default function SocialButtons() {
           download={btn.download}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
-          className="flex items-center justify-start gap-2 text-xs px-3 py-1 rounded-lg
-                     border border-gray-400/40 dark:border-white/30
-                     bg-black/5 dark:bg-white/10 
-                     backdrop-blur-md
+          className="flex items-center justify-start gap-2 text-xs px-3 py-1 rounded-xl
+                     border border-white/30 dark:border-white/20
                      text-black dark:text-white
-                     shadow-lg shadow-black/5 dark:shadow-white/5
-                     hover:bg-black/10 dark:hover:bg-white/20 
+                     hover:border-white/50 
                      transition-all duration-300
                      flex-1 basis-[48%] h-8"
+          style={glassStyle}
         >
           {btn.icon} {btn.label}
         </motion.a>
