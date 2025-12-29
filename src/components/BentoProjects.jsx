@@ -177,7 +177,7 @@ const PROJECTS = [
 ];
 
 // 🧩 Masonry Card Component (Pinterest Style)
-const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick }) => {
+const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick, isDragging }) => {
   // Variasi tinggi berdasarkan konten untuk efek masonry
   const getAspectRatio = () => {
     switch (project.size) {
@@ -192,7 +192,12 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick 
       layout
       layoutId={`project-${project.id}`}
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
+      animate={{ 
+        opacity: isDragging ? 0.4 : 1, 
+        y: 0,
+        scale: isDragging ? 0.95 : 1,
+        rotate: isDragging ? 2 : 0
+      }}
       exit={{ opacity: 0, y: -20 }}
       transition={{ 
         type: "spring", 
@@ -205,12 +210,14 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick 
       onDragOver={onDragOver}
       onDrop={(e) => onDrop(e, index)}
       onClick={() => onClick(project)}
-      className="break-inside-avoid mb-3 group cursor-pointer"
+      className="break-inside-avoid mb-3 group cursor-grab active:cursor-grabbing select-none"
+      style={{ touchAction: 'none' }}
     >
       <div className={`relative rounded-2xl overflow-hidden 
         dark:bg-neutral-900 bg-neutral-100
         hover:ring-2 hover:ring-blue-500/50 
-        transition-all duration-300 transform hover:scale-[1.02]`}
+        transition-all duration-300 transform hover:scale-[1.02]
+        ${isDragging ? 'ring-2 ring-blue-400 shadow-2xl' : ''}`}
       >
         {/* Image Container */}
         <div className={`relative ${getAspectRatio()} overflow-hidden`}>
@@ -218,16 +225,30 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick 
             src={project.image.src}
             alt={project.title}
             className="w-full h-full object-cover transition-transform duration-500 
-              group-hover:scale-110"
+              group-hover:scale-110 pointer-events-none"
             draggable="false"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
           
           {/* Year Badge */}
           <span className="absolute top-3 left-3 px-2.5 py-1 text-xs font-medium 
-            rounded-full bg-black/40 backdrop-blur-md text-white border border-white/10">
+            rounded-full bg-black/40 backdrop-blur-md text-white border border-white/10 pointer-events-none">
             {project.year}
           </span>
+
+          {/* Drag Indicator - Visible on hover */}
+          <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+            <div className="flex flex-col gap-0.5 p-2 rounded-lg bg-black/40 backdrop-blur-md border border-white/10">
+              <div className="flex gap-0.5">
+                <div className="w-1 h-1 rounded-full bg-white/60"></div>
+                <div className="w-1 h-1 rounded-full bg-white/60"></div>
+              </div>
+              <div className="flex gap-0.5">
+                <div className="w-1 h-1 rounded-full bg-white/60"></div>
+                <div className="w-1 h-1 rounded-full bg-white/60"></div>
+              </div>
+            </div>
+          </div>
 
           {/* Link Icon */}
           {project.link && (
@@ -236,7 +257,7 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick 
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="absolute top-3 right-3 p-2 rounded-full 
+              className="absolute bottom-3 right-3 p-2 rounded-full 
                 bg-black/40 backdrop-blur-md text-white border border-white/10
                 opacity-0 group-hover:opacity-100 transition-all duration-300
                 hover:bg-white/20 hover:scale-110"
@@ -246,7 +267,7 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick 
           )}
 
           {/* Content Overlay */}
-          <div className="absolute bottom-0 left-0 right-0 p-4">
+          <div className="absolute bottom-0 left-0 right-0 p-4 pointer-events-none">
             <h3 className="font-bold text-white text-base leading-tight mb-1">
               {project.title}
             </h3>
@@ -287,6 +308,10 @@ export default function ProjectsBento({ onProjectClick }) {
     setDraggedIndex(index);
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("text/plain", index);
+    // Set custom drag image (optional - makes it look better)
+    const dragImage = e.currentTarget.cloneNode(true);
+    dragImage.style.opacity = "0.5";
+    e.dataTransfer.setDragImage(dragImage, 0, 0);
   }, []);
 
   const handleDragOver = useCallback((e) => {
@@ -306,6 +331,10 @@ export default function ProjectsBento({ onProjectClick }) {
     });
     setDraggedIndex(null);
   }, [draggedIndex]);
+
+  const handleDragEnd = useCallback(() => {
+    setDraggedIndex(null);
+  }, []);
 
   // Handle project click - navigate to detail page
   const handleProjectClick = useCallback((project) => {
@@ -339,6 +368,7 @@ export default function ProjectsBento({ onProjectClick }) {
               onDragOver={handleDragOver}
               onDrop={handleDrop}
               onClick={handleProjectClick}
+              isDragging={draggedIndex === index}
             />
           ))}
         </div>
