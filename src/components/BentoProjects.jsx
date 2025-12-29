@@ -1,4 +1,4 @@
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useRef } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
@@ -178,17 +178,35 @@ const PROJECTS = [
 
 // 🧩 Masonry Card Component (Pinterest Style)
 const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick, isDragging }) => {
-  const [isMobile, setIsMobile] = useState(false);
+  const dragHandleRef = useRef(null);
+  const [isDragHandleActive, setIsDragHandleActive] = useState(false);
 
-  // Check if mobile on mount
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  const handleDragHandleMouseDown = (e) => {
+    if (e.button !== 0) return; // Only left mouse button
+    setIsDragHandleActive(true);
+    onDragStart(e, index);
+  };
+
+  const handleDragHandleMouseUp = () => {
+    setIsDragHandleActive(false);
+  };
+
+  const handleDragHandleTouchStart = (e) => {
+    setIsDragHandleActive(true);
+    // Convert touch to drag for better compatibility
+    const touch = e.touches[0];
+    const mouseEvent = new MouseEvent('dragstart', {
+      bubbles: true,
+      cancelable: true,
+      clientX: touch.clientX,
+      clientY: touch.clientY,
+    });
+    onDragStart(mouseEvent, index);
+  };
+
+  const handleDragHandleTouchEnd = () => {
+    setIsDragHandleActive(false);
+  };
 
   // Variasi tinggi berdasarkan konten untuk efek masonry
   const getAspectRatio = () => {
@@ -217,12 +235,10 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
         damping: 25,
         delay: index * 0.03 
       }}
-      draggable={!isMobile}
-      onDragStart={(e) => !isMobile && onDragStart(e, index)}
       onDragOver={onDragOver}
-      onDrop={(e) => !isMobile && onDrop(e, index)}
+      onDrop={(e) => onDrop(e, index)}
       onClick={() => onClick(project)}
-      className={`break-inside-avoid mb-3 group select-none ${!isMobile ? 'cursor-grab active:cursor-grabbing' : ''}`}
+      className="break-inside-avoid mb-3 group select-none"
     >
       <div className={`relative rounded-2xl overflow-hidden 
         dark:bg-neutral-900 bg-neutral-100
@@ -247,16 +263,30 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
             {project.year}
           </span>
 
-          {/* Drag Indicator - Visible on hover */}
-          <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-            <div className="flex flex-col gap-0.5 p-2 rounded-lg bg-black/40 backdrop-blur-md border border-white/10">
+          {/* Drag Handle - Interactive */}
+          <div 
+            ref={dragHandleRef}
+            draggable
+            onDragStart={handleDragHandleMouseDown}
+            onMouseDown={handleDragHandleMouseDown}
+            onMouseUp={handleDragHandleMouseUp}
+            onMouseLeave={handleDragHandleMouseUp}
+            onTouchStart={handleDragHandleTouchStart}
+            onTouchEnd={handleDragHandleTouchEnd}
+            className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 cursor-grab active:cursor-grabbing select-none"
+            title="Drag to reorder"
+          >
+            <div className={`flex flex-col gap-0.5 p-2.5 rounded-lg backdrop-blur-md border transition-all
+              ${isDragHandleActive 
+                ? 'bg-blue-500/50 border-blue-400 shadow-lg shadow-blue-500/30' 
+                : 'bg-black/40 border-white/10 hover:bg-black/60 hover:border-white/20'}`}>
               <div className="flex gap-0.5">
-                <div className="w-1 h-1 rounded-full bg-white/60"></div>
-                <div className="w-1 h-1 rounded-full bg-white/60"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-white/80"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-white/80"></div>
               </div>
               <div className="flex gap-0.5">
-                <div className="w-1 h-1 rounded-full bg-white/60"></div>
-                <div className="w-1 h-1 rounded-full bg-white/60"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-white/80"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-white/80"></div>
               </div>
             </div>
           </div>
