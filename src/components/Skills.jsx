@@ -25,10 +25,6 @@ const skillLogos = [
   { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", alt: "Figma", title: "Figma" },
 ];
 
-// Split logos for two rows
-const firstRowLogos = skillLogos.slice(0, 8);
-const secondRowLogos = skillLogos.slice(8);
-
 export default function Skills() {
   return (
     <section className="space-y-6">
@@ -37,31 +33,16 @@ export default function Skills() {
       </Reveal>
 
       <Reveal>
-        <div className="space-y-4">
-          {/* First Row - Left Direction */}
-          <LogoLoop
-            logos={firstRowLogos}
-            speed={80}
-            direction="left"
-            logoHeight={40}
-            gap={40}
-            hoverSpeed={0}
-            fadeOut
-            ariaLabel="Technical skills - Row 1"
-          />
-          
-          {/* Second Row - Right Direction */}
-          <LogoLoop
-            logos={secondRowLogos}
-            speed={80}
-            direction="right"
-            logoHeight={40}
-            gap={40}
-            hoverSpeed={0}
-            fadeOut
-            ariaLabel="Technical skills - Row 2"
-          />
-        </div>
+        <LogoLoop
+          logos={skillLogos}
+          speed={60}
+          direction="left"
+          logoHeight={28}
+          gap={32}
+          hoverSpeed={0}
+          fadeOut
+          ariaLabel="Technical skills"
+        />
       </Reveal>
     </section>
   );
