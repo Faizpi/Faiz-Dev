@@ -1,100 +1,66 @@
 // src/Skills.jsx
-import { useState } from "react";
 import Reveal from "./Reveal";
+import LogoLoop from "./LogoLoop";
 
-// Asumsi Anda punya komponen Reveal.js atau framer-motion.
-// Jika tidak, Anda bisa hapus tag <Reveal> dan </Reveal>.
-
-
-const categories = [
-  // ... (data skills Anda tetap sama)
-  {
-    title: "Programming Languages",
-    skills: [
-      { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
-      { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
-      { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
-      { name: "PHP", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
-      { name: "Dart", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg" },
-    ],
-  },
-  {
-    title: "Frameworks & Libraries",
-    skills: [
-      { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-      { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
-      { name: "Express", icon: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png" },
-      { name: "Laravel", icon: "https://cdn.simpleicons.org/laravel/FF2D20" },
-      { name: "Tailwind", icon: "https://cdn.simpleicons.org/tailwindcss/38BDF8" },
-      { name: "Flutter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" },
-    ],
-  },
-  {
-    title: "Databases & Tools",
-    skills: [
-      { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-      { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-      { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-      { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-      { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
-    ],
-  },
+// Skills data converted to LogoLoop format
+const skillLogos = [
+  // Programming Languages
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg", alt: "HTML", title: "HTML" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg", alt: "CSS", title: "CSS" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg", alt: "JavaScript", title: "JavaScript" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg", alt: "PHP", title: "PHP" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dart/dart-original.svg", alt: "Dart", title: "Dart" },
+  // Frameworks & Libraries
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", alt: "React", title: "React" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg", alt: "Node.js", title: "Node.js" },
+  { src: "https://upload.wikimedia.org/wikipedia/commons/6/64/Expressjs.png", alt: "Express", title: "Express" },
+  { src: "https://cdn.simpleicons.org/laravel/FF2D20", alt: "Laravel", title: "Laravel" },
+  { src: "https://cdn.simpleicons.org/tailwindcss/38BDF8", alt: "Tailwind", title: "Tailwind CSS" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg", alt: "Flutter", title: "Flutter" },
+  // Databases & Tools
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg", alt: "MySQL", title: "MySQL" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg", alt: "MongoDB", title: "MongoDB" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg", alt: "Git", title: "Git" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", alt: "GitHub", title: "GitHub" },
+  { src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", alt: "Figma", title: "Figma" },
 ];
 
-// Komponen kecil untuk satu item skill, agar tidak duplikasi kode
-const SkillItem = ({ skill }) => (
-  <div className="group relative inline-flex w-20 flex-shrink-0 flex-col items-center">
-    {/* Icon */}
-    <img
-      src={skill.icon}
-      alt={skill.name}
-      className="h-16 w-16 object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
-    />
-    {/* Nama skill di bawah icon */}
-    <span className="mt-1 text-xs text-gray-500 group-hover:text-black dark:text-gray-400 dark:group-hover:text-white">
-      {skill.name}
-    </span>
-    {/* Tooltip yang muncul di atas saat hover */}
-    <div className="absolute bottom-16 z-10 hidden whitespace-nowrap rounded bg-gray-800 px-2 py-1 text-xs text-white group-hover:flex">
-      {skill.name}
-    </div>
-  </div>
-);
-
+// Split logos for two rows
+const firstRowLogos = skillLogos.slice(0, 8);
+const secondRowLogos = skillLogos.slice(8);
 
 export default function Skills() {
-  const allSkills = categories.flatMap((cat) => cat.skills);
-  const halfwayPoint = Math.ceil(allSkills.length / 2);
-  const skillsFirstRow = allSkills.slice(0, halfwayPoint);
-  const skillsSecondRow = allSkills.slice(halfwayPoint);
-
   return (
     <section className="space-y-6">
-      {/* Judul dikembalikan seperti semula */}
       <Reveal>
         <h2 className="text-sm font-bold text-gray-900 dark:text-white">Skills</h2>
       </Reveal>
 
-      {/* Animasi skill dibungkus Reveal */}
       <Reveal>
-        <div
-          className="relative w-full overflow-hidden py-4 [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
-        >
-          <div className="flex flex-col gap-6">
-            {/* Baris Pertama */}
-            <div className="flex w-max animate-scroll-left gap-6 hover:[animation-play-state:paused]">
-              {[...skillsFirstRow, ...skillsFirstRow].map((skill, idx) => (
-                <SkillItem key={`first-${idx}`} skill={skill} />
-              ))}
-            </div>
-
-            {/* Baris Kedua */}
-            <div className="flex w-max animate-scroll-right gap-6 hover:[animation-play-state:paused]">
-              {[...skillsSecondRow, ...skillsSecondRow].map((skill, idx) => (
-                <SkillItem key={`second-${idx}`} skill={skill} />
-              ))}
-            </div>
-          </div>
+        <div className="space-y-4">
+          {/* First Row - Left Direction */}
+          <LogoLoop
+            logos={firstRowLogos}
+            speed={80}
+            direction="left"
+            logoHeight={40}
+            gap={40}
+            hoverSpeed={0}
+            fadeOut
+            ariaLabel="Technical skills - Row 1"
+          />
+          
+          {/* Second Row - Right Direction */}
+          <LogoLoop
+            logos={secondRowLogos}
+            speed={80}
+            direction="right"
+            logoHeight={40}
+            gap={40}
+            hoverSpeed={0}
+            fadeOut
+            ariaLabel="Technical skills - Row 2"
+          />
         </div>
       </Reveal>
     </section>
