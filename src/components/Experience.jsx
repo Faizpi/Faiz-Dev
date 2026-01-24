@@ -41,24 +41,31 @@ export default function Experience() {
               <h2 className="text-sm font-bold dark:text-white text-black">Education</h2>
             </Reveal>
             <Reveal>
-              <div className="grid grid-cols-12 gap-4 items-start py-2">
-                <div className="col-span-2 text-xs dark:text-gray-400 text-gray-700 pt-2">
-                  2023 – Present
-                </div>
-                <div className="col-span-2 flex justify-center">
+              <div className="flex gap-6 items-start">
+                <div className="flex flex-col items-center w-28 text-center">
                   <img
                     src={`${process.env.PUBLIC_URL}/Untirta.png`}
                     alt="Untirta"
-                    className="w-10 h-10 object-contain rounded-full bg-white p-1"
+                    className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
                   />
+                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
+                    2023 –<br />Present
+                  </p>
                 </div>
-                <div className="col-span-8 space-y-1">
-                  <h3 className="text-sm font-semibold dark:text-white text-black">
-                    Universitas Sultan Ageng Tirtayasa
-                  </h3>
-                  <p className="text-xs dark:text-gray-400 text-gray-700">Cilegon, Banten</p>
-                  <p className="text-xs dark:text-gray-400 text-gray-700">S1 Informatika</p>
-                  <p className="text-xs dark:text-gray-400 text-gray-700">GPA 3.87 / 4.00</p>
+                <div className="space-y-3 flex-1">
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-semibold dark:text-white text-black">
+                      S1 Informatika
+                    </h3>
+                    <p className="text-xs dark:text-gray-400 text-gray-700">
+                      Universitas Sultan Ageng Tirtayasa · Cilegon, Banten
+                    </p>
+                  </div>
+                  <ul className="list-disc list-inside text-sm text-justify dark:text-gray-400 text-gray-700 space-y-1">
+                    <li>GPA 3.87 / 4.00</li>
+                    <li>Focused on Software Engineering and Web Development</li>
+                    <li>Active in organizational activities and projects</li>
+                  </ul>
                 </div>
               </div>
             </Reveal>

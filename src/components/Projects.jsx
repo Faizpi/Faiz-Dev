@@ -1,174 +1,282 @@
+import { useState } from "react";
 import Reveal from "./Reveal";
+import { 
+  Globe, 
+  Smartphone, 
+  Gamepad2, 
+  Palette,
+  ArrowUpRight 
+} from "lucide-react";
 
-function Projects() {
-  const projects = [
+// 🎨 Data Project dengan kategori
+const PROJECTS = {
+  "Web Development": [
     {
+      id: 1,
       year: "Ongoing",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
-      title: (
-        <a
-          href="https://faizpi.github.io/Faiz-Dev/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm font-semibold text-white underline hover:text-blue-400"
-        >
-          Faiz-Dev
-        </a>
-      ),
+      logo: `${process.env.PUBLIC_URL}/ppf.jpg`,
+      title: "Faiz-Dev",
+      subtitle: "Personal Portfolio Website",
       desc: "Personal portfolio website yang menampilkan profil, skill, project, serta informasi kontak secara interaktif dan modern.",
-      stack: "React • Tailwind CSS • Framer Motion • GitHub Pages",
+      tags: ["React", "Tailwind CSS", "Framer Motion", "GitHub Pages"],
       link: "https://github.com/Faizpi/Faiz-Dev",
-      platform: "GitHub",
     },
     {
+      id: 5,
       year: "Ongoing",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
+      logo: `${process.env.PUBLIC_URL}/sik1.png`,
+      title: "Bunching Label Plant 1",
+      subtitle: "Industrial Web Application",
+      desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dengan fitur barcode scanning dan export data.",
+      tags: ["Laravel", "Bootstrap", "MySQL"],
+      link: "https://github.com/Faizpi/bunching-label-tugas-akhir",
+    },
+    {
+      id: 6,
+      year: "Ongoing",
+      logo: `${process.env.PUBLIC_URL}/sik1.png`,
+      title: "Bunching Label Plant 2",
+      subtitle: "Industrial Web Application",
+      desc: "Aplikasi Web Based untuk memberi label pada kabel automobile Plant 2 dengan fitur laporan dan print view.",
+      tags: ["Laravel", "Bootstrap", "MySQL"],
+      link: "https://github.com/Faizpi/bunching-label-cable-plant2",
+    },
+    {
+      id: 7,
+      year: "Ongoing",
+      logo: `${process.env.PUBLIC_URL}/cat.png`,
       title: "Pendanaan Daerah",
-      desc: "Web platform simulasi dana desa menggunakan konsep blockchain dan validasi tahapan.",
-      stack: "MERN • Tailwind • Smart UI Flow",
+      subtitle: "Blockchain-based Platform",
+      desc: "Web platform simulasi dana desa menggunakan konsep blockchain dan validasi tahapan untuk transparansi.",
+      tags: ["MERN", "Tailwind", "Smart UI Flow"],
       link: "https://github.com/Faizpi/KTI-pendanaan_daerah",
-      platform: "GitHub",
     },
     {
-      year: "2025",
-      logo: "https://cdn.simpleicons.org/figma/FFFFFF",
-      title: "Bugarin",
-      desc: "Aplikasi mobile pelatihan dan kebugaran dengan fitur workout dan plan harian.",
-      stack: "Figma • UI/UX Design • Prototyping • Wireframing",
-      link: "https://www.figma.com/design/GWSnsK9ECzJ7fct4MomEcZ/BUGARIN?node-id=0-1&t=CHPPLCgQfDHsDayR-1",
-      platform: "Figma",
-    },
-    {
-      year: "2025",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
-      title: "Nusantara Hop",
-      desc: "Game platformer edukatif bertema nusantara dan gunung-gunung di Indonesia + Kuis.",
-      stack: "Unity 2D • C# • Tilemap",
-      link: "https://github.com/Faizpi/Nusantara-Hop",
-      platform: "GitHub",
-    },
-    {
+      id: 10,
       year: "2024",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
+      logo: `${process.env.PUBLIC_URL}/cat.png`,
       title: "Taskflow",
-      desc: "Task management sederhana berbasis web dengan sistem kategori dan kalender serta notifikasi.",
-      stack: "Laravel • MySQL",
+      subtitle: "Task Management System",
+      desc: "Task management sederhana berbasis web dengan sistem kategori, kalender, dan notifikasi.",
+      tags: ["Laravel", "MySQL"],
       link: "https://github.com/Faizpi/Task-Flow",
-      platform: "Figma",
     },
     {
+      id: 11,
       year: "2024",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
+      logo: `${process.env.PUBLIC_URL}/cat.png`,
       title: "Mini Games",
-      desc: "Web mini-games dashboard dengan login dan logout system.",
-      stack: "PHP • JavaScript • MySQL",
+      subtitle: "Web Gaming Platform",
+      desc: "Web mini-games dashboard dengan login dan logout system serta koleksi game browser.",
+      tags: ["PHP", "JavaScript", "MySQL"],
       link: "https://github.com/Faizpi/Login-and-Regist-form-to-Game-Dashboard",
-      platform: "GitHub",
     },
     {
+      id: 12,
       year: "2024",
-      logo: "https://cdn.simpleicons.org/github/FFFFFF",
+      logo: `${process.env.PUBLIC_URL}/cat.png`,
       title: "PointCademy",
+      subtitle: "E-Learning Platform",
       desc: "Website pembelajaran interaktif berbasis poin dan kuis untuk siswa SD, SMP, dan SMA.",
-      stack: "Html • Css • Javascript • Figma",
+      tags: ["Html", "Css", "Javascript", "Figma"],
       link: "https://github.com/Faizpi/PointCademy",
-      platform: "Github",
+    },
+  ],
+  "Mobile App": [
+    {
+      id: 2,
+      year: "2025",
+      logo: `${process.env.PUBLIC_URL}/targetku.jpg`,
+      title: "TargetKu",
+      subtitle: "Savings Management App",
+      desc: "Aplikasi mobile untuk mengelola tabungan target secara menyenangkan, efektif dan efisien dengan gamification.",
+      tags: ["Flutter", "Dart", "Firebase", "Mobile App"],
+      link: "https://github.com/Faizpi/",
     },
     {
+      id: 3,
       year: "2023",
-      logo: "https://cdn.simpleicons.org/figma/FFFFFF",
-      title: "K@bel",
-      desc: "Aplikasi mobile kantin dengan fitur login seller dan buyer.",
-      stack: "Figma • UI/UX Design • Prototyping • Wireframing",
-      link: "https://www.figma.com/design/3tysDmv7A60w33iGLOGwtT/Kantin_jawir?node-id=0-1&t=4NR5hczjUVlDKiRl-1",
-      platform: "Figma",
+      logo: `${process.env.PUBLIC_URL}/kny.jpg`,
+      title: "Kimetsu no Yaiba Gallery",
+      subtitle: "Anime Character Gallery",
+      desc: "Aplikasi mobile galeri karakter dari anime Kimetsu no Yaiba dengan detail info dan UI yang terinspirasi anime.",
+      tags: ["Flutter", "Dart", "Mobile App"],
+      link: "https://github.com/Faizpi/",
     },
-  ];
+    {
+      id: 4,
+      year: "2023",
+      logo: `${process.env.PUBLIC_URL}/livesc.jpg`,
+      title: "Sports Live Score",
+      subtitle: "Real-time Sports App",
+      desc: "Aplikasi mobile untuk melihat skor pertandingan olahraga secara langsung dengan update real-time.",
+      tags: ["Flutter", "Dart", "UI/UX"],
+      link: "https://github.com/Faizpi/",
+    },
+  ],
+  "Game Development": [
+    {
+      id: 9,
+      year: "2025",
+      logo: `${process.env.PUBLIC_URL}/cat.png`,
+      title: "Nusantara Hop",
+      subtitle: "Educational Platformer Game",
+      desc: "Game platformer edukatif bertema nusantara dan gunung-gunung Indonesia dengan fitur kuis.",
+      tags: ["Unity 2D", "C#", "Tilemap"],
+      link: "https://github.com/Faizpi/Nusantara-Hop",
+    },
+  ],
+  "UI/UX Design": [
+    {
+      id: 8,
+      year: "2025",
+      logo: `${process.env.PUBLIC_URL}/cat.png`,
+      title: "Bugarin",
+      subtitle: "Fitness App Design",
+      desc: "Desain aplikasi mobile pelatihan dan kebugaran dengan fitur workout dan plan harian.",
+      tags: ["Figma", "UI/UX Design", "Prototyping", "Wireframing"],
+      link: "https://www.figma.com/design/GWSnsK9ECzJ7fct4MomEcZ/BUGARIN",
+    },
+    {
+      id: 13,
+      year: "2023",
+      logo: `${process.env.PUBLIC_URL}/cat.png`,
+      title: "K@bel",
+      subtitle: "Canteen App Design",
+      desc: "Desain aplikasi mobile kantin dengan fitur login seller dan buyer untuk transaksi digital.",
+      tags: ["Figma", "UI/UX Design", "Prototyping", "Wireframing"],
+      link: "https://www.figma.com/design/3tysDmv7A60w33iGLOGwtT/Kantin_jawir",
+    },
+  ],
+};
 
-  const getPlatformIcon = (platform) => {
-    switch (platform.toLowerCase()) {
-      case "github":
-        return "https://cdn.simpleicons.org/github/FFFFFF";
-      case "figma":
-        return "https://cdn.simpleicons.org/figma/FFFFFF";
-      default:
-        return null;
-    }
-  };
+const tabs = [
+  { name: "Web Development", icon: <Globe size={20} /> },
+  { name: "Mobile App", icon: <Smartphone size={20} /> },
+  { name: "Game Development", icon: <Gamepad2 size={20} /> },
+  { name: "UI/UX Design", icon: <Palette size={20} /> },
+];
+
+function Projects({ onProjectClick }) {
+  const [activeTab, setActiveTab] = useState("Web Development");
+
+  const currentProjects = PROJECTS[activeTab] || [];
 
   return (
-    <section className="space-y-8">
-      <Reveal>
-        <h2 className="text-sm font-bold text-white">Projects</h2>
-      </Reveal>
+    <div className="flex flex-col md:flex-row gap-8">
+      {/* Sidebar */}
+      <div className="flex md:flex-col gap-4 md:w-10">
+        {tabs.map((tab) => (
+          <button
+            key={tab.name}
+            onClick={() => setActiveTab(tab.name)}
+            className={`flex items-center justify-center p-2 rounded-lg transition-colors duration-200 ${
+              activeTab === tab.name
+                ? "bg-white/10 dark:text-white text-black"
+                : "dark:text-gray-400 text-gray-700 hover:dark:text-white hover:text-black hover:bg-white/5"
+            }`}
+            title={tab.name}
+          >
+            {tab.icon}
+          </button>
+        ))}
+      </div>
 
-      {projects.map((project, i) => (
-        <Reveal delay={i * 0.07} key={i}>
-          <div className="grid grid-cols-12 gap-4 items-start py-3">
-            {/* Tahun */}
-            <div className="col-span-2 text-xs text-gray-500 pt-1">
-              {project.year}
+      {/* Content */}
+      <div className="flex-1 min-h-[200px]">
+        <section className="space-y-8">
+          <Reveal>
+            <div className="flex items-center justify-between">
+              <h2 className="text-sm font-bold dark:text-white text-black">{activeTab}</h2>
+              <span className="text-xs dark:text-gray-500 text-gray-400">
+                {currentProjects.length} projects
+              </span>
             </div>
+          </Reveal>
 
-            {/* Logo */}
-            <div className="col-span-2">
-              <img
-                src={project.logo}
-                alt={
-                  typeof project.title === "string" ? project.title : "Project"
-                }
-                className="w-10 h-10 object-contain"
-              />
-            </div>
-
-            {/* Detail */}
-            <div className="col-span-8 space-y-1">
-              <div className="flex items-center gap-2 flex-wrap">
-                <h3 className="text-sm font-semibold text-white">
-                  {project.title}
-                </h3>
-
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1 text-xs text-blue-400 hover:underline"
-                  >
-                    {project.platform} ↗
-                    <img
-                      src={getPlatformIcon(project.platform)}
-                      alt={project.platform}
-                      className="w-4 h-4"
-                    />
-                  </a>
-                )}
+          {currentProjects.map((project, index) => (
+            <Reveal key={project.id} delay={index * 0.1}>
+              <div 
+                className="flex gap-6 items-start group cursor-pointer hover:bg-white/5 rounded-lg p-2 -m-2 transition-all duration-200"
+                onClick={() => onProjectClick && onProjectClick(project.id)}
+              >
+                <div className="flex flex-col items-center w-28 text-center">
+                  <img
+                    src={project.logo}
+                    alt={project.title}
+                    className="w-12 h-12 mb-2 object-cover rounded-lg group-hover:scale-105 transition-transform duration-200"
+                  />
+                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
+                    {project.year}
+                  </p>
+                </div>
+                <div className="space-y-3 flex-1">
+                  <div className="space-y-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-sm font-semibold dark:text-white text-black group-hover:text-blue-400 transition-colors">
+                        {project.title}
+                      </h3>
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={(e) => e.stopPropagation()}
+                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                        >
+                          <ArrowUpRight size={14} className="dark:text-gray-400 text-gray-600 hover:text-blue-400" />
+                        </a>
+                      )}
+                    </div>
+                    <p className="text-xs dark:text-gray-400 text-gray-700">
+                      {project.subtitle}
+                    </p>
+                  </div>
+                  <p className="text-sm dark:text-gray-400 text-gray-700 text-justify">
+                    {project.desc}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="px-2 py-0.5 text-[10px] rounded-full 
+                          dark:bg-white/10 bg-black/10 dark:text-gray-300 text-gray-700"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               </div>
-              <p className="text-sm text-gray-400">{project.desc}</p>
-              <p className="text-xs text-gray-500">{project.stack}</p>
-            </div>
-          </div>
-        </Reveal>
-      ))}
+            </Reveal>
+          ))}
 
-      {/* Link ke Drive */}
-      <Reveal delay={projects.length * 0.13}>
-        <div className="pt-6">
-          <p className="text-xs text-gray-500">
-            Ingin melihat lebih banyak project saya? Silakan akses portofolio
-            lengkap saya dalam bentuk PDF di sini:{" "}
-            <a
-              href="https://bit.ly/Faiz-Pratama-Portofolio"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:underline"
-            >
-              Google Drive Portfolio ↗
-            </a>
-          </p>
-        </div>
-      </Reveal>
-    </section>
+          {currentProjects.length === 0 && (
+            <Reveal>
+              <p className="dark:text-gray-400 text-gray-700">No projects in this category yet.</p>
+            </Reveal>
+          )}
+
+          {/* Link ke Drive */}
+          <Reveal delay={currentProjects.length * 0.1 + 0.1}>
+            <div className="pt-6">
+              <p className="text-xs dark:text-gray-500 text-gray-600">
+                Ingin melihat lebih banyak project saya? Silakan akses portofolio
+                lengkap saya dalam bentuk PDF di sini:{" "}
+                <a
+                  href="https://bit.ly/Faiz-Pratama-Portofolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:underline"
+                >
+                  Google Drive Portfolio ↗
+                </a>
+              </p>
+            </div>
+          </Reveal>
+        </section>
+      </div>
+    </div>
   );
 }
 

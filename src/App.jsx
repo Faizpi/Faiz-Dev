@@ -9,7 +9,7 @@ import GitHubStats from "./components/GitHubStats";
 import ScrollButtons from "./components/ScrollButtons";
 import BottomNavbar from "./components/BottomNavbar";
 import Cursor from "./components/Cursor";
-import BentoProjects from "./components/BentoProjects";
+import Projects from "./components/Projects";
 import ProjectDetailPage from "./components/ProjectDetailPage";
 import ThemeToggle from "./components/ThemeToggle"; 
 
@@ -55,7 +55,7 @@ export default function App() {
                 <section id="GitHubStats"><GitHubStats /></section>
                 <section id="Experience"><Experience /></section>
                 <section id="Projects">
-                  <BentoProjects onProjectClick={handleProjectClick} />
+                  <Projects onProjectClick={handleProjectClick} />
                 </section>
                 <section id="Skills"><Skills /></section>
                 <section id="Links"><Links /></section>
