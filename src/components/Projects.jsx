@@ -157,7 +157,7 @@ const tabs = [
   { name: "UI/UX Design", icon: <Palette size={20} /> },
 ];
 
-function Projects({ onProjectClick }) {
+function Projects() {
   const [activeTab, setActiveTab] = useState("Web Development");
 
   const currentProjects = PROJECTS[activeTab] || [];
@@ -197,14 +197,13 @@ function Projects({ onProjectClick }) {
           {currentProjects.map((project, index) => (
             <Reveal key={project.id} delay={index * 0.1}>
               <div 
-                className="flex gap-6 items-start group cursor-pointer hover:bg-white/5 rounded-lg p-2 -m-2 transition-all duration-200"
-                onClick={() => onProjectClick && onProjectClick(project.id)}
+                className="flex gap-6 items-start group hover:bg-white/5 rounded-lg p-2 -m-2 transition-all duration-200"
               >
                 <div className="flex flex-col items-center w-28 text-center">
                   <img
                     src={project.logo}
                     alt={project.title}
-                    className="w-12 h-12 mb-2 object-cover rounded-lg group-hover:scale-105 transition-transform duration-200"
+                    className="w-12 h-12 mb-2 object-cover rounded-full group-hover:scale-105 transition-transform duration-200"
                   />
                   <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
                     {project.year}

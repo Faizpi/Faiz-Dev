@@ -61,7 +61,7 @@ export default function Experience() {
                       Universitas Sultan Ageng Tirtayasa · Cilegon, Banten
                     </p>
                   </div>
-                  <ul className="list-disc list-inside text-sm text-justify dark:text-gray-400 text-gray-700 space-y-1">
+                  <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
                     <li>GPA 3.87 / 4.00</li>
                     <li>Focused on Software Engineering and Web Development</li>
                     <li>Active in organizational activities and projects</li>
@@ -84,7 +84,7 @@ export default function Experience() {
                   <img
                     src={`${process.env.PUBLIC_URL}/HMIF.png`}
                     alt="HMIF Logo"
-                    className="w-12 h-12 mb-2 object-contain"
+                    className="w-12 h-12 mb-2 object-contain rounded-full"
                   />
                   <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
                     Mar 2025 –<br />Present
@@ -161,52 +161,86 @@ export default function Experience() {
             </Reveal>
             {[
               {
-                year: "Februari 2025",
+                year: "Oct 2025",
+                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+                institution: "Belajar Membuat Aplikasi Flutter untuk Pemula",
+                subtitle: "Dicoding Academy",
+                skills: ["Flutter", "Responsive"],
+              },
+              {
+                year: "Sep 2025",
+                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+                institution: "Belajar Dasar AI",
+                subtitle: "Dicoding Academy",
+                skills: ["Machine Learning", "Deep Learning"],
+              },
+              {
+                year: "Sep 2025",
+                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+                institution: "Memulai Pemrograman dengan Dart",
+                subtitle: "Dicoding Academy",
+                skills: ["Dart", "Object-Oriented Programming (OOP)"],
+              },
+              {
+                year: "Feb 2025",
                 logo: "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
-                institution: "AWS",
-                degree: "Fundamentals of Analytics on AWS",
-                desc: "Data lakes, data analytics, and AWS analytics services.",
+                institution: "Fundamentals of Analytics on AWS",
+                subtitle: "Amazon Web Services (AWS)",
+                skills: ["Data Lakes", "Data Analytics", "AWS Services"],
               },
               {
-                year: "Januari 2025",
+                year: "Jan 2025",
                 logo: `${process.env.PUBLIC_URL}/Udemy.png`,
-                institution: "Udemy",
-                degree: "The Complete 2024 Web Development Bootcamp",
-                desc: "HTML, CSS, JS, Node.js, MongoDB, Express.js, React.js, APIs, deployment.",
+                institution: "The Complete 2024 Web Development Bootcamp",
+                subtitle: "Udemy",
+                skills: ["HTML", "CSS", "JavaScript", "Node.js", "React.js"],
               },
               {
-                year: "Januari 2025",
+                year: "Jan 2025",
                 logo: `${process.env.PUBLIC_URL}/Udemy.png`,
-                institution: "Udemy",
-                degree: "Front-End Web Developer Bootcamp",
-                desc: "Frontend mastery using modern tools and best practices.",
+                institution: "Front-End Web Developer Bootcamp",
+                subtitle: "Udemy",
+                skills: ["Frontend Development", "Modern Tools", "Best Practices"],
               },
               {
-                year: "Desember 2024",
+                year: "Dec 2024",
                 logo: `${process.env.PUBLIC_URL}/Udemy.png`,
-                institution: "Udemy",
-                degree: "Basics of Database Design & Development",
-                desc: "Relational databases, ERD, normalization, SQL.",
+                institution: "Basics of Database Design & Development",
+                subtitle: "Udemy",
+                skills: ["Database", "ERD", "Normalization", "SQL"],
               },
             ].map((item, i) => (
-              <Reveal delay={i * 0.2} key={i}>
-                <div className="grid grid-cols-12 gap-4 items-start py-2">
-                  <div className="col-span-2 text-xs dark:text-gray-400 text-gray-700 pt-2">
-                    {item.year}
-                  </div>
-                  <div className="col-span-2 flex justify-center">
+              <Reveal delay={i * 0.1} key={i}>
+                <div className="flex gap-6 items-start">
+                  <div className="flex flex-col items-center w-28 text-center">
                     <img
                       src={item.logo}
                       alt={item.institution}
-                      className="w-10 h-10 object-contain rounded-full bg-white p-1"
+                      className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
                     />
+                    <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
+                      {item.year}
+                    </p>
                   </div>
-                  <div className="col-span-8 space-y-1">
-                    <h3 className="text-sm font-semibold dark:text-white text-black">
-                      {item.institution}
-                    </h3>
-                    <p className="text-xs dark:text-gray-400 text-gray-700">{item.degree}</p>
-                    <p className="text-xs dark:text-gray-400 text-gray-700">{item.desc}</p>
+                  <div className="space-y-3 flex-1">
+                    <div className="space-y-1">
+                      <h3 className="text-sm font-semibold dark:text-white text-black">
+                        {item.institution}
+                      </h3>
+                      <p className="text-xs dark:text-gray-400 text-gray-700">
+                        {item.subtitle}
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {item.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-2 py-0.5 text-[10px] rounded-full dark:bg-white/10 bg-black/10 dark:text-gray-300 text-gray-700"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </Reveal>
