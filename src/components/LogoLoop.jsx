@@ -275,6 +275,7 @@ export const LogoLoop = memo(
             className={cx(
               'inline-flex items-center',
               'motion-reduce:transition-none',
+              'grayscale dark:invert dark:brightness-200',
               scaleOnHover &&
                 'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
             )}
@@ -289,6 +290,7 @@ export const LogoLoop = memo(
               '[-webkit-user-drag:none] pointer-events-none',
               '[image-rendering:-webkit-optimize-contrast]',
               'motion-reduce:transition-none',
+              'grayscale dark:invert dark:brightness-200',
               scaleOnHover &&
                 'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
             )}
