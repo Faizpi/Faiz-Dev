@@ -197,13 +197,13 @@ function Projects() {
           {currentProjects.map((project, index) => (
             <Reveal key={project.id} delay={index * 0.1}>
               <div 
-                className="flex gap-6 items-start group hover:bg-white/5 rounded-lg p-2 -m-2 transition-all duration-200"
+                className="flex gap-6 items-start"
               >
                 <div className="flex flex-col items-center w-28 text-center">
                   <img
                     src={project.logo}
                     alt={project.title}
-                    className="w-12 h-12 mb-2 object-cover rounded-full group-hover:scale-105 transition-transform duration-200"
+                    className="w-12 h-12 mb-2 object-cover rounded-full"
                   />
                   <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
                     {project.year}
@@ -212,7 +212,7 @@ function Projects() {
                 <div className="space-y-3 flex-1">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2">
-                      <h3 className="text-sm font-semibold dark:text-white text-black group-hover:text-blue-400 transition-colors">
+                      <h3 className="text-sm font-semibold dark:text-white text-black">
                         {project.title}
                       </h3>
                       {project.link && (
@@ -221,9 +221,8 @@ function Projects() {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={(e) => e.stopPropagation()}
-                          className="opacity-0 group-hover:opacity-100 transition-opacity duration-200"
                         >
-                          <ArrowUpRight size={14} className="dark:text-gray-400 text-gray-600 hover:text-blue-400" />
+                          <ArrowUpRight size={14} className="dark:text-gray-400 text-gray-600" />
                         </a>
                       )}
                     </div>
