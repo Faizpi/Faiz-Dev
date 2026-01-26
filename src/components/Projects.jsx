@@ -14,7 +14,7 @@ const PROJECTS = {
     {
       id: 1,
       year: "Ongoing",
-      logo: `${process.env.PUBLIC_URL}/faiz.png`,
+      logo: `${process.env.PUBLIC_URL}/Faiz.png`,
       title: "Faiz-Dev",
       subtitle: "Personal Portfolio Website",
       desc: "Personal portfolio website yang menampilkan profil, skill, project, serta informasi kontak secara interaktif dan modern.",
@@ -44,7 +44,7 @@ const PROJECTS = {
     {
       id: 10,
       year: "2024",
-      logo: `${process.env.PUBLIC_URL}/tflow.png`,
+      logo: `${process.env.PUBLIC_URL}/cat.png`,
       title: "Taskflow",
       subtitle: "Task Management System",
       desc: "Task management sederhana berbasis web dengan sistem kategori, kalender, dan notifikasi.",
