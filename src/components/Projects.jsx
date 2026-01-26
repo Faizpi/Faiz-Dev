@@ -14,7 +14,7 @@ const PROJECTS = {
     {
       id: 1,
       year: "Ongoing",
-      logo: `${process.env.PUBLIC_URL}/ppf.jpg`,
+      logo: `${process.env.PUBLIC_URL}/faiz.png`,
       title: "Faiz-Dev",
       subtitle: "Personal Portfolio Website",
       desc: "Personal portfolio website yang menampilkan profil, skill, project, serta informasi kontak secara interaktif dan modern.",
@@ -24,7 +24,7 @@ const PROJECTS = {
     {
       id: 5,
       year: "Ongoing",
-      logo: `${process.env.PUBLIC_URL}/sik1.png`,
+      logo: `${process.env.PUBLIC_URL}/SIK.png`,
       title: "Bunching Label Plant 1",
       subtitle: "Industrial Web Application",
       desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dengan fitur barcode scanning dan export data.",
@@ -34,7 +34,7 @@ const PROJECTS = {
     {
       id: 6,
       year: "Ongoing",
-      logo: `${process.env.PUBLIC_URL}/sik1.png`,
+      logo: `${process.env.PUBLIC_URL}/SIK.png`,
       title: "Bunching Label Plant 2",
       subtitle: "Industrial Web Application",
       desc: "Aplikasi Web Based untuk memberi label pada kabel automobile Plant 2 dengan fitur laporan dan print view.",
@@ -44,7 +44,7 @@ const PROJECTS = {
     {
       id: 10,
       year: "2024",
-      logo: `${process.env.PUBLIC_URL}/cat.png`,
+      logo: `${process.env.PUBLIC_URL}/tflow.png`,
       title: "Taskflow",
       subtitle: "Task Management System",
       desc: "Task management sederhana berbasis web dengan sistem kategori, kalender, dan notifikasi.",
@@ -120,7 +120,7 @@ const PROJECTS = {
     {
       id: 8,
       year: "2025",
-      logo: `${process.env.PUBLIC_URL}/cat.png`,
+      logo: `${process.env.PUBLIC_URL}/bugarin.png`,
       title: "Bugarin",
       subtitle: "Fitness App Design",
       desc: "Desain aplikasi mobile pelatihan dan kebugaran dengan fitur workout dan plan harian.",
@@ -130,7 +130,7 @@ const PROJECTS = {
     {
       id: 13,
       year: "2023",
-      logo: `${process.env.PUBLIC_URL}/cat.png`,
+      logo: `${process.env.PUBLIC_URL}/k@bel.png`,
       title: "K@bel",
       subtitle: "Canteen App Design",
       desc: "Desain aplikasi mobile kantin dengan fitur login seller dan buyer untuk transaksi digital.",
