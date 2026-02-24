@@ -1,6 +1,5 @@
-// Import komponen Reveal dan DecayCard
 import Reveal from "./Reveal";
-import DecayCard from "./DecayCard"; // <-- PASTIKAN PATH INI BENAR
+import DecayCard from "./DecayCard";
 
 function About() {
   return (
@@ -10,7 +9,6 @@ function About() {
       </Reveal>
 
       <div className="flex flex-row items-center gap-6">
-        {/* Kolom Teks */}
         <div className="flex-1">
           <Reveal delay={0.2}>
             <p className="text-justify text-sm leading-relaxed text-gray-700 dark:text-gray-400">
@@ -19,14 +17,12 @@ function About() {
           </Reveal>
         </div>
 
-        {/* Kolom Gambar dengan DecayCard */}
         <div className="flex-shrink-0">
           <Reveal delay={0.2}>
-            {/* Ganti <img> dengan DecayCard di sini */}
             <DecayCard
-              width={128} // w-32 di Tailwind adalah 128px
-              height={240} // h-[200px] di Tailwind adalah 200px
-              image={`${process.env.PUBLIC_URL}/Faiz2.png`}
+              width={128}
+              height={240}
+              image={`${process.env.PUBLIC_URL}/faizpp.jpg`}
             />
           </Reveal>
         </div>

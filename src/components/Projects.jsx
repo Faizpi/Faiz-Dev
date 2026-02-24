@@ -1,14 +1,14 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
-import { 
-  Globe, 
-  Smartphone, 
-  Gamepad2, 
+import {
+  Globe,
+  Smartphone,
+  Gamepad2,
   Palette,
-  ArrowUpRight 
+  ArrowUpRight
 } from "lucide-react";
 
-// 🎨 Data Project dengan kategori
+
 const PROJECTS = {
   "Web Development": [
     {
@@ -154,17 +154,16 @@ function Projects() {
 
   return (
     <div className="flex flex-col md:flex-row gap-8">
-      {/* Sidebar */}
+
       <div className="flex md:flex-col gap-4 md:w-10">
         {tabs.map((tab) => (
           <button
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
-            className={`flex items-center justify-center p-2 rounded-lg transition-colors duration-200 ${
-              activeTab === tab.name
+            className={`flex items-center justify-center p-2 rounded-lg transition-colors duration-200 ${activeTab === tab.name
                 ? "bg-white/10 dark:text-white text-black"
                 : "dark:text-gray-400 text-gray-700 hover:dark:text-white hover:text-black hover:bg-white/5"
-            }`}
+              }`}
             title={tab.name}
           >
             {tab.icon}
@@ -172,7 +171,7 @@ function Projects() {
         ))}
       </div>
 
-      {/* Content */}
+
       <div className="flex-1 min-h-[200px]">
         <section className="space-y-8">
           <Reveal>
@@ -186,7 +185,7 @@ function Projects() {
 
           {currentProjects.map((project, index) => (
             <Reveal key={project.id} delay={index * 0.1}>
-              <div 
+              <div
                 className="flex gap-6 items-start"
               >
                 <div className="flex flex-col items-center w-28 text-center">
@@ -245,7 +244,7 @@ function Projects() {
             </Reveal>
           )}
 
-          {/* Link ke Drive */}
+
           <Reveal delay={currentProjects.length * 0.1 + 0.1}>
             <div className="pt-6">
               <p className="text-xs dark:text-gray-500 text-gray-600">

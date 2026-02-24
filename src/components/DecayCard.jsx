@@ -5,7 +5,7 @@ const DecayCard = ({ width = 300, height = 400, image = 'https://picsum.photos/3
 
   return (
     <div
-      className="relative overflow-hidden rounded-lg"
+      className="relative overflow-hidden"
       style={{ width: `${width}px`, height: `${height}px` }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

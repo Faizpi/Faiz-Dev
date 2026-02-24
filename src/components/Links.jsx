@@ -41,12 +41,12 @@ function Links() {
         {links.map((link, i) => (
           <Reveal delay={i * 0.1} key={i}>
             <div className="flex gap-6">
-              {/* Label kiri */}
+
               <span className="text-sm dark:text-gray-400 text-gray-700 w-24">
                 {link.label}
               </span>
 
-              {/* Nama link */}
+
               <a
                 href={link.href}
                 target="_blank"

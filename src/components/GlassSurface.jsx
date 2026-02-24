@@ -6,14 +6,14 @@ const useDarkMode = () => {
   useEffect(() => {
     if (typeof window === 'undefined') return;
 
-    // Check initial dark mode from document class
+
     const checkDarkMode = () => {
       setIsDark(document.documentElement.classList.contains('dark'));
     };
-    
+
     checkDarkMode();
 
-    // Watch for class changes on html element
+
     const observer = new MutationObserver(checkDarkMode);
     observer.observe(document.documentElement, {
       attributes: true,

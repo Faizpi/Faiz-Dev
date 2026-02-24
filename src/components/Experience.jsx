@@ -14,17 +14,16 @@ export default function Experience() {
 
   return (
     <div className="flex flex-col md:flex-row gap-8">
-      {/* Sidebar */}
+
       <div className="flex md:flex-col gap-4 md:w-10">
         {tabs.map((tab) => (
           <button
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
-            className={`flex items-center justify-center p-2 rounded-lg transition-colors duration-200 ${
-              activeTab === tab.name
+            className={`flex items-center justify-center p-2 rounded-lg transition-colors duration-200 ${activeTab === tab.name
                 ? "bg-white/10 dark:text-white text-black"
                 : "dark:text-gray-400 text-gray-700 hover:dark:text-white hover:text-black hover:bg-white/5"
-            }`}
+              }`}
             title={tab.name}
           >
             {tab.icon}
@@ -32,9 +31,9 @@ export default function Experience() {
         ))}
       </div>
 
-      {/* Konten */}
+
       <div className="flex-1 min-h-[200px]">
-        {/* Education */}
+
         {activeTab === "Education" && (
           <section className="space-y-8">
             <Reveal>
@@ -72,7 +71,7 @@ export default function Experience() {
           </section>
         )}
 
-        {/* Organizations */}
+
         {activeTab === "Organizations" && (
           <section className="space-y-8">
             <Reveal>
@@ -99,18 +98,18 @@ export default function Experience() {
                       Sultan Ageng Tirtayasa University · Cilegon, Banten
                     </p>
                   </div>
-                    <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
-                      <li>Produced digital content for internal and public organizational publications.</li>
-                      <li>Designed visuals for national holidays, campaigns, and tech-related educational content.</li>
-                      <li>Documented all organizational activities (photo/video), creating a digital archive.</li>
-                    </ul>
+                  <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
+                    <li>Produced digital content for internal and public organizational publications.</li>
+                    <li>Designed visuals for national holidays, campaigns, and tech-related educational content.</li>
+                    <li>Documented all organizational activities (photo/video), creating a digital archive.</li>
+                  </ul>
                 </div>
               </div>
             </Reveal>
           </section>
         )}
 
-        {/* Work Experience */}
+
         {activeTab === "Work Experience" && (
           <section className="space-y-8">
             <Reveal>
@@ -146,14 +145,14 @@ export default function Experience() {
           </section>
         )}
 
-        {/* Speaker */}
+
         {activeTab === "Speaker" && (
           <Reveal>
             <p className="dark:text-gray-400 text-gray-700">Belum ada data speaker.</p>
           </Reveal>
         )}
 
-        {/* Awards */}
+
         {activeTab === "Awards" && (
           <section className="space-y-8">
             <Reveal>

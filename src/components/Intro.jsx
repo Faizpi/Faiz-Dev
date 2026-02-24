@@ -10,7 +10,7 @@ import {
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
 
-// 🕒 Clock
+
 function Clock() {
   const [time, setTime] = useState(new Date());
   useEffect(() => {
@@ -70,13 +70,13 @@ export default function Intro() {
     };
 
     fetchWeather();
-    const interval = setInterval(fetchWeather, 60000); // refresh every minute
+    const interval = setInterval(fetchWeather, 60000);
     return () => clearInterval(interval);
   }, [API_KEY]);
 
   return (
     <div className="flex items-start gap-4">
-      {/* Profile Photo */}
+
       <motion.img
         src={`${process.env.PUBLIC_URL}/Faiz.png`}
         alt="Faiz"
@@ -85,14 +85,14 @@ export default function Intro() {
         transition={{ duration: 0.3 }}
       />
 
-      {/* Info Section */}
+
       <div className="pt-[2px]">
-        {/* Name */}
+
         <h1 className="text-lg font-semibold leading-tight text-black dark:text-white">
           Muhammad Faiz Bintang Pratama
         </h1>
 
-        {/* Typewriter */}
+
         <p className="text-sm mt-1 leading-tight text-gray-700 dark:text-gray-400">
           <Typewriter
             words={["UI/UX Designer", "Web Developer", "Mobile Developer"]}
@@ -105,13 +105,13 @@ export default function Intro() {
           />
         </p>
 
-        {/* Location */}
+
         <div className="mt-1 text-xs text-gray-600 dark:text-gray-400 flex items-center gap-2">
           <FaMapMarkerAlt size={14} />
           <span>Curug, Tangerang Regency, Banten, Indonesia</span>
         </div>
 
-        {/* Weather */}
+
         {weather ? (
           <motion.div
             className="mt-1 text-xs text-gray-600 dark:text-gray-400 flex items-center gap-2"
@@ -139,10 +139,10 @@ export default function Intro() {
           </div>
         )}
 
-        {/* Clock */}
+
         <Clock />
 
-        {/* Buttons */}
+
         <div className="flex flex-wrap gap-2 mt-3">
           {[
             {

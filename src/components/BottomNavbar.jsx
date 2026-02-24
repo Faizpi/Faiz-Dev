@@ -11,7 +11,7 @@ import {
   X,
 } from "lucide-react";
 
-// Glass effect styles
+
 const glassStyle = {
   background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
   backdropFilter: 'blur(20px) saturate(180%)',
@@ -51,7 +51,7 @@ const BottomNavbar = () => {
 
   return (
     <>
-      {/* Tombol burger */}
+
       <button
         onClick={() => setIsVisible(!isVisible)}
         className="fixed top-4 right-4 z-50 p-2 rounded-xl 
@@ -64,7 +64,7 @@ const BottomNavbar = () => {
         {isVisible ? <X size={20} /> : <Menu size={20} />}
       </button>
 
-      {/* Navbar */}
+
       <div
         className="fixed bottom-6 left-1/2 z-40 transition-all duration-[1200ms] ease-in-out"
         style={{
@@ -75,7 +75,7 @@ const BottomNavbar = () => {
           pointerEvents: isVisible ? "auto" : "none",
         }}
       >
-        <div 
+        <div
           className="rounded-full px-3 py-2 border border-white/30 dark:border-white/20"
           style={glassStyle}
         >
@@ -88,16 +88,15 @@ const BottomNavbar = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.section)}
-                  className={`group relative p-2 rounded-full transition-all duration-300 ${
-                    isActive
+                  className={`group relative p-2 rounded-full transition-all duration-300 ${isActive
                       ? "dark:bg-white/20 bg-black/20 dark:text-white text-gray-900 shadow-md"
                       : "dark:text-gray-200 text-gray-700 hover:dark:text-white hover:text-gray-900 hover:dark:bg-white/10 hover:bg-black/10"
-                  }`}
+                    }`}
                   aria-label={item.label}
                 >
                   <Icon size={14} strokeWidth={2} />
 
-                  {/* Tooltip */}
+
                   <div
                     className={`absolute -top-8 left-1/2 transform -translate-x-1/2 px-1.5 py-0.5 
                                 dark:bg-black/70 bg-white/90 dark:text-white text-gray-900 text-[10px] rounded opacity-0 

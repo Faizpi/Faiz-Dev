@@ -3,7 +3,7 @@ import { motion, useMotionValue, useTransform } from 'motion/react';
 import { ArrowUpRight } from 'lucide-react';
 import Reveal from './Reveal';
 
-// 🎨 Data Project
+
 const PROJECTS = [
   {
     year: "Ongoing",
@@ -142,7 +142,7 @@ const VELOCITY_THRESHOLD = 500;
 const GAP = 16;
 const SPRING_OPTIONS = { type: 'spring', stiffness: 300, damping: 30 };
 
-// 🧩 Kartu Project dengan efek 3D
+
 function CarouselItem({ item, index, itemWidth, trackItemOffset, x, transition }) {
   const range = [-(index + 1) * trackItemOffset, -index * trackItemOffset, -(index - 1) * trackItemOffset];
   const outputRange = [90, 0, -90];
@@ -159,7 +159,7 @@ function CarouselItem({ item, index, itemWidth, trackItemOffset, x, transition }
       }}
       transition={transition}
     >
-      {/* Gambar */}
+
       <div className="w-full aspect-[4/3] overflow-hidden">
         <img
           src={item.image.src}
@@ -169,7 +169,7 @@ function CarouselItem({ item, index, itemWidth, trackItemOffset, x, transition }
         />
       </div>
 
-      {/* Konten */}
+
       <div className="flex-grow flex flex-col p-3">
         <h3 className="text-sm font-bold dark:text-white text-gray-900 mb-1 line-clamp-1">
           {item.title}
@@ -193,7 +193,7 @@ function CarouselItem({ item, index, itemWidth, trackItemOffset, x, transition }
           )}
         </div>
 
-        {/* Footer */}
+
         <div className="flex justify-between items-center mt-auto pt-2 border-t dark:border-neutral-800 border-neutral-200">
           <span className="text-[10px] dark:text-gray-400 text-gray-600">
             {item.year}
@@ -216,7 +216,7 @@ function CarouselItem({ item, index, itemWidth, trackItemOffset, x, transition }
   );
 }
 
-// 🌀 Carousel Utama dengan efek 3D
+
 export default function Carousel({
   items = PROJECTS,
   baseWidth = 400,
@@ -358,7 +358,7 @@ export default function Carousel({
         </h2>
       </Reveal>
 
-      {/* Container Carousel dengan efek 3D */}
+
       <div
         ref={containerRef}
         className="relative overflow-hidden rounded-[24px] border border-neutral-800 dark:border-neutral-700 mx-auto"
@@ -399,7 +399,7 @@ export default function Carousel({
           ))}
         </motion.div>
 
-        {/* Indikator Dots */}
+
         <div className="flex w-full justify-center absolute bottom-4 left-0 right-0">
           <div className="flex gap-1.5">
             {items.map((_, index) => (

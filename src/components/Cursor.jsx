@@ -7,13 +7,13 @@ export default function Cursor() {
 
     const updateColors = () => {
       const isDark = document.documentElement.classList.contains("dark");
-      const color = isDark ? "#fff" : "#000"; 
+      const color = isDark ? "#fff" : "#000";
 
       dot.style.background = color;
       ring.style.border = `2px solid ${color}`;
     };
 
-    // Titik kecil
+
     Object.assign(dot.style, {
       position: "fixed",
       width: "6px",
@@ -25,7 +25,7 @@ export default function Cursor() {
       transform: "translate(-50%, -50%)",
     });
 
-    // Lingkaran besar
+
     Object.assign(ring.style, {
       position: "fixed",
       width: "30px",
@@ -73,7 +73,7 @@ export default function Cursor() {
       ring.style.transform = "translate(-50%, -50%) scale(1)";
     };
 
-    // Update warna pertama kali & setiap theme berubah
+
     updateColors();
     const observer = new MutationObserver(updateColors);
     observer.observe(document.documentElement, {

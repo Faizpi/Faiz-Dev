@@ -14,24 +14,24 @@ export default function ThemeToggle() {
   const toggleTheme = (e) => {
     const newTheme = theme === "dark" ? "light" : "dark";
 
-    // Hitung posisi klik
+
     const rect = e.currentTarget.getBoundingClientRect();
     const x = rect.left + rect.width / 2;
     const y = rect.top + rect.height / 2;
 
-    // Ukuran circle = diagonal layar * 2 → selalu nutup full
+
     const size = Math.sqrt(window.innerWidth ** 2 + window.innerHeight ** 2) * 2;
 
     setCircle({ x, y, size, newTheme });
 
-    // Ubah tema setelah circle nutup setengah animasi
+
     setTimeout(() => {
       setTheme(newTheme);
       localStorage.setItem("theme", newTheme);
       document.documentElement.classList.toggle("dark", newTheme === "dark");
     }, 500);
 
-    // Hapus circle setelah animasi selesai
+
     setTimeout(() => setCircle(null), 1000);
   };
 
@@ -44,7 +44,7 @@ export default function ThemeToggle() {
         {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
       </button>
 
-      {/* Circle animasi */}
+
       {circle && (
         <span
           className="pointer-events-none fixed rounded-full z-40"
@@ -61,7 +61,7 @@ export default function ThemeToggle() {
         />
       )}
 
-      {/* Keyframes animasi */}
+
       <style jsx>{`
         @keyframes circle-expand {
           to {

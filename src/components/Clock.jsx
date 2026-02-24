@@ -6,18 +6,18 @@ export default function Clock() {
   useEffect(() => {
     const interval = setInterval(() => {
       setTime(new Date());
-    }, 1000); // update tiap detik
+    }, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  // Format tanggal: 12 Sep 2025
+
   const formattedDate = time.toLocaleDateString("id-ID", {
     day: "2-digit",
     month: "short",
     year: "numeric",
   });
 
-  // Format jam: 14:32:10
+
   const formattedTime = time.toLocaleTimeString("id-ID", {
     hour: "2-digit",
     minute: "2-digit",

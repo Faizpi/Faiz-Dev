@@ -5,7 +5,7 @@ export default function GitHubStats() {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // cek kondisi awal
+
     setIsDark(document.documentElement.classList.contains("dark"));
 
     const observer = new MutationObserver(() => {

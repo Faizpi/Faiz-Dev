@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
 
-// 🎨 Data Project
+
 const PROJECTS = [
   {
     id: 1,
@@ -176,13 +176,13 @@ const PROJECTS = [
   },
 ];
 
-// 🧩 Masonry Card Component (Pinterest Style)
+
 const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick, isDragging }) => {
   const dragHandleRef = useRef(null);
   const [isDragHandleActive, setIsDragHandleActive] = useState(false);
 
   const handleDragHandleMouseDown = (e) => {
-    if (e.button !== 0) return; // Only left mouse button
+    if (e.button !== 0) return;
     setIsDragHandleActive(true);
     onDragStart(e, index);
   };
@@ -193,7 +193,6 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
 
   const handleDragHandleTouchStart = (e) => {
     setIsDragHandleActive(true);
-    // Convert touch to drag for better compatibility
     const touch = e.touches[0];
     const mouseEvent = new MouseEvent('dragstart', {
       bubbles: true,
@@ -208,7 +207,7 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
     setIsDragHandleActive(false);
   };
 
-  // Variasi tinggi berdasarkan konten untuk efek masonry
+
   const getAspectRatio = () => {
     switch (project.size) {
       case "large": return "aspect-[3/4]";
@@ -222,18 +221,18 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
       layout
       layoutId={`project-${project.id}`}
       initial={{ opacity: 0, y: 20 }}
-      animate={{ 
-        opacity: isDragging ? 0.4 : 1, 
+      animate={{
+        opacity: isDragging ? 0.4 : 1,
         y: 0,
         scale: isDragging ? 0.95 : 1,
         rotate: isDragging ? 2 : 0
       }}
       exit={{ opacity: 0, y: -20 }}
-      transition={{ 
-        type: "spring", 
-        stiffness: 300, 
+      transition={{
+        type: "spring",
+        stiffness: 300,
         damping: 25,
-        delay: index * 0.03 
+        delay: index * 0.03
       }}
       onDragOver={onDragOver}
       onDrop={(e) => onDrop(e, index)}
@@ -246,7 +245,7 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
         transition-all duration-300 transform hover:scale-[1.02]
         ${isDragging ? 'ring-2 ring-blue-400 shadow-2xl' : ''}`}
       >
-        {/* Image Container */}
+
         <div className={`relative ${getAspectRatio()} overflow-hidden`}>
           <img
             src={project.image.src}
@@ -256,15 +255,15 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
             draggable="false"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-          
-          {/* Year Badge */}
+
+
           <span className="absolute top-3 left-3 px-2.5 py-1 text-xs font-medium 
             rounded-full bg-black/40 backdrop-blur-md text-white border border-white/10 pointer-events-none">
             {project.year}
           </span>
 
-          {/* Drag Handle - Interactive */}
-          <div 
+
+          <div
             ref={dragHandleRef}
             draggable
             onDragStart={handleDragHandleMouseDown}
@@ -277,8 +276,8 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
             title="Drag to reorder"
           >
             <div className={`flex flex-col gap-0.5 p-2.5 rounded-lg backdrop-blur-md border transition-all
-              ${isDragHandleActive 
-                ? 'bg-blue-500/50 border-blue-400 shadow-lg shadow-blue-500/30' 
+              ${isDragHandleActive
+                ? 'bg-blue-500/50 border-blue-400 shadow-lg shadow-blue-500/30'
                 : 'bg-black/40 border-white/10 hover:bg-black/60 hover:border-white/20'}`}>
               <div className="flex gap-0.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-white/80"></div>
@@ -291,7 +290,7 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
             </div>
           </div>
 
-          {/* Link Icon */}
+
           {project.link && (
             <a
               href={project.link}
@@ -307,7 +306,7 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
             </a>
           )}
 
-          {/* Content Overlay */}
+
           <div className="absolute bottom-0 left-0 right-0 p-4 pointer-events-none">
             <h3 className="font-bold text-white text-base leading-tight mb-1">
               {project.title}
@@ -339,17 +338,16 @@ const MasonryCard = ({ project, index, onDragStart, onDragOver, onDrop, onClick,
   );
 };
 
-// 🌐 Main Bento Grid Component
+
 export default function ProjectsBento({ onProjectClick }) {
   const [projects, setProjects] = useState(PROJECTS);
   const [draggedIndex, setDraggedIndex] = useState(null);
 
-  // Drag handlers
+
   const handleDragStart = useCallback((e, index) => {
     setDraggedIndex(index);
     e.dataTransfer.effectAllowed = "move";
     e.dataTransfer.setData("text/plain", index);
-    // Set custom drag image (optional - makes it look better)
     const dragImage = e.currentTarget.cloneNode(true);
     dragImage.style.opacity = "0.5";
     e.dataTransfer.setDragImage(dragImage, 0, 0);
@@ -377,7 +375,7 @@ export default function ProjectsBento({ onProjectClick }) {
     setDraggedIndex(null);
   }, []);
 
-  // Handle project click - navigate to detail page
+
   const handleProjectClick = useCallback((project) => {
     if (onProjectClick) {
       onProjectClick(project.id);
@@ -397,7 +395,7 @@ export default function ProjectsBento({ onProjectClick }) {
         </div>
       </Reveal>
 
-      {/* Masonry Grid (Pinterest Style) */}
+
       <Reveal>
         <div className="columns-2 gap-3">
           {projects.map((project, index) => (

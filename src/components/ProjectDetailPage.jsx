@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ExternalLink, Github, Calendar, Tag, ChevronLeft, ChevronRight } from "lucide-react";
 import Reveal from "./Reveal";
 
-// 🎨 Data Project (same as BentoProjects)
+
 export const PROJECTS = [
   {
     id: 1,
@@ -178,7 +178,7 @@ export const PROJECTS = [
 
 export default function ProjectDetailPage({ projectId, onBack }) {
   const [currentIndex, setCurrentIndex] = useState(0);
-  
+
   useEffect(() => {
     const index = PROJECTS.findIndex(p => p.id === projectId);
     if (index !== -1) setCurrentIndex(index);
@@ -197,7 +197,7 @@ export default function ProjectDetailPage({ projectId, onBack }) {
     if (hasNext) setCurrentIndex(currentIndex + 1);
   };
 
-  // Keyboard navigation
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === "Escape") onBack();
@@ -217,7 +217,7 @@ export default function ProjectDetailPage({ projectId, onBack }) {
       exit={{ opacity: 0 }}
       className="space-y-8"
     >
-      {/* Back Button */}
+
       <Reveal>
         <button
           onClick={onBack}
@@ -229,7 +229,7 @@ export default function ProjectDetailPage({ projectId, onBack }) {
         </button>
       </Reveal>
 
-      {/* Project Image */}
+
       <Reveal delay={0.1}>
         <div className="relative rounded-2xl overflow-hidden">
           <img
@@ -247,9 +247,9 @@ export default function ProjectDetailPage({ projectId, onBack }) {
         </div>
       </Reveal>
 
-      {/* Project Info */}
+
       <div className="space-y-6">
-        {/* Header */}
+
         <Reveal delay={0.2}>
           <div>
             <h1 className="text-2xl font-bold dark:text-white text-gray-900 mb-2">
@@ -262,7 +262,7 @@ export default function ProjectDetailPage({ projectId, onBack }) {
           </div>
         </Reveal>
 
-        {/* Description */}
+
         <Reveal delay={0.3}>
           <div className="space-y-3">
             <h2 className="text-sm font-semibold dark:text-white text-gray-900">
@@ -274,7 +274,7 @@ export default function ProjectDetailPage({ projectId, onBack }) {
           </div>
         </Reveal>
 
-        {/* Features */}
+
         {project.features && (
           <Reveal delay={0.4}>
             <div className="space-y-3">
@@ -298,7 +298,7 @@ export default function ProjectDetailPage({ projectId, onBack }) {
           </Reveal>
         )}
 
-        {/* Tech Stack */}
+
         <Reveal delay={0.5}>
           <div className="space-y-3">
             <h2 className="text-sm font-semibold dark:text-white text-gray-900">
@@ -319,7 +319,7 @@ export default function ProjectDetailPage({ projectId, onBack }) {
           </div>
         </Reveal>
 
-        {/* Action Button */}
+
         {project.link && (
           <Reveal delay={0.6}>
             <a
@@ -340,31 +340,31 @@ export default function ProjectDetailPage({ projectId, onBack }) {
           </Reveal>
         )}
 
-        {/* Navigation */}
+
         <Reveal delay={0.7}>
           <div className="flex items-center justify-between pt-6 border-t dark:border-neutral-800 border-neutral-200">
             <button
               onClick={goToPrev}
               disabled={!hasPrev}
               className={`flex items-center gap-2 text-sm transition-colors
-                ${hasPrev 
-                  ? "dark:text-gray-300 text-gray-700 hover:text-blue-500" 
+                ${hasPrev
+                  ? "dark:text-gray-300 text-gray-700 hover:text-blue-500"
                   : "dark:text-gray-700 text-gray-300 cursor-not-allowed"}`}
             >
               <ChevronLeft className="w-4 h-4" />
               Sebelumnya
             </button>
-            
+
             <span className="text-xs dark:text-gray-500 text-gray-400">
               {currentIndex + 1} / {PROJECTS.length}
             </span>
-            
+
             <button
               onClick={goToNext}
               disabled={!hasNext}
               className={`flex items-center gap-2 text-sm transition-colors
-                ${hasNext 
-                  ? "dark:text-gray-300 text-gray-700 hover:text-blue-500" 
+                ${hasNext
+                  ? "dark:text-gray-300 text-gray-700 hover:text-blue-500"
                   : "dark:text-gray-700 text-gray-300 cursor-not-allowed"}`}
             >
               Selanjutnya
