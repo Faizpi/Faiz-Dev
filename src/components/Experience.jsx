@@ -21,8 +21,8 @@ export default function Experience() {
             key={tab.name}
             onClick={() => setActiveTab(tab.name)}
             className={`flex items-center justify-center p-2 rounded-lg transition-colors duration-200 ${activeTab === tab.name
-                ? "bg-white/10 dark:text-white text-black"
-                : "dark:text-gray-400 text-gray-700 hover:dark:text-white hover:text-black hover:bg-white/5"
+              ? "bg-white/10 dark:text-white text-black"
+              : "dark:text-gray-400 text-gray-700 hover:dark:text-white hover:text-black hover:bg-white/5"
               }`}
             title={tab.name}
           >
@@ -38,6 +38,30 @@ export default function Experience() {
           <section className="space-y-8">
             <Reveal>
               <h2 className="text-sm font-bold dark:text-white text-black">Education</h2>
+            </Reveal>
+            <Reveal>
+              <div className="flex gap-6 items-start">
+                <div className="flex flex-col items-center w-28 text-center">
+                  <img
+                    src={`${process.env.PUBLIC_URL}/DBS.png`}
+                    alt="DBS Foundation"
+                    className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
+                  />
+                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
+                    Jan 2026 –<br />Present
+                  </p>
+                </div>
+                <div className="space-y-3 flex-1">
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-semibold dark:text-white text-black">
+                      Full-Stack Web Developer Cohort
+                    </h3>
+                    <p className="text-xs dark:text-gray-400 text-gray-700">
+                      Coding Camp powered by DBS Foundation · Indonesia · Remote
+                    </p>
+                  </div>
+                </div>
+              </div>
             </Reveal>
             <Reveal>
               <div className="flex gap-6 items-start">
@@ -160,24 +184,59 @@ export default function Experience() {
             </Reveal>
             {[
               {
+                year: "Feb 2026",
+                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+                institution: "Belajar Dasar Pemrograman Web",
+                subtitle: "Dicoding Indonesia",
+                skills: ["Web Development"],
+              },
+              {
+                year: "Feb 2026",
+                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+                institution: "Belajar Dasar Cloud dan Gen AI di AWS",
+                subtitle: "Dicoding Indonesia",
+                skills: ["Generative AI", "Cloud Computing"],
+              },
+              {
+                year: "Feb 2026",
+                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+                institution: "Pengenalan ke Logika Pemrograman (Programming Logic 101)",
+                subtitle: "Dicoding Indonesia",
+                skills: ["Logic Programming"],
+              },
+              {
+                year: "Feb 2026",
+                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+                institution: "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
+                subtitle: "Dicoding Indonesia",
+                skills: ["Software Engineers"],
+              },
+              {
+                year: "Feb 2026",
+                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+                institution: "Belajar Fundamental Aplikasi Flutter",
+                subtitle: "Dicoding Indonesia",
+                skills: ["Flutter", "Mobile Application Development"],
+              },
+              {
                 year: "Oct 2025",
                 logo: `${process.env.PUBLIC_URL}/dicoding.png`,
                 institution: "Belajar Membuat Aplikasi Flutter untuk Pemula",
-                subtitle: "Dicoding Academy",
+                subtitle: "Dicoding Indonesia",
                 skills: ["Flutter", "Responsive"],
               },
               {
                 year: "Sep 2025",
                 logo: `${process.env.PUBLIC_URL}/dicoding.png`,
                 institution: "Belajar Dasar AI",
-                subtitle: "Dicoding Academy",
+                subtitle: "Dicoding Indonesia",
                 skills: ["Machine Learning", "Deep Learning"],
               },
               {
                 year: "Sep 2025",
                 logo: `${process.env.PUBLIC_URL}/dicoding.png`,
                 institution: "Memulai Pemrograman dengan Dart",
-                subtitle: "Dicoding Academy",
+                subtitle: "Dicoding Indonesia",
                 skills: ["Dart", "Object-Oriented Programming (OOP)"],
               },
               {

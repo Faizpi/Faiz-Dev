@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import {
   Home,
   User,
-  BarChart3,
   Briefcase,
   Code,
   Lightbulb,
@@ -30,7 +29,7 @@ const BottomNavbar = () => {
   const navItems = [
     { id: "Intro", icon: Home, label: "Home", section: "Intro" },
     { id: "About", icon: User, label: "About", section: "About" },
-    { id: "GitHubStats", icon: BarChart3, label: "Stats", section: "GitHubStats" },
+
     { id: "Experience", icon: Briefcase, label: "Experience", section: "Experience" },
     { id: "Projects", icon: Code, label: "Projects", section: "Projects" },
     { id: "Skills", icon: Lightbulb, label: "Skills", section: "Skills" },
@@ -89,8 +88,8 @@ const BottomNavbar = () => {
                   key={item.id}
                   onClick={() => scrollToSection(item.section)}
                   className={`group relative p-2 rounded-full transition-all duration-300 ${isActive
-                      ? "dark:bg-white/20 bg-black/20 dark:text-white text-gray-900 shadow-md"
-                      : "dark:text-gray-200 text-gray-700 hover:dark:text-white hover:text-gray-900 hover:dark:bg-white/10 hover:bg-black/10"
+                    ? "dark:bg-white/20 bg-black/20 dark:text-white text-gray-900 shadow-md"
+                    : "dark:text-gray-200 text-gray-700 hover:dark:text-white hover:text-gray-900 hover:dark:bg-white/10 hover:bg-black/10"
                     }`}
                   aria-label={item.label}
                 >
