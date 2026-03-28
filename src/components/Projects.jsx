@@ -221,12 +221,12 @@ function Projects() {
                 Ingin melihat lebih banyak project saya? Silakan akses portofolio
                 lengkap saya dalam bentuk PDF di sini:{" "}
                 <a
-                  href="https://bit.ly/Faiz-Pratama-Portofolio"
+                  href="https://github.com/Faizpi/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-400 hover:underline"
                 >
-                  Google Drive Portfolio ↗
+                  Github ↗
                 </a>
               </p>
             </div>
