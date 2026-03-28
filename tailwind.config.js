@@ -3,9 +3,6 @@ module.exports = {
   darkMode: "class",
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    fontFamily: {
-      mono: ["'JetBrains Mono'", "monospace"],
-    },
     extend: {
       keyframes: {
         // Animasi untuk baris pertama (kiri ke kanan)
