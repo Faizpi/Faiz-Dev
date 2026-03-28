@@ -50,7 +50,7 @@ const PROJECTS = {
       title: "Amara Baby Shop",
       subtitle: "Manajemen Inventaris & POS Toko Perlengkapan Bayi",
       desc: "Aplikasi mobile yang cocok untuk menjadi solusi lengkap untuk mengelola stok, penjualan, dan bisnis multi-warung Anda.",
-      tags: ["Flutter", "Dart", "Firebase", "Mobile App"],
+      tags: ["Flutter", "Firebase"],
       link: "https://github.com/Faizpi/babyshop",
     },
     {
@@ -60,7 +60,7 @@ const PROJECTS = {
       title: "TargetKu",
       subtitle: "Savings Management App",
       desc: "Aplikasi mobile untuk mengelola tabungan target secara menyenangkan, efektif dan efisien dengan gamification.",
-      tags: ["Flutter", "Dart", "Firebase", "Mobile App"],
+      tags: ["Flutter", "Firebase"],
       link: "https://github.com/Faizpi/",
     },
     {
@@ -70,7 +70,7 @@ const PROJECTS = {
       title: "Kimetsu no Yaiba Gallery",
       subtitle: "Anime Character Gallery",
       desc: "Aplikasi mobile galeri karakter dari anime Kimetsu no Yaiba dengan detail info dan UI yang terinspirasi anime.",
-      tags: ["Flutter", "Dart", "Mobile App"],
+      tags: ["Flutter"],
       link: "https://github.com/Faizpi/",
     },
   ],
@@ -219,7 +219,7 @@ function Projects() {
             <div className="pt-6">
               <p className="text-xs dark:text-gray-500 text-gray-600">
                 Ingin melihat lebih banyak project saya? Silakan akses portofolio
-                lengkap saya dalam bentuk PDF di sini:{" "}
+                lengkap di sini:{" "}
                 <a
                   href="https://github.com/Faizpi/"
                   target="_blank"
