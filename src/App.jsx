@@ -15,13 +15,6 @@ export default function App() {
   return (
     <div
       className="min-h-screen font-sans relative dark:bg-black dark:text-white bg-white text-black"
-      style={{
-        backgroundImage: "url('/background.gif')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
-        cursor: "none",
-      }}
     >
       <ThemeToggle />
       <Cursor />

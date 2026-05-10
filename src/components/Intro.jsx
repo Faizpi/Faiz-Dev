@@ -43,6 +43,12 @@ export default function Intro() {
   const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
 
   useEffect(() => {
+    if (!API_KEY) {
+      setError("missing-api-key");
+      setWeather(null);
+      return undefined;
+    }
+
     const fetchWeather = async () => {
       try {
         const city = "Curug,Tangerang,ID";
@@ -128,7 +134,7 @@ export default function Intro() {
               {weather.desc}, {weather.temp}°C
             </span>
           </motion.div>
-        ) : error === "offline" ? (
+        ) : error ? (
           <div className="mt-1 text-xs text-gray-600 dark:text-gray-400 flex items-center gap-2">
             <FaCloud size={12} className="opacity-70" />
             <span>Offline — unable to load weather</span>

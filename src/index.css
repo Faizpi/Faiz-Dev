@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@media (pointer: fine) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
 @keyframes text-shine {
   0% {
     background-position: -200% center;

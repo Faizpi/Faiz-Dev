@@ -28,7 +28,7 @@ const PROJECTS = [
     image: `${process.env.PUBLIC_URL}/amara.png`,
     title: "Amara Baby Shop",
     subtitle: "Manajemen Inventaris & POS Toko Perlengkapan Bayi",
-    desc: "Aplikasi mobile yang cocok untuk menjadi solusi lengkap untuk mengelola stok, penjualan, dan bisnis multi-warung Anda.",
+    desc: "Aplikasi mobile untuk membantu toko perlengkapan bayi mengelola stok, penjualan, dan operasional toko dengan lebih praktis.",
     tags: ["Flutter", "Firebase"],
     link: "https://github.com/Faizpi/babyshop",
   },
@@ -72,6 +72,7 @@ function Projects() {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={`Open ${project.title} repository`}
                     >
                       <ArrowUpRight size={14} className="dark:text-gray-400 text-gray-600 shrink-0" />
                     </a>

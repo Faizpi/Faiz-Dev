@@ -2,8 +2,15 @@ import { useEffect } from "react";
 
 export default function Cursor() {
   useEffect(() => {
+    const finePointer = window.matchMedia("(pointer: fine)");
+
+    if (!finePointer.matches) {
+      return undefined;
+    }
+
     const dot = document.createElement("div");
     const ring = document.createElement("div");
+    let frameId;
 
     const updateColors = () => {
       const isDark = document.documentElement.classList.contains("dark");
@@ -12,7 +19,6 @@ export default function Cursor() {
       dot.style.background = color;
       ring.style.border = `2px solid ${color}`;
     };
-
 
     Object.assign(dot.style, {
       position: "fixed",
@@ -24,7 +30,6 @@ export default function Cursor() {
       zIndex: "9999",
       transform: "translate(-50%, -50%)",
     });
-
 
     Object.assign(ring.style, {
       position: "fixed",
@@ -40,6 +45,7 @@ export default function Cursor() {
 
     document.body.appendChild(dot);
     document.body.appendChild(ring);
+    document.documentElement.classList.add("custom-cursor-active");
 
     let mouseX = 0,
       mouseY = 0;
@@ -62,7 +68,7 @@ export default function Cursor() {
       ring.style.left = `${ringX}px`;
       ring.style.top = `${ringY}px`;
 
-      requestAnimationFrame(animate);
+      frameId = requestAnimationFrame(animate);
     };
 
     const onMouseDown = () => {
@@ -72,7 +78,6 @@ export default function Cursor() {
     const onMouseUp = () => {
       ring.style.transform = "translate(-50%, -50%) scale(1)";
     };
-
 
     updateColors();
     const observer = new MutationObserver(updateColors);
@@ -87,12 +92,14 @@ export default function Cursor() {
     animate();
 
     return () => {
+      cancelAnimationFrame(frameId);
       window.removeEventListener("mousemove", move);
       window.removeEventListener("mousedown", onMouseDown);
       window.removeEventListener("mouseup", onMouseUp);
       dot.remove();
       ring.remove();
       observer.disconnect();
+      document.documentElement.classList.remove("custom-cursor-active");
     };
   }, []);
 
