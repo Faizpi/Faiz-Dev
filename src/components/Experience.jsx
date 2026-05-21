@@ -67,6 +67,34 @@ export default function Experience() {
               <div className="flex gap-6 items-start">
                 <div className="flex flex-col items-center w-28 text-center">
                   <img
+                    src={`${process.env.PUBLIC_URL}/idccamp.png`}
+                    alt="IDCamp"
+                    className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
+                  />
+                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
+                    Mar 2026 –<br />May 2026
+                  </p>
+                </div>
+                <div className="space-y-3 flex-1">
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-semibold dark:text-white text-black">
+                      AI Multi-platform App Developer
+                    </h3>
+                    <p className="text-xs dark:text-gray-400 text-gray-700">
+                      IDCamp Indosat Ooredoo Hutchison · Indonesia · Remote
+                    </p>
+                  </div>
+                  <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
+                    <li>Completed Intermediate & Expert level tracks</li>
+                    <li>Focused on Flutter-based multi-platform app development with AI integration</li>
+                  </ul>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="flex gap-6 items-start">
+                <div className="flex flex-col items-center w-28 text-center">
+                  <img
                     src={`${process.env.PUBLIC_URL}/Untirta.png`}
                     alt="Untirta"
                     className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
@@ -183,6 +211,20 @@ export default function Experience() {
               <h2 className="text-sm font-bold dark:text-white text-black">Certifications & Trainings</h2>
             </Reveal>
             {[
+              {
+                year: "May 2026",
+                logo: `${process.env.PUBLIC_URL}/idccamp.png`,
+                institution: "AI Multi-platform App Developer Expert",
+                subtitle: "IDCamp Indosat Ooredoo Hutchison",
+                skills: ["Flutter", "AI", "Multi-platform"],
+              },
+              {
+                year: "Mar 2026",
+                logo: `${process.env.PUBLIC_URL}/idccamp.png`,
+                institution: "AI Multi-platform App Developer Intermediate",
+                subtitle: "IDCamp Indosat Ooredoo Hutchison",
+                skills: ["Flutter", "AI", "Multi-platform"],
+              },
               {
                 year: "Feb 2026",
                 logo: `${process.env.PUBLIC_URL}/dicoding.png`,
