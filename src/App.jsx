@@ -10,31 +10,34 @@ import BottomNavbar from "./components/BottomNavbar";
 import Cursor from "./components/Cursor";
 import Projects from "./components/Projects";
 import ThemeToggle from "./components/ThemeToggle";
+import { LanguageProvider } from "./context/LanguageContext";
 
 export default function App() {
   return (
-    <div
-      className="min-h-screen font-sans relative dark:bg-black dark:text-white bg-white text-black"
-    >
-      <ThemeToggle />
-      <Cursor />
+    <LanguageProvider>
+      <div
+        className="min-h-screen font-sans relative dark:bg-black dark:text-white bg-white text-black"
+      >
+        <ThemeToggle />
+        <Cursor />
 
-      <div className="bg-black/70 dark:bg-black/70 bg-white/70 backdrop-blur-sm relative z-10">
-        <div className="max-w-md mx-auto px-4 py-12 space-y-20 pb-24">
-          <section id="Intro"><Intro /></section>
-          <section id="About"><About /></section>
+        <div className="bg-black/70 dark:bg-black/70 bg-white/70 backdrop-blur-sm relative z-10">
+          <div className="max-w-md mx-auto px-4 py-12 space-y-20 pb-24">
+            <section id="Intro"><Intro /></section>
+            <section id="About"><About /></section>
 
-          <section id="Experience"><Experience /></section>
-          <section id="Projects">
-            <Projects />
-          </section>
-          <section id="Skills"><Skills /></section>
-          <section id="Links"><Links /></section>
+            <section id="Experience"><Experience /></section>
+            <section id="Projects">
+              <Projects />
+            </section>
+            <section id="Skills"><Skills /></section>
+            <section id="Links"><Links /></section>
+          </div>
         </div>
-      </div>
 
-      <ScrollButtons />
-      <BottomNavbar />
-    </div>
+        <ScrollButtons />
+        <BottomNavbar />
+      </div>
+    </LanguageProvider>
   );
 }

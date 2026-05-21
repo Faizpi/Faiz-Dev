@@ -1,6 +1,7 @@
-
 import Reveal from "./Reveal";
 import LogoLoop from "./LogoLoop";
+import { useLang } from "../context/LanguageContext";
+import translations from "../context/translations";
 
 
 const skillLogos = [
@@ -26,10 +27,13 @@ const skillLogos = [
 ];
 
 export default function Skills() {
+  const { lang } = useLang();
+  const t = translations[lang].skills;
+
   return (
     <section className="space-y-6">
       <Reveal>
-        <h2 className="text-sm font-bold text-gray-900 dark:text-white">Skills</h2>
+        <h2 className="text-sm font-bold text-gray-900 dark:text-white">{t.title}</h2>
       </Reveal>
 
       <Reveal>

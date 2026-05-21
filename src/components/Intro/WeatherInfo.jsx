@@ -1,11 +1,15 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaCloud } from "react-icons/fa";
+import { useLang } from "../../context/LanguageContext";
+import translations from "../../context/translations";
 
 export default function WeatherInfo() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
   const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
+  const { lang } = useLang();
+  const t = translations[lang].intro;
 
   useEffect(() => {
     if (!API_KEY) {
@@ -64,14 +68,14 @@ export default function WeatherInfo() {
     return (
       <div className="mt-1 text-xs text-gray-600 dark:text-gray-400 flex items-center gap-2">
         <FaCloud size={12} className="opacity-70" />
-        <span>Offline — unable to load weather</span>
+        <span>{t.weatherOffline}</span>
       </div>
     );
   }
 
   return (
     <div className="mt-1 text-xs text-gray-600 dark:text-gray-400">
-      Loading weather...
+      {t.weatherLoading}
     </div>
   );
 }

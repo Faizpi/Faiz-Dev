@@ -9,6 +9,8 @@ import {
   FaCloud,
 } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { useLang } from "../context/LanguageContext";
+import translations from "../context/translations";
 
 
 function Clock() {
@@ -41,6 +43,8 @@ export default function Intro() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
   const API_KEY = process.env.REACT_APP_OPENWEATHER_API_KEY;
+  const { lang } = useLang();
+  const t = translations[lang].intro;
 
   useEffect(() => {
     if (!API_KEY) {
@@ -80,6 +84,30 @@ export default function Intro() {
     return () => clearInterval(interval);
   }, [API_KEY]);
 
+  const buttons = [
+    {
+      href: "https://www.linkedin.com/in/faiz-pratama/",
+      label: t.linkedin,
+      icon: <FaLinkedin size={12} />,
+    },
+    {
+      href: "https://github.com/Faizpi",
+      label: t.github,
+      icon: <FaGithub size={12} />,
+    },
+    {
+      href: `${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`,
+      label: t.downloadCV,
+      icon: <FaFileAlt size={12} />,
+      download: true,
+    },
+    {
+      href: "mailto:faizbintang1244@gmail.com",
+      label: t.emailMe,
+      icon: <FaEnvelope size={12} />,
+    },
+  ];
+
   return (
     <div className="flex items-start gap-4">
 
@@ -101,7 +129,8 @@ export default function Intro() {
 
         <p className="text-sm mt-1 leading-tight text-gray-700 dark:text-gray-400">
           <Typewriter
-            words={["UI/UX Designer", "Web Developer", "Mobile Developer"]}
+            key={lang}
+            words={t.roles}
             loop={0}
             cursor
             cursorStyle="_"
@@ -114,7 +143,7 @@ export default function Intro() {
 
         <div className="mt-1 text-xs text-gray-600 dark:text-gray-400 flex items-center gap-2">
           <FaMapMarkerAlt size={14} />
-          <span>Curug, Tangerang Regency, Banten, Indonesia</span>
+          <span>{t.location}</span>
         </div>
 
 
@@ -137,11 +166,11 @@ export default function Intro() {
         ) : error ? (
           <div className="mt-1 text-xs text-gray-600 dark:text-gray-400 flex items-center gap-2">
             <FaCloud size={12} className="opacity-70" />
-            <span>Offline — unable to load weather</span>
+            <span>{t.weatherOffline}</span>
           </div>
         ) : (
           <div className="mt-1 text-xs text-gray-600 dark:text-gray-400">
-            Loading weather...
+            {t.weatherLoading}
           </div>
         )}
 
@@ -150,29 +179,7 @@ export default function Intro() {
 
 
         <div className="flex flex-wrap gap-2 mt-3">
-          {[
-            {
-              href: "https://www.linkedin.com/in/faiz-pratama/",
-              label: "Connect on LinkedIn ↗",
-              icon: <FaLinkedin size={12} />,
-            },
-            {
-              href: "https://github.com/Faizpi",
-              label: "View GitHub ↗",
-              icon: <FaGithub size={12} />,
-            },
-            {
-              href: `${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`,
-              label: "Download CV ↗",
-              icon: <FaFileAlt size={12} />,
-              download: true,
-            },
-            {
-              href: "mailto:faizbintang1244@gmail.com",
-              label: "Email Me ↗",
-              icon: <FaEnvelope size={12} />,
-            },
-          ].map((btn, i) => (
+          {buttons.map((btn, i) => (
             <motion.a
               key={i}
               href={btn.href}

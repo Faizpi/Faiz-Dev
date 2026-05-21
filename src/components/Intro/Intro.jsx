@@ -4,8 +4,13 @@ import { FaMapMarkerAlt } from "react-icons/fa";
 import Clock from "./Clock";
 import WeatherInfo from "./WeatherInfo";
 import SocialButtons from "./SocialButtons";
+import { useLang } from "../../context/LanguageContext";
+import translations from "../../context/translations";
 
 export default function Intro() {
+  const { lang } = useLang();
+  const t = translations[lang].intro;
+
   return (
     <div className="flex items-start gap-4">
       <div className="relative w-24 h-24 rounded-full overflow-hidden flex-shrink-0 
@@ -29,7 +34,8 @@ export default function Intro() {
 
         <p className="text-sm mt-1 leading-tight text-gray-700 dark:text-gray-400">
           <Typewriter
-            words={["UI/UX Designer", "Web Developer", "Mobile Developer"]}
+            key={lang}
+            words={t.roles}
             loop={0}
             cursor
             cursorStyle="_"
@@ -42,7 +48,7 @@ export default function Intro() {
 
         <div className="mt-1 text-xs text-gray-600 dark:text-gray-400 flex items-center gap-2">
           <FaMapMarkerAlt size={14} />
-          <span>Curug, Tangerang Regency, Banten, Indonesia</span>
+          <span>{t.location}</span>
         </div>
 
 

@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { FaLinkedin, FaGithub, FaFileAlt, FaEnvelope } from "react-icons/fa";
+import { useLang } from "../../context/LanguageContext";
+import translations from "../../context/translations";
 
 const glassStyle = {
   background: 'linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%)',
@@ -13,26 +15,29 @@ const glassStyle = {
 };
 
 export default function SocialButtons() {
+  const { lang } = useLang();
+  const t = translations[lang].intro;
+
   const buttons = [
     {
       href: "https://www.linkedin.com/in/faiz-pratama/",
-      label: "Connect ↗",
+      label: t.linkedin,
       icon: <FaLinkedin size={12} />,
     },
     {
       href: "https://github.com/Faizpi",
-      label: "View GitHub ↗",
+      label: t.github,
       icon: <FaGithub size={12} />,
     },
     {
       href: `${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`,
-      label: "Download CV ↗",
+      label: t.downloadCV,
       icon: <FaFileAlt size={12} />,
       download: true,
     },
     {
       href: "mailto:faizbintang1244@gmail.com",
-      label: "Email Me ↗",
+      label: t.emailMe,
       icon: <FaEnvelope size={12} />,
     },
   ];

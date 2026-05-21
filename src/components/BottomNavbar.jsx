@@ -9,6 +9,8 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import { useLang } from "../context/LanguageContext";
+import translations from "../context/translations";
 
 
 const glassStyle = {
@@ -25,15 +27,16 @@ const glassStyle = {
 const BottomNavbar = () => {
   const [activeSection, setActiveSection] = useState("Intro");
   const [isVisible, setIsVisible] = useState(true);
+  const { lang } = useLang();
+  const t = translations[lang].nav;
 
   const navItems = [
-    { id: "Intro", icon: Home, label: "Home", section: "Intro" },
-    { id: "About", icon: User, label: "About", section: "About" },
-
-    { id: "Experience", icon: Briefcase, label: "Experience", section: "Experience" },
-    { id: "Projects", icon: Code, label: "Projects", section: "Projects" },
-    { id: "Skills", icon: Lightbulb, label: "Skills", section: "Skills" },
-    { id: "Links", icon: Mail, label: "Contact", section: "Links" },
+    { id: "Intro", icon: Home, label: t.home, section: "Intro" },
+    { id: "About", icon: User, label: t.about, section: "About" },
+    { id: "Experience", icon: Briefcase, label: t.experience, section: "Experience" },
+    { id: "Projects", icon: Code, label: t.projects, section: "Projects" },
+    { id: "Skills", icon: Lightbulb, label: t.skills, section: "Skills" },
+    { id: "Links", icon: Mail, label: t.contact, section: "Links" },
   ];
 
   const scrollToSection = (sectionId) => {

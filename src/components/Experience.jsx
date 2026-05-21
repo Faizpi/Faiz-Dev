@@ -1,16 +1,158 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
 import { GraduationCap, Users, Briefcase, Mic, Award } from "lucide-react";
+import { useLang } from "../context/LanguageContext";
+import translations from "../context/translations";
 
 export default function Experience() {
+  const { lang } = useLang();
+  const t = translations[lang].experience;
+
   const tabs = [
-    { name: "Work Experience", icon: <Briefcase size={20} /> },
-    { name: "Education", icon: <GraduationCap size={20} /> },
-    { name: "Organizations", icon: <Users size={20} /> },
-    { name: "Speaker", icon: <Mic size={20} /> },
-    { name: "Awards", icon: <Award size={20} /> },
+    { name: "Work Experience", label: t.tabWorkExperience, icon: <Briefcase size={20} /> },
+    { name: "Education", label: t.tabEducation, icon: <GraduationCap size={20} /> },
+    { name: "Organizations", label: t.tabOrganizations, icon: <Users size={20} /> },
+    { name: "Speaker", label: t.tabSpeaker, icon: <Mic size={20} /> },
+    { name: "Awards", label: t.tabAwards, icon: <Award size={20} /> },
   ];
+
   const [activeTab, setActiveTab] = useState("Work Experience");
+
+  const certifications = [
+    {
+      year: "May 2026",
+      logo: `${process.env.PUBLIC_URL}/idccamp.png`,
+      institution: "AI Multi-platform App Developer Expert",
+      subtitle: "IDCamp Indosat Ooredoo Hutchison",
+      skills: ["Flutter", "AI", "Multi-platform"],
+    },
+    {
+      year: "May 2026",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Belajar Back-End Pemula dengan JavaScript",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Back-End Web Development"],
+    },
+    {
+      year: "Apr 2026",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Belajar Fundamental Aplikasi Web dengan React",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Web Application Development", "React.js"],
+    },
+    {
+      year: "Apr 2026",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Belajar Membuat Aplikasi Web dengan React",
+      subtitle: "Dicoding Indonesia",
+      skills: ["React.js"],
+    },
+    {
+      year: "Apr 2026",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Belajar Membuat Front-End Web untuk Pemula",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Front-End Development"],
+    },
+    {
+      year: "Mar 2026",
+      logo: `${process.env.PUBLIC_URL}/idccamp.png`,
+      institution: "AI Multi-platform App Developer Intermediate",
+      subtitle: "IDCamp Indosat Ooredoo Hutchison",
+      skills: ["Flutter", "AI", "Multi-platform"],
+    },
+    {
+      year: "Mar 2026",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Belajar Dasar Pemrograman JavaScript",
+      subtitle: "Dicoding Indonesia",
+      skills: ["JavaScript"],
+    },
+    {
+      year: "Feb 2026",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Belajar Dasar Pemrograman Web",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Web Development"],
+    },
+    {
+      year: "Feb 2026",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Belajar Dasar Cloud dan Gen AI di AWS",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Generative AI", "Cloud Computing"],
+    },
+    {
+      year: "Feb 2026",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Pengenalan ke Logika Pemrograman (Programming Logic 101)",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Logic Programming"],
+    },
+    {
+      year: "Feb 2026",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Software Engineers"],
+    },
+    {
+      year: "Feb 2026",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Belajar Fundamental Aplikasi Flutter",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Flutter", "Mobile Application Development"],
+    },
+    {
+      year: "Oct 2025",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Belajar Membuat Aplikasi Flutter untuk Pemula",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Flutter", "Responsive"],
+    },
+    {
+      year: "Sep 2025",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Belajar Dasar AI",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Machine Learning", "Deep Learning"],
+    },
+    {
+      year: "Sep 2025",
+      logo: `${process.env.PUBLIC_URL}/dicoding.png`,
+      institution: "Memulai Pemrograman dengan Dart",
+      subtitle: "Dicoding Indonesia",
+      skills: ["Dart", "Object-Oriented Programming (OOP)"],
+    },
+    {
+      year: "Feb 2025",
+      logo: "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
+      institution: "Fundamentals of Analytics on AWS",
+      subtitle: "Amazon Web Services (AWS)",
+      skills: ["Data Lakes", "Data Analytics", "AWS Services"],
+    },
+    {
+      year: "Jan 2025",
+      logo: `${process.env.PUBLIC_URL}/Udemy.png`,
+      institution: "The Complete 2024 Web Development Bootcamp",
+      subtitle: "Udemy",
+      skills: ["HTML", "CSS", "JavaScript", "Node.js", "React.js"],
+    },
+    {
+      year: "Jan 2025",
+      logo: `${process.env.PUBLIC_URL}/Udemy.png`,
+      institution: "Front-End Web Developer Bootcamp",
+      subtitle: "Udemy",
+      skills: ["Frontend Development", "Modern Tools", "Best Practices"],
+    },
+    {
+      year: "Dec 2024",
+      logo: `${process.env.PUBLIC_URL}/Udemy.png`,
+      institution: "Basics of Database Design & Development",
+      subtitle: "Udemy",
+      skills: ["Database", "ERD", "Normalization", "SQL"],
+    },
+  ];
 
   return (
     <div className="flex flex-col md:flex-row gap-8">
@@ -24,7 +166,7 @@ export default function Experience() {
               ? "bg-white/10 dark:text-white text-black"
               : "dark:text-gray-400 text-gray-700 hover:dark:text-white hover:text-black hover:bg-white/5"
               }`}
-            title={tab.name}
+            title={tab.label}
           >
             {tab.icon}
           </button>
@@ -34,349 +176,152 @@ export default function Experience() {
 
       <div className="flex-1 min-h-[200px]">
 
-        {activeTab === "Education" && (
-          <section className="space-y-8">
-            <Reveal>
-              <h2 className="text-sm font-bold dark:text-white text-black">Education</h2>
-            </Reveal>
-            <Reveal>
-              <div className="flex gap-6 items-start">
-                <div className="flex flex-col items-center w-28 text-center">
-                  <img
-                    src={`${process.env.PUBLIC_URL}/DBS.png`}
-                    alt="DBS Foundation"
-                    className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
-                  />
-                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
-                    Jan 2026 –<br />Present
-                  </p>
-                </div>
-                <div className="space-y-3 flex-1">
-                  <div className="space-y-1">
-                    <h3 className="text-sm font-semibold dark:text-white text-black">
-                      Full-Stack Web Developer Cohort
-                    </h3>
-                    <p className="text-xs dark:text-gray-400 text-gray-700">
-                      Coding Camp powered by DBS Foundation · Indonesia · Remote
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal>
-              <div className="flex gap-6 items-start">
-                <div className="flex flex-col items-center w-28 text-center">
-                  <img
-                    src={`${process.env.PUBLIC_URL}/idccamp.png`}
-                    alt="IDCamp"
-                    className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
-                  />
-                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
-                    Mar 2026 –<br />May 2026
-                  </p>
-                </div>
-                <div className="space-y-3 flex-1">
-                  <div className="space-y-1">
-                    <h3 className="text-sm font-semibold dark:text-white text-black">
-                      AI Multi-platform App Developer
-                    </h3>
-                    <p className="text-xs dark:text-gray-400 text-gray-700">
-                      IDCamp Indosat Ooredoo Hutchison · Indonesia · Remote
-                    </p>
-                  </div>
-                  <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
-                    <li>Completed Intermediate & Expert level tracks</li>
-                    <li>Focused on Flutter-based multi-platform app development with AI integration</li>
-                  </ul>
-                </div>
-              </div>
-            </Reveal>
-            <Reveal>
-              <div className="flex gap-6 items-start">
-                <div className="flex flex-col items-center w-28 text-center">
-                  <img
-                    src={`${process.env.PUBLIC_URL}/Untirta.png`}
-                    alt="Untirta"
-                    className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
-                  />
-                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
-                    2023 –<br />Present
-                  </p>
-                </div>
-                <div className="space-y-3 flex-1">
-                  <div className="space-y-1">
-                    <h3 className="text-sm font-semibold dark:text-white text-black">
-                      S1 Informatika
-                    </h3>
-                    <p className="text-xs dark:text-gray-400 text-gray-700">
-                      Universitas Sultan Ageng Tirtayasa · Cilegon, Banten
-                    </p>
-                  </div>
-                  <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
-                    <li>GPA 3.87 / 4.00</li>
-                    <li>Focused on Software Engineering and Web Development</li>
-                    <li>Active in organizational activities and projects</li>
-                  </ul>
-                </div>
-              </div>
-            </Reveal>
-          </section>
-        )}
-
-
-        {activeTab === "Organizations" && (
-          <section className="space-y-8">
-            <Reveal>
-              <h2 className="text-sm font-bold dark:text-white text-black">Organizations</h2>
-            </Reveal>
-            <Reveal>
-              <div className="flex gap-6 items-start">
-                <div className="flex flex-col items-center w-28 text-center">
-                  <img
-                    src={`${process.env.PUBLIC_URL}/HMIF.png`}
-                    alt="HMIF Logo"
-                    className="w-12 h-12 mb-2 object-contain rounded-full"
-                  />
-                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
-                    Mar 2025 –<br />Present
-                  </p>
-                </div>
-                <div className="space-y-3 flex-1">
-                  <div className="space-y-1">
-                    <h3 className="text-sm font-semibold dark:text-white text-black">
-                      Communications and Information Department – Informatics Student Association
-                    </h3>
-                    <p className="text-xs dark:text-gray-400 text-gray-700">
-                      Sultan Ageng Tirtayasa University · Cilegon, Banten
-                    </p>
-                  </div>
-                  <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
-                    <li>Produced digital content for internal and public organizational publications.</li>
-                    <li>Designed visuals for national holidays, campaigns, and tech-related educational content.</li>
-                    <li>Documented all organizational activities (photo/video), creating a digital archive.</li>
-                  </ul>
-                </div>
-              </div>
-            </Reveal>
-          </section>
-        )}
-
-
+        {/* ── WORK EXPERIENCE ── */}
         {activeTab === "Work Experience" && (
           <section className="space-y-8">
             <Reveal>
-              <h2 className="text-sm font-bold dark:text-white text-black">Work Experience</h2>
+              <h2 className="text-sm font-bold dark:text-white text-black">{t.sectionWorkExperience}</h2>
             </Reveal>
-            <Reveal>
-              <div className="flex gap-6 items-start">
-                <div className="flex flex-col items-center w-28 text-center">
-                  <img
-                    src={`${process.env.PUBLIC_URL}/kit.png`}
-                    alt="Krakatau IT Logo"
-                    className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
-                  />
-                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
-                    May 2026 –<br />Present
-                  </p>
-                </div>
-                <div className="space-y-3 flex-1">
-                  <div className="space-y-1">
-                    <h3 className="text-sm font-semibold dark:text-white text-black">
-                      Digital Transformation – Internship
-                    </h3>
-                    <p className="text-xs dark:text-gray-400 text-gray-700">
-                      PT Krakatau Information Technology · Cilegon, Banten · On-site
+            {t.work.map((item, i) => (
+              <Reveal key={i}>
+                <div className="flex gap-6 items-start">
+                  <div className="flex flex-col items-center w-28 text-center">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/${item.logo}`}
+                      alt={item.alt}
+                      className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
+                    />
+                    <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
+                      {item.period}
                     </p>
                   </div>
-                  <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
-                    <li>Contributed to digital transformation initiatives and software development activities.</li>
-                    <li>Assisted in developing and improving digital solutions to support business processes.</li>
-                  </ul>
-                  <div className="flex flex-wrap gap-1.5 pt-1">
-                    <span className="px-2 py-0.5 text-[10px] rounded-full dark:bg-white/10 bg-black/10 dark:text-gray-300 text-gray-700">Flutter</span>
-                    <span className="px-2 py-0.5 text-[10px] rounded-full dark:bg-white/10 bg-black/10 dark:text-gray-300 text-gray-700">Mobile Applications</span>
+                  <div className="space-y-3 flex-1">
+                    <div className="space-y-1">
+                      <h3 className="text-sm font-semibold dark:text-white text-black">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs dark:text-gray-400 text-gray-700">
+                        {item.company}
+                      </p>
+                    </div>
+                    {item.bullets.length > 0 && (
+                      <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
+                        {item.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                      </ul>
+                    )}
+                    {item.tags.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {item.tags.map((tag) => (
+                          <span
+                            key={tag}
+                            className="px-2 py-0.5 text-[10px] rounded-full dark:bg-white/10 bg-black/10 dark:text-gray-300 text-gray-700"
+                          >
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
-              </div>
-            </Reveal>
-            <Reveal>
-              <div className="flex gap-6 items-start">
-                <div className="flex flex-col items-center w-28 text-center">
-                  <img
-                    src={`${process.env.PUBLIC_URL}/SIK.png`}
-                    alt="Sumi Indo Kabel Logo"
-                    className="w-10 h-10 mb-2 object-contain rounded-full"
-                  />
-                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
-                    Aug 2025 –<br />Present
-                  </p>
-                </div>
-                <div className="space-y-3 flex-1">
-                  <div className="space-y-1">
-                    <h3 className="text-sm font-semibold dark:text-white text-black">
-                      IT Department – Internship
-                    </h3>
-                    <p className="text-xs dark:text-gray-400 text-gray-700">
-                      PT Sumi Indo Kabel Tbk · Tangerang, Banten
-                    </p>
-                  </div>
-                  <ul className="list-disc list-inside text-sm text-justify dark:text-gray-400 text-gray-700 space-y-1">
-                    <p>Developed Website System STB Label for Automobile Cable Plant 1 using Laravel.</p>
-                  </ul>
-                </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            ))}
           </section>
         )}
 
+        {/* ── EDUCATION ── */}
+        {activeTab === "Education" && (
+          <section className="space-y-8">
+            <Reveal>
+              <h2 className="text-sm font-bold dark:text-white text-black">{t.sectionEducation}</h2>
+            </Reveal>
+            {t.education.map((item, i) => (
+              <Reveal key={i}>
+                <div className="flex gap-6 items-start">
+                  <div className="flex flex-col items-center w-28 text-center">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/${item.logo}`}
+                      alt={item.alt}
+                      className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
+                    />
+                    <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
+                      {item.period}
+                    </p>
+                  </div>
+                  <div className="space-y-3 flex-1">
+                    <div className="space-y-1">
+                      <h3 className="text-sm font-semibold dark:text-white text-black">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs dark:text-gray-400 text-gray-700">
+                        {item.institution}
+                      </p>
+                    </div>
+                    {item.bullets.length > 0 && (
+                      <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
+                        {item.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </section>
+        )}
 
+        {/* ── ORGANIZATIONS ── */}
+        {activeTab === "Organizations" && (
+          <section className="space-y-8">
+            <Reveal>
+              <h2 className="text-sm font-bold dark:text-white text-black">{t.sectionOrganizations}</h2>
+            </Reveal>
+            {t.organizations.map((item, i) => (
+              <Reveal key={i}>
+                <div className="flex gap-6 items-start">
+                  <div className="flex flex-col items-center w-28 text-center">
+                    <img
+                      src={`${process.env.PUBLIC_URL}/${item.logo}`}
+                      alt={item.alt}
+                      className="w-12 h-12 mb-2 object-contain rounded-full"
+                    />
+                    <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
+                      {item.period}
+                    </p>
+                  </div>
+                  <div className="space-y-3 flex-1">
+                    <div className="space-y-1">
+                      <h3 className="text-sm font-semibold dark:text-white text-black">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs dark:text-gray-400 text-gray-700">
+                        {item.institution}
+                      </p>
+                    </div>
+                    {item.bullets.length > 0 && (
+                      <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
+                        {item.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </section>
+        )}
+
+        {/* ── SPEAKER ── */}
         {activeTab === "Speaker" && (
           <Reveal>
-            <p className="dark:text-gray-400 text-gray-700">Belum ada data speaker.</p>
+            <p className="dark:text-gray-400 text-gray-700">{t.noSpeakerData}</p>
           </Reveal>
         )}
 
-
+        {/* ── AWARDS / CERTIFICATIONS ── */}
         {activeTab === "Awards" && (
           <section className="space-y-8">
             <Reveal>
-              <h2 className="text-sm font-bold dark:text-white text-black">Certifications & Trainings</h2>
+              <h2 className="text-sm font-bold dark:text-white text-black">{t.sectionCertifications}</h2>
             </Reveal>
-            {[
-              {
-                year: "May 2026",
-                logo: `${process.env.PUBLIC_URL}/idccamp.png`,
-                institution: "AI Multi-platform App Developer Expert",
-                subtitle: "IDCamp Indosat Ooredoo Hutchison",
-                skills: ["Flutter", "AI", "Multi-platform"],
-              },
-              {
-                year: "May 2026",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Belajar Back-End Pemula dengan JavaScript",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Back-End Web Development"],
-              },
-              {
-                year: "Apr 2026",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Belajar Fundamental Aplikasi Web dengan React",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Web Application Development", "React.js"],
-              },
-              {
-                year: "Apr 2026",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Belajar Membuat Aplikasi Web dengan React",
-                subtitle: "Dicoding Indonesia",
-                skills: ["React.js"],
-              },
-              {
-                year: "Apr 2026",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Belajar Membuat Front-End Web untuk Pemula",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Front-End Development"],
-              },
-              {
-                year: "Mar 2026",
-                logo: `${process.env.PUBLIC_URL}/idccamp.png`,
-                institution: "AI Multi-platform App Developer Intermediate",
-                subtitle: "IDCamp Indosat Ooredoo Hutchison",
-                skills: ["Flutter", "AI", "Multi-platform"],
-              },
-              {
-                year: "Mar 2026",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Belajar Dasar Pemrograman JavaScript",
-                subtitle: "Dicoding Indonesia",
-                skills: ["JavaScript"],
-              },
-              {
-                year: "Feb 2026",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Belajar Dasar Pemrograman Web",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Web Development"],
-              },
-              {
-                year: "Feb 2026",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Belajar Dasar Cloud dan Gen AI di AWS",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Generative AI", "Cloud Computing"],
-              },
-              {
-                year: "Feb 2026",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Pengenalan ke Logika Pemrograman (Programming Logic 101)",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Logic Programming"],
-              },
-              {
-                year: "Feb 2026",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Memulai Dasar Pemrograman untuk Menjadi Pengembang Software",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Software Engineers"],
-              },
-              {
-                year: "Feb 2026",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Belajar Fundamental Aplikasi Flutter",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Flutter", "Mobile Application Development"],
-              },
-              {
-                year: "Oct 2025",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Belajar Membuat Aplikasi Flutter untuk Pemula",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Flutter", "Responsive"],
-              },
-              {
-                year: "Sep 2025",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Belajar Dasar AI",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Machine Learning", "Deep Learning"],
-              },
-              {
-                year: "Sep 2025",
-                logo: `${process.env.PUBLIC_URL}/dicoding.png`,
-                institution: "Memulai Pemrograman dengan Dart",
-                subtitle: "Dicoding Indonesia",
-                skills: ["Dart", "Object-Oriented Programming (OOP)"],
-              },
-              {
-                year: "Feb 2025",
-                logo: "https://a0.awsstatic.com/libra-css/images/logos/aws_logo_smile_1200x630.png",
-                institution: "Fundamentals of Analytics on AWS",
-                subtitle: "Amazon Web Services (AWS)",
-                skills: ["Data Lakes", "Data Analytics", "AWS Services"],
-              },
-              {
-                year: "Jan 2025",
-                logo: `${process.env.PUBLIC_URL}/Udemy.png`,
-                institution: "The Complete 2024 Web Development Bootcamp",
-                subtitle: "Udemy",
-                skills: ["HTML", "CSS", "JavaScript", "Node.js", "React.js"],
-              },
-              {
-                year: "Jan 2025",
-                logo: `${process.env.PUBLIC_URL}/Udemy.png`,
-                institution: "Front-End Web Developer Bootcamp",
-                subtitle: "Udemy",
-                skills: ["Frontend Development", "Modern Tools", "Best Practices"],
-              },
-              {
-                year: "Dec 2024",
-                logo: `${process.env.PUBLIC_URL}/Udemy.png`,
-                institution: "Basics of Database Design & Development",
-                subtitle: "Udemy",
-                skills: ["Database", "ERD", "Normalization", "SQL"],
-              },
-            ].map((item, i) => (
+            {certifications.map((item, i) => (
               <Reveal delay={i * 0.1} key={i}>
                 <div className="flex gap-6 items-start">
                   <div className="flex flex-col items-center w-28 text-center">

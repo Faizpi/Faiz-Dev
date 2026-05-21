@@ -1,6 +1,11 @@
 import Reveal from "./Reveal";
+import { useLang } from "../context/LanguageContext";
+import translations from "../context/translations";
 
 function Links() {
+  const { lang } = useLang();
+  const t = translations[lang].links;
+
   const links = [
     {
       label: "GitHub",
@@ -33,7 +38,7 @@ function Links() {
     <section className="space-y-6">
       <Reveal>
         <h2 className="text-sm font-bold dark:text-white text-gray-900">
-          Links
+          {t.title}
         </h2>
       </Reveal>
 

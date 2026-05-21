@@ -1,18 +1,23 @@
 import Reveal from "./Reveal";
 import DecayCard from "./DecayCard";
+import { useLang } from "../context/LanguageContext";
+import translations from "../context/translations";
 
 function About() {
+  const { lang } = useLang();
+  const t = translations[lang].about;
+
   return (
     <section className="space-y-4">
       <Reveal>
-        <h2 className="text-sm font-bold dark:text-white text-black">About</h2>
+        <h2 className="text-sm font-bold dark:text-white text-black">{t.title}</h2>
       </Reveal>
 
       <div className="flex flex-row items-center gap-6">
         <div className="flex-1">
           <Reveal delay={0.2}>
             <p className="text-justify text-sm leading-relaxed text-gray-700 dark:text-gray-400">
-              Informatics student at Sultan Ageng Tirtayasa University (GPA: 3.91), a versatile developer passionate about both web and mobile development. Skilled in building interactive and user-friendly applications, with a strong drive to keep learning and adapting to new technologies. Dedicated to crafting impactful digital solutions that blend functionality, performance, and great user experience.
+              {t.bio}
             </p>
           </Reveal>
         </div>
