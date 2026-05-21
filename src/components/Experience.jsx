@@ -171,6 +171,38 @@ export default function Experience() {
               <div className="flex gap-6 items-start">
                 <div className="flex flex-col items-center w-28 text-center">
                   <img
+                    src={`${process.env.PUBLIC_URL}/kit.png`}
+                    alt="Krakatau IT Logo"
+                    className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
+                  />
+                  <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
+                    May 2026 –<br />Present
+                  </p>
+                </div>
+                <div className="space-y-3 flex-1">
+                  <div className="space-y-1">
+                    <h3 className="text-sm font-semibold dark:text-white text-black">
+                      Digital Transformation – Internship
+                    </h3>
+                    <p className="text-xs dark:text-gray-400 text-gray-700">
+                      PT Krakatau Information Technology · Cilegon, Banten · On-site
+                    </p>
+                  </div>
+                  <ul className="list-disc list-outside text-sm dark:text-gray-400 text-gray-700 space-y-1 pl-4">
+                    <li>Contributed to digital transformation initiatives and software development activities.</li>
+                    <li>Assisted in developing and improving digital solutions to support business processes.</li>
+                  </ul>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    <span className="px-2 py-0.5 text-[10px] rounded-full dark:bg-white/10 bg-black/10 dark:text-gray-300 text-gray-700">Flutter</span>
+                    <span className="px-2 py-0.5 text-[10px] rounded-full dark:bg-white/10 bg-black/10 dark:text-gray-300 text-gray-700">Mobile Applications</span>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+            <Reveal>
+              <div className="flex gap-6 items-start">
+                <div className="flex flex-col items-center w-28 text-center">
+                  <img
                     src={`${process.env.PUBLIC_URL}/SIK.png`}
                     alt="Sumi Indo Kabel Logo"
                     className="w-10 h-10 mb-2 object-contain rounded-full"
