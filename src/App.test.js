@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import App from "./App";
 import Reveal from "./components/Reveal";
 
@@ -66,7 +66,10 @@ test("renders updated projects in the requested order", () => {
 
   expect(screen.getByText("5 projects")).toBeInTheDocument();
 
-  const projectTitles = screen
+  const projectsSection = screen.getByRole("heading", { name: "Projects" }).closest("section");
+  expect(projectsSection).not.toBeNull();
+
+  const projectTitles = within(projectsSection)
     .getAllByRole("heading", { level: 3 })
     .map((heading) => heading.textContent);
 
