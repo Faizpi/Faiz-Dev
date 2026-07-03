@@ -18,22 +18,31 @@ export default function App() {
       <div
         className="min-h-screen font-sans relative dark:bg-black dark:text-white bg-white text-black"
       >
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-black focus:shadow-lg dark:focus:bg-black dark:focus:text-white"
+        >
+          Skip to main content
+        </a>
         <ThemeToggle />
         <Cursor />
 
-        <div className="bg-black/70 dark:bg-black/70 bg-white/70 backdrop-blur-sm relative z-10">
+        <main
+          id="main-content"
+          className="bg-black/70 dark:bg-black/70 bg-white/70 backdrop-blur-sm relative z-10"
+        >
           <div className="max-w-md mx-auto px-4 py-12 space-y-20 pb-24">
-            <section id="Intro"><Intro /></section>
-            <section id="About"><About /></section>
+            <section id="Intro" aria-label="Introduction"><Intro /></section>
+            <section id="About" aria-label="About"><About /></section>
 
-            <section id="Experience"><Experience /></section>
-            <section id="Projects">
+            <section id="Experience" aria-label="Experience"><Experience /></section>
+            <section id="Projects" aria-label="Projects">
               <Projects />
             </section>
-            <section id="Skills"><Skills /></section>
-            <section id="Links"><Links /></section>
+            <section id="Skills" aria-label="Skills"><Skills /></section>
+            <section id="Links" aria-label="Links"><Links /></section>
           </div>
-        </div>
+        </main>
 
         <ScrollButtons />
         <BottomNavbar />

@@ -20,8 +20,6 @@ const translations = {
     intro: {
       roles: ["UI/UX Designer", "Web Developer", "Mobile Developer"],
       location: "Curug, Tangerang Regency, Banten, Indonesia",
-      weatherOffline: "Offline — unable to load weather",
-      weatherLoading: "Loading weather...",
       linkedin: "LinkedIn ↗",
       github: "View GitHub ↗",
       downloadCV: "Download CV ↗",
@@ -33,14 +31,12 @@ const translations = {
       tabWorkExperience: "Work Experience",
       tabEducation: "Education",
       tabOrganizations: "Organizations",
-      tabSpeaker: "Speaker",
       tabAwards: "Awards",
 
       sectionWorkExperience: "Work Experience",
       sectionEducation: "Education",
       sectionOrganizations: "Organizations",
       sectionCertifications: "Certifications & Trainings",
-      noSpeakerData: "No speaker data available.",
 
       // Work Experience entries
       work: [
@@ -153,8 +149,6 @@ const translations = {
     intro: {
       roles: ["Desainer UI/UX", "Pengembang Web", "Pengembang Mobile"],
       location: "Curug, Kabupaten Tangerang, Banten, Indonesia",
-      weatherOffline: "Offline — cuaca tidak dapat dimuat",
-      weatherLoading: "Memuat cuaca...",
       linkedin: "LinkedIn ↗",
       github: "Lihat GitHub ↗",
       downloadCV: "Unduh CV ↗",
@@ -166,14 +160,12 @@ const translations = {
       tabWorkExperience: "Pengalaman Kerja",
       tabEducation: "Pendidikan",
       tabOrganizations: "Organisasi",
-      tabSpeaker: "Pembicara",
       tabAwards: "Penghargaan",
 
       sectionWorkExperience: "Pengalaman Kerja",
       sectionEducation: "Pendidikan",
       sectionOrganizations: "Organisasi",
       sectionCertifications: "Sertifikasi & Pelatihan",
-      noSpeakerData: "Belum ada data pembicara.",
 
       // Work Experience entries
       work: [

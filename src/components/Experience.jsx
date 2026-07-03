@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Reveal from "./Reveal";
-import { GraduationCap, Users, Briefcase, Mic, Award } from "lucide-react";
+import { GraduationCap, Users, Briefcase, Award } from "lucide-react";
 import { useLang } from "../context/LanguageContext";
 import translations from "../context/translations";
 
@@ -9,11 +9,34 @@ export default function Experience() {
   const t = translations[lang].experience;
 
   const tabs = [
-    { name: "Work Experience", label: t.tabWorkExperience, icon: <Briefcase size={20} /> },
-    { name: "Education", label: t.tabEducation, icon: <GraduationCap size={20} /> },
-    { name: "Organizations", label: t.tabOrganizations, icon: <Users size={20} /> },
-    { name: "Speaker", label: t.tabSpeaker, icon: <Mic size={20} /> },
-    { name: "Awards", label: t.tabAwards, icon: <Award size={20} /> },
+    {
+      name: "Work Experience",
+      label: t.tabWorkExperience,
+      icon: <Briefcase size={20} />,
+      tabId: "experience-work-tab",
+      panelId: "experience-work-panel",
+    },
+    {
+      name: "Education",
+      label: t.tabEducation,
+      icon: <GraduationCap size={20} />,
+      tabId: "experience-education-tab",
+      panelId: "experience-education-panel",
+    },
+    {
+      name: "Organizations",
+      label: t.tabOrganizations,
+      icon: <Users size={20} />,
+      tabId: "experience-organizations-tab",
+      panelId: "experience-organizations-panel",
+    },
+    {
+      name: "Awards",
+      label: t.tabAwards,
+      icon: <Award size={20} />,
+      tabId: "experience-awards-tab",
+      panelId: "experience-awards-panel",
+    },
   ];
 
   const [activeTab, setActiveTab] = useState("Work Experience");
@@ -157,12 +180,18 @@ export default function Experience() {
   return (
     <div className="flex flex-col md:flex-row gap-8">
 
-      <div className="flex md:flex-col gap-4 md:w-10">
+      <div className="flex md:flex-col gap-4 md:w-10" role="tablist" aria-label="Experience sections">
         {tabs.map((tab) => (
           <button
             key={tab.name}
+            id={tab.tabId}
+            type="button"
+            role="tab"
+            aria-selected={activeTab === tab.name}
+            aria-controls={tab.panelId}
+            aria-label={tab.label}
             onClick={() => setActiveTab(tab.name)}
-            className={`flex items-center justify-center p-2 rounded-lg transition-colors duration-200 ${activeTab === tab.name
+            className={`flex items-center justify-center p-2 rounded-lg transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-black focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-white dark:focus-visible:ring-offset-black ${activeTab === tab.name
               ? "bg-white/10 dark:text-white text-black"
               : "dark:text-gray-400 text-gray-700 hover:dark:text-white hover:text-black hover:bg-white/5"
               }`}
@@ -178,7 +207,12 @@ export default function Experience() {
 
         {/* ── WORK EXPERIENCE ── */}
         {activeTab === "Work Experience" && (
-          <section className="space-y-8">
+          <section
+            id="experience-work-panel"
+            role="tabpanel"
+            aria-labelledby="experience-work-tab"
+            className="space-y-8"
+          >
             <Reveal>
               <h2 className="text-sm font-bold dark:text-white text-black">{t.sectionWorkExperience}</h2>
             </Reveal>
@@ -189,6 +223,10 @@ export default function Experience() {
                     <img
                       src={`${process.env.PUBLIC_URL}/${item.logo}`}
                       alt={item.alt}
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      decoding="async"
                       className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
                     />
                     <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
@@ -230,7 +268,12 @@ export default function Experience() {
 
         {/* ── EDUCATION ── */}
         {activeTab === "Education" && (
-          <section className="space-y-8">
+          <section
+            id="experience-education-panel"
+            role="tabpanel"
+            aria-labelledby="experience-education-tab"
+            className="space-y-8"
+          >
             <Reveal>
               <h2 className="text-sm font-bold dark:text-white text-black">{t.sectionEducation}</h2>
             </Reveal>
@@ -241,6 +284,10 @@ export default function Experience() {
                     <img
                       src={`${process.env.PUBLIC_URL}/${item.logo}`}
                       alt={item.alt}
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      decoding="async"
                       className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
                     />
                     <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
@@ -270,7 +317,12 @@ export default function Experience() {
 
         {/* ── ORGANIZATIONS ── */}
         {activeTab === "Organizations" && (
-          <section className="space-y-8">
+          <section
+            id="experience-organizations-panel"
+            role="tabpanel"
+            aria-labelledby="experience-organizations-tab"
+            className="space-y-8"
+          >
             <Reveal>
               <h2 className="text-sm font-bold dark:text-white text-black">{t.sectionOrganizations}</h2>
             </Reveal>
@@ -281,6 +333,10 @@ export default function Experience() {
                     <img
                       src={`${process.env.PUBLIC_URL}/${item.logo}`}
                       alt={item.alt}
+                      width="48"
+                      height="48"
+                      loading="lazy"
+                      decoding="async"
                       className="w-12 h-12 mb-2 object-contain rounded-full"
                     />
                     <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">
@@ -308,16 +364,14 @@ export default function Experience() {
           </section>
         )}
 
-        {/* ── SPEAKER ── */}
-        {activeTab === "Speaker" && (
-          <Reveal>
-            <p className="dark:text-gray-400 text-gray-700">{t.noSpeakerData}</p>
-          </Reveal>
-        )}
-
         {/* ── AWARDS / CERTIFICATIONS ── */}
         {activeTab === "Awards" && (
-          <section className="space-y-8">
+          <section
+            id="experience-awards-panel"
+            role="tabpanel"
+            aria-labelledby="experience-awards-tab"
+            className="space-y-8"
+          >
             <Reveal>
               <h2 className="text-sm font-bold dark:text-white text-black">{t.sectionCertifications}</h2>
             </Reveal>
@@ -328,6 +382,10 @@ export default function Experience() {
                     <img
                       src={item.logo}
                       alt={item.institution}
+                      width="40"
+                      height="40"
+                      loading="lazy"
+                      decoding="async"
                       className="w-10 h-10 mb-2 object-contain rounded-full bg-white p-1"
                     />
                     <p className="text-xs dark:text-gray-400 text-gray-700 leading-relaxed mt-auto">

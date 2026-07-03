@@ -19,7 +19,7 @@
 ---
 
 ## 🚀 Live Demo
-[View Portfolio](faizpi.vercel.app)
+[View Portfolio](https://faizpi.vercel.app)
 
 ---
 
@@ -34,12 +34,6 @@
 - **Typewriter Effect** - Dynamic role showcase animation
 - **Reveal Animations** - Smooth section transitions using Framer Motion
 - **Real-time Clock** - Live digital clock display
-
-### 📊 **GitHub Integration**
-- Live contribution graph
-- Dynamic stats cards
-- Streak statistics
-- Automatic theme synchronization
 
 ---
 
@@ -79,7 +73,7 @@
 
 3. **Start development server**
    ```bash
-   npm run dev
+   npm start
    ```
 
 4. **Build for production**

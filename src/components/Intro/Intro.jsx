@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Clock from "./Clock";
-import WeatherInfo from "./WeatherInfo";
 import SocialButtons from "./SocialButtons";
 import { useLang } from "../../context/LanguageContext";
 import translations from "../../context/translations";
@@ -18,6 +17,10 @@ export default function Intro() {
         <motion.img
           src={`${process.env.PUBLIC_URL}/Faiz.png`}
           alt="Faiz"
+          width="96"
+          height="96"
+          decoding="async"
+          fetchPriority="high"
           className="absolute inset-0 w-full h-full object-cover"
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3 }}
@@ -52,7 +55,6 @@ export default function Intro() {
         </div>
 
 
-        <WeatherInfo />
         <Clock />
         <SocialButtons />
       </div>

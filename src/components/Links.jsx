@@ -34,6 +34,8 @@ function Links() {
     },
   ];
 
+  const isExternalLink = (href) => href.startsWith("http");
+
   return (
     <section className="space-y-6">
       <Reveal>
@@ -54,11 +56,11 @@ function Links() {
 
               <a
                 href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm dark:text-white text-gray-900 transition-colors hover:text-blue-400 hover:underline"
+                target={isExternalLink(link.href) ? "_blank" : undefined}
+                rel={isExternalLink(link.href) ? "noopener noreferrer" : undefined}
+                className="rounded-sm text-sm dark:text-white text-gray-900 transition-colors hover:text-blue-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black"
               >
-                {link.name} ↗
+                {link.name}{isExternalLink(link.href) ? " ↗" : ""}
               </a>
             </div>
           </Reveal>

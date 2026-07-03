@@ -57,16 +57,18 @@ export default function ThemeToggle() {
       >
         {/* Theme toggle */}
         <button
+          type="button"
           onClick={toggleTheme}
           className="relative flex items-center justify-center w-8 h-8 rounded-full
                      dark:text-white/90 text-black/80
                      hover:dark:bg-white/15 hover:bg-black/10
-                     transition-all duration-300 hover:scale-110"
+                     transition-all duration-300 hover:scale-110
+                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black"
           aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
           title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
         >
           <span className="transition-all duration-300">
-            {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+            {theme === "dark" ? <Sun size={16} aria-hidden="true" /> : <Moon size={16} aria-hidden="true" />}
           </span>
         </button>
 
@@ -75,17 +77,19 @@ export default function ThemeToggle() {
 
         {/* Language toggle */}
         <button
+          type="button"
           onClick={toggleLang}
           className="relative flex items-center gap-1 px-2.5 h-8 rounded-full
                      dark:text-white/90 text-black/80
                      hover:dark:bg-white/15 hover:bg-black/10
                      transition-all duration-300 hover:scale-105
+                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black
                      select-none group"
           aria-label={`Switch to ${lang === "en" ? "Indonesian" : "English"}`}
           title={lang === "en" ? "Switch to Bahasa Indonesia" : "Switch to English"}
         >
           {/* Globe icon */}
-          <Globe size={13} className="opacity-75 transition-transform duration-300 group-hover:rotate-12" />
+          <Globe size={13} aria-hidden="true" className="opacity-75 transition-transform duration-300 group-hover:rotate-12" />
           {/* Label — shows language to SWITCH TO */}
           <span className="text-[10px] font-bold tracking-widest uppercase">
             {lang === "en" ? "ID" : "EN"}

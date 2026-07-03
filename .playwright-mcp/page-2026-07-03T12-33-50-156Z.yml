@@ -1,0 +1,228 @@
+- generic [ref=e3]:
+  - generic [ref=e4]:
+    - button "Switch to light theme" [ref=e5]:
+      - img [ref=e7]
+    - button "Switch to Indonesian" [ref=e14]:
+      - img [ref=e15]
+      - generic [ref=e18]: ID
+  - generic [ref=e20]:
+    - generic [ref=e22]:
+      - img "Faiz" [ref=e24]
+      - generic [ref=e25]:
+        - heading "Muhammad Faiz Bintang Pratama" [level=1] [ref=e26]
+        - paragraph [ref=e27]: _
+        - generic [ref=e28]:
+          - img [ref=e29]
+          - generic [ref=e31]: Curug, Tangerang Regency, Banten, Indonesia
+        - generic [ref=e32]: Loading weather...
+        - generic [ref=e33]:
+          - generic [ref=e34]: 03 Jul 2026
+          - generic [ref=e35]: 19:33:49
+        - generic [ref=e36]:
+          - link "LinkedIn ↗" [ref=e37]:
+            - /url: https://www.linkedin.com/in/faiz-pratama/
+            - img [ref=e38]
+            - text: LinkedIn ↗
+          - link "View GitHub ↗" [ref=e40]:
+            - /url: https://github.com/Faizpi
+            - img [ref=e41]
+            - text: View GitHub ↗
+          - link "Download CV ↗" [ref=e43]:
+            - /url: /Muhammad Faiz Bintang Pratama - CV.pdf
+            - img [ref=e44]
+            - text: Download CV ↗
+          - link "Email Me ↗" [ref=e46]:
+            - /url: mailto:faizbintang1244@gmail.com
+            - img [ref=e47]
+            - text: Email Me ↗
+    - generic [ref=e50]:
+      - heading "About" [level=2] [ref=e52]
+      - generic [ref=e53]:
+        - paragraph [ref=e56]: "Informatics student at Sultan Ageng Tirtayasa University (GPA: 3.91), a versatile developer passionate about both web and mobile development. Skilled in building interactive and user-friendly applications, with a strong drive to keep learning and adapting to new technologies. Dedicated to crafting impactful digital solutions that blend functionality, performance, and great user experience."
+        - img "About" [ref=e60]
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - button "Work Experience" [ref=e64]:
+          - img [ref=e65]
+        - button "Education" [ref=e68]:
+          - img [ref=e69]
+        - button "Organizations" [ref=e72]:
+          - img [ref=e73]
+        - button "Speaker" [ref=e78]:
+          - img [ref=e79]
+        - button "Awards" [ref=e82]:
+          - img [ref=e83]
+      - generic [ref=e87]:
+        - heading "Work Experience" [level=2] [ref=e89]
+        - generic [ref=e91]:
+          - generic [ref=e92]:
+            - img "Krakatau IT Logo" [ref=e93]
+            - paragraph [ref=e94]: May 2026 – Present
+          - generic [ref=e95]:
+            - generic [ref=e96]:
+              - heading "Digital Transformation – Internship" [level=3] [ref=e97]
+              - paragraph [ref=e98]: PT Krakatau Information Technology · Cilegon, Banten · On-site
+            - list [ref=e99]:
+              - listitem [ref=e100]: Contributed to digital transformation initiatives and software development activities.
+              - listitem [ref=e101]: Assisted in developing and improving digital solutions to support business processes.
+            - generic [ref=e102]:
+              - generic [ref=e103]: Flutter
+              - generic [ref=e104]: Mobile Applications
+        - generic [ref=e106]:
+          - generic [ref=e107]:
+            - img "Sumi Indo Kabel Logo" [ref=e108]
+            - paragraph [ref=e109]: Aug 2025 – Present
+          - generic [ref=e110]:
+            - generic [ref=e111]:
+              - heading "IT Department – Internship" [level=3] [ref=e112]
+              - paragraph [ref=e113]: PT Sumi Indo Kabel Tbk · Tangerang, Banten
+            - list [ref=e114]:
+              - listitem [ref=e115]: Developed Website System STB Label for Automobile Cable Plant 1 using Laravel.
+    - generic [ref=e117]:
+      - generic [ref=e119]:
+        - heading "Projects" [level=2] [ref=e120]
+        - generic [ref=e121]: 3 projects
+      - generic [ref=e123]:
+        - generic [ref=e124]:
+          - img "Bunching Label Plant 1" [ref=e126]
+          - paragraph [ref=e127]: "2025"
+        - generic [ref=e128]:
+          - generic [ref=e129]:
+            - generic [ref=e130]:
+              - heading "Bunching Label Plant 1" [level=3] [ref=e131]
+              - link "Open Bunching Label Plant 1 repository" [ref=e132]:
+                - /url: https://github.com/Faizpi/bunching-label-tugas-akhir
+                - img [ref=e133]
+            - paragraph [ref=e136]: Industrial Web Application
+          - paragraph [ref=e137]: Aplikasi Web Based untuk memberi label pada kabel automobile dengan fitur barcode scanning dan export data.
+          - generic [ref=e138]:
+            - generic [ref=e139]: Laravel
+            - generic [ref=e140]: Bootstrap
+            - generic [ref=e141]: MySQL
+      - generic [ref=e143]:
+        - generic [ref=e144]:
+          - img "Hibiscus Efsya POS" [ref=e146]
+          - paragraph [ref=e147]: "2026"
+        - generic [ref=e148]:
+          - generic [ref=e149]:
+            - generic [ref=e150]:
+              - heading "Hibiscus Efsya POS" [level=3] [ref=e151]
+              - link "Open Hibiscus Efsya POS repository" [ref=e152]:
+                - /url: https://github.com/Faizpi/
+                - img [ref=e153]
+            - paragraph [ref=e156]: POS System Web & Mobile Application
+          - paragraph [ref=e157]: Aplikasi Web dan Mobile untuk mengelola sistem point of sale mulai dari penjualan, pembelian, biaya, kunjungan, invoice, export data excel dan pdf, dll.
+          - generic [ref=e158]:
+            - generic [ref=e159]: Laravel
+            - generic [ref=e160]: Bootstrap
+            - generic [ref=e161]: MySQL
+            - generic [ref=e162]: Flutter
+            - generic [ref=e163]: Rest API
+      - generic [ref=e165]:
+        - generic [ref=e166]:
+          - img "Amara Baby Shop" [ref=e168]
+          - paragraph [ref=e169]: "2026"
+        - generic [ref=e170]:
+          - generic [ref=e171]:
+            - generic [ref=e172]:
+              - heading "Amara Baby Shop" [level=3] [ref=e173]
+              - link "Open Amara Baby Shop repository" [ref=e174]:
+                - /url: https://github.com/Faizpi/babyshop
+                - img [ref=e175]
+            - paragraph [ref=e178]: Manajemen Inventaris & POS Toko Perlengkapan Bayi
+          - paragraph [ref=e179]: Aplikasi mobile untuk membantu toko perlengkapan bayi mengelola stok, penjualan, dan operasional toko dengan lebih praktis.
+          - generic [ref=e180]:
+            - generic [ref=e181]: Flutter
+            - generic [ref=e182]: Firebase
+      - paragraph [ref=e185]:
+        - text: "Ingin melihat lebih banyak project saya? Silakan akses portofolio lengkap di sini:"
+        - link "Github ↗" [ref=e186]:
+          - /url: https://github.com/Faizpi/
+    - generic [ref=e188]:
+      - heading "Skills" [level=2] [ref=e190]
+      - region "Technical skills" [ref=e192]:
+        - generic [ref=e193]:
+          - list [ref=e194]:
+            - listitem:
+              - img "HTML"
+            - listitem:
+              - img "CSS"
+            - listitem:
+              - img "JavaScript"
+            - listitem:
+              - img "PHP"
+            - listitem:
+              - img "Dart"
+            - listitem:
+              - img "React"
+            - listitem:
+              - img "Node.js"
+            - listitem:
+              - img "Express"
+            - listitem:
+              - img "Laravel"
+            - listitem:
+              - img "Tailwind"
+            - listitem:
+              - img "Flutter"
+            - listitem:
+              - img "MySQL"
+            - listitem:
+              - img "MongoDB"
+            - listitem:
+              - img "Git"
+            - listitem:
+              - img "GitHub"
+            - listitem:
+              - img "Figma"
+          - list [ref=e195]
+          - list [ref=e196]
+    - generic [ref=e198]:
+      - heading "Links" [level=2] [ref=e200]
+      - generic [ref=e201]:
+        - generic [ref=e203]:
+          - generic [ref=e204]: GitHub
+          - link "@Faizpi ↗" [ref=e205]:
+            - /url: https://github.com/Faizpi
+        - generic [ref=e207]:
+          - generic [ref=e208]: LinkedIn
+          - link "Muhammad Faiz Bintang Pratama ↗" [ref=e209]:
+            - /url: https://www.linkedin.com/in/faiz-pratama/
+        - generic [ref=e211]:
+          - generic [ref=e212]: Email
+          - link "faizbintang1244@gmail.com ↗" [ref=e213]:
+            - /url: mailto:faizbintang1244@gmail.com
+        - generic [ref=e215]:
+          - generic [ref=e216]: WhatsApp
+          - link "+62 87871656326 ↗" [ref=e217]:
+            - /url: https://wa.me/6287871656326
+        - generic [ref=e219]:
+          - generic [ref=e220]: Instagram
+          - link "@faiz_pratama02 ↗" [ref=e221]:
+            - /url: https://instagram.com/faiz_pratama02
+  - generic [ref=e222]:
+    - button "Scroll to top" [ref=e223]:
+      - img [ref=e224]
+    - button "Scroll to bottom" [ref=e226]:
+      - img [ref=e227]
+  - button "Toggle Navbar" [ref=e229]:
+    - img [ref=e230]
+  - generic [ref=e235]:
+    - button "Home" [ref=e236]:
+      - img [ref=e237]
+      - generic: Home
+    - button "About" [ref=e240]:
+      - img [ref=e241]
+      - generic: About
+    - button "Experience" [ref=e244]:
+      - img [ref=e245]
+      - generic: Experience
+    - button "Projects" [ref=e248]:
+      - img [ref=e249]
+      - generic: Projects
+    - button "Skills" [ref=e252]:
+      - img [ref=e253]
+      - generic: Skills
+    - button "Contact" [ref=e255]:
+      - img [ref=e256]
+      - generic: Contact

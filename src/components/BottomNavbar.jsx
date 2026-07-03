@@ -55,19 +55,24 @@ const BottomNavbar = () => {
     <>
 
       <button
+        type="button"
         onClick={() => setIsVisible(!isVisible)}
         className="fixed top-4 right-4 z-50 p-2 rounded-xl 
                    border border-white/30 dark:border-white/20
                    hover:scale-105 hover:border-white/50 transition-all
-                   dark:text-white text-gray-900"
+                   dark:text-white text-gray-900
+                   focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
         style={glassStyle}
         aria-label="Toggle Navbar"
+        aria-expanded={isVisible}
+        aria-controls="primary-sections-nav"
       >
         {isVisible ? <X size={20} /> : <Menu size={20} />}
       </button>
 
 
-      <div
+      <nav
+        aria-label="Primary sections"
         className="fixed bottom-6 left-1/2 z-40 transition-all duration-[1200ms] ease-in-out"
         style={{
           transform: isVisible
@@ -78,6 +83,7 @@ const BottomNavbar = () => {
         }}
       >
         <div
+          id="primary-sections-nav"
           className="rounded-full px-3 py-2 border border-white/30 dark:border-white/20"
           style={glassStyle}
         >
@@ -89,12 +95,14 @@ const BottomNavbar = () => {
               return (
                 <button
                   key={item.id}
+                  type="button"
                   onClick={() => scrollToSection(item.section)}
-                  className={`group relative p-2 rounded-full transition-all duration-300 ${isActive
+                  className={`group relative p-2 rounded-full transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 focus-visible:ring-offset-2 focus-visible:ring-offset-transparent ${isActive
                     ? "dark:bg-white/20 bg-black/20 dark:text-white text-gray-900 shadow-md"
                     : "dark:text-gray-200 text-gray-700 hover:dark:text-white hover:text-gray-900 hover:dark:bg-white/10 hover:bg-black/10"
                     }`}
                   aria-label={item.label}
+                  aria-current={isActive ? "page" : undefined}
                 >
                   <Icon size={14} strokeWidth={2} />
 
@@ -112,7 +120,7 @@ const BottomNavbar = () => {
             })}
           </div>
         </div>
-      </div>
+      </nav>
     </>
   );
 };

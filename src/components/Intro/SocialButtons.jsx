@@ -22,23 +22,25 @@ export default function SocialButtons() {
     {
       href: "https://www.linkedin.com/in/faiz-pratama/",
       label: t.linkedin,
-      icon: <FaLinkedin size={12} />,
+      icon: <FaLinkedin size={12} aria-hidden="true" />,
+      external: true,
     },
     {
       href: "https://github.com/Faizpi",
       label: t.github,
-      icon: <FaGithub size={12} />,
+      icon: <FaGithub size={12} aria-hidden="true" />,
+      external: true,
     },
     {
       href: `${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`,
       label: t.downloadCV,
-      icon: <FaFileAlt size={12} />,
+      icon: <FaFileAlt size={12} aria-hidden="true" />,
       download: true,
     },
     {
       href: "mailto:faizbintang1244@gmail.com",
       label: t.emailMe,
-      icon: <FaEnvelope size={12} />,
+      icon: <FaEnvelope size={12} aria-hidden="true" />,
     },
   ];
 
@@ -48,8 +50,8 @@ export default function SocialButtons() {
         <motion.a
           key={i}
           href={btn.href}
-          target={btn.download ? undefined : "_blank"}
-          rel={btn.download ? undefined : "noopener noreferrer"}
+          target={btn.external ? "_blank" : undefined}
+          rel={btn.external ? "noopener noreferrer" : undefined}
           download={btn.download}
           whileHover={{ scale: 1.05 }}
           transition={{ duration: 0.2 }}
@@ -58,6 +60,7 @@ export default function SocialButtons() {
                      text-black dark:text-white
                      hover:border-white/50 
                      transition-all duration-300
+                     focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black
                      flex-1 basis-[48%] h-8"
           style={glassStyle}
         >

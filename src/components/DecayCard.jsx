@@ -13,6 +13,10 @@ const DecayCard = ({ width = 300, height = 400, image = 'https://picsum.photos/3
       <img
         src={image}
         alt="About"
+        width={width}
+        height={height}
+        loading="lazy"
+        decoding="async"
         style={{
           width: '100%',
           height: '100%',
