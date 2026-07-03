@@ -60,3 +60,29 @@ test("runs reveal animation only once when content enters the viewport", () => {
     "true"
   );
 });
+
+test("renders updated projects in the requested order", () => {
+  render(<App />);
+
+  expect(screen.getByText("5 projects")).toBeInTheDocument();
+
+  const projectTitles = screen
+    .getAllByRole("heading", { level: 3 })
+    .map((heading) => heading.textContent);
+
+  expect(projectTitles).toEqual([
+    "Hibiscus Efsya POS",
+    "Hibiscusefsya Landingpage",
+    "MBK Hibiscusefsya Katalog",
+    "Amara Baby Shop",
+    "STB Label Cable Plant 1",
+  ]);
+
+  expect(
+    screen.getByRole("link", { name: /open hibiscusefsya landingpage/i })
+  ).toHaveAttribute("href", "https://hibiscusefsya.com/");
+  expect(
+    screen.getByRole("link", { name: /open mbk hibiscusefsya katalog/i })
+  ).toHaveAttribute("href", "https://bodycare.hibiscusefsya.com/");
+  expect(screen.queryByText("Bunching Label Plant 1")).not.toBeInTheDocument();
+});

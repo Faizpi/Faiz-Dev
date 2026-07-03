@@ -4,16 +4,6 @@ import { ArrowUpRight } from "lucide-react";
 const PROJECTS = [
   {
     id: 1,
-    year: "2025",
-    image: `${process.env.PUBLIC_URL}/sik1.png`,
-    title: "Bunching Label Plant 1",
-    subtitle: "Industrial Web Application",
-    desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dengan fitur barcode scanning dan export data.",
-    tags: ["Laravel", "Bootstrap", "MySQL"],
-    link: "https://github.com/Faizpi/bunching-label-tugas-akhir",
-  },
-  {
-    id: 4,
     year: "2026",
     image: `${process.env.PUBLIC_URL}/hibiscusefsya1.png`,
     title: "Hibiscus Efsya POS",
@@ -23,7 +13,27 @@ const PROJECTS = [
     link: "https://github.com/Faizpi/",
   },
   {
-    id: 7,
+    id: 2,
+    year: "2026",
+    image: `${process.env.PUBLIC_URL}/projek4.png`,
+    title: "Hibiscusefsya Landingpage",
+    subtitle: "Company Profile Landing Page",
+    desc: "Landing page resmi Hibiscusefsya untuk menampilkan profil brand, produk unggulan, dan informasi bisnis secara ringkas.",
+    tags: ["React", "Tailwind CSS", "Responsive Design"],
+    link: "https://hibiscusefsya.com/",
+  },
+  {
+    id: 3,
+    year: "2026",
+    image: `${process.env.PUBLIC_URL}/projek5.png`,
+    title: "MBK Hibiscusefsya Katalog",
+    subtitle: "Online Product Catalog",
+    desc: "Katalog online untuk produk bodycare Hibiscusefsya yang memudahkan pelanggan melihat daftar produk dan detailnya.",
+    tags: ["React", "Tailwind CSS", "Catalog"],
+    link: "https://bodycare.hibiscusefsya.com/",
+  },
+  {
+    id: 4,
     year: "2026",
     image: `${process.env.PUBLIC_URL}/amara.png`,
     title: "Amara Baby Shop",
@@ -32,7 +42,18 @@ const PROJECTS = [
     tags: ["Flutter", "Firebase"],
     link: "https://github.com/Faizpi/babyshop",
   },
+  {
+    id: 5,
+    year: "2025",
+    image: `${process.env.PUBLIC_URL}/sik1.png`,
+    title: "STB Label Cable Plant 1",
+    subtitle: "Industrial Web Application",
+    desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dengan fitur barcode scanning dan export data.",
+    tags: ["Laravel", "Bootstrap", "MySQL"],
+    link: "https://github.com/Faizpi/bunching-label-tugas-akhir",
+  },
 ];
+
 
 function Projects() {
   return (
