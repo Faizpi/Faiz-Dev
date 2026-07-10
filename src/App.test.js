@@ -99,7 +99,17 @@ test("renders a project detail page from a project hash", () => {
   render(<App />);
 
   expect(screen.getByRole("heading", { name: "Hibiscusefsya Landingpage" })).toBeInTheDocument();
-  expect(screen.getByRole("heading", { name: "Interface gallery" })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: "Project images" })).toBeInTheDocument();
+  expect(screen.getByText("Company Profile Landing Page")).toBeInTheDocument();
   expect(screen.getByRole("link", { name: /back to projects/i })).toHaveAttribute("href", "#Projects");
-  expect(screen.getAllByRole("img")).toHaveLength(3);
+  expect(screen.getAllByRole("img")).toHaveLength(1);
+  expect(screen.getByRole("img")).toHaveAttribute("src", "/projek4.png");
+});
+
+test("shows an empty image state when a project has no configured gallery", () => {
+  window.location.hash = "#project-3";
+  render(<App />);
+
+  expect(screen.getByText("Project images belum tersedia.")).toBeInTheDocument();
+  expect(screen.queryByRole("img")).not.toBeInTheDocument();
 });

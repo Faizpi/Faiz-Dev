@@ -6,6 +6,7 @@ export const PROJECTS = [
     id: 1,
     year: "2026",
     image: `${process.env.PUBLIC_URL}/hibiscusefsya1.png`,
+    gallery: [`${process.env.PUBLIC_URL}/hibiscusefsya1.png`],
     title: "Hibiscus Efsya POS",
     subtitle: "POS System Web & Mobile Application",
     desc: "Aplikasi Web dan Mobile untuk mengelola sistem point of sale mulai dari penjualan, pembelian, biaya, kunjungan, invoice, export data excel dan pdf, dll.",
@@ -16,6 +17,7 @@ export const PROJECTS = [
     id: 2,
     year: "2026",
     image: `${process.env.PUBLIC_URL}/projek4.png`,
+    gallery: [`${process.env.PUBLIC_URL}/projek4.png`],
     title: "Hibiscusefsya Landingpage",
     subtitle: "Company Profile Landing Page",
     desc: "Landing page resmi Hibiscusefsya yang terintegrasi dengan admin panel CMS untuk mengelola konten website, profil brand, produk unggulan, dan informasi bisnis.",
@@ -130,7 +132,7 @@ function Projects() {
                     href={`#project-${project.id}`}
                     className="inline-flex rounded-sm text-xs font-medium text-blue-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
                   >
-                    View case study
+                    View project details
                   </a>
                   <div className="flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (

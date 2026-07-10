@@ -1,35 +1,34 @@
-import { ArrowLeft, ArrowUpRight, Monitor, Smartphone, Tablet } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import Reveal from "./Reveal";
 
-const MOCKUP_SIZES = [
-  { label: "Desktop experience", icon: Monitor, aspectRatio: "aspect-[16/10]" },
-  { label: "Tablet experience", icon: Tablet, aspectRatio: "aspect-[4/3]" },
-  { label: "Mobile experience", icon: Smartphone, aspectRatio: "aspect-[9/16] max-w-[13rem] mx-auto" },
-];
-
-function MockupPlaceholder({ project, label, icon: Icon, aspectRatio }) {
-  const imageUrl = `https://placehold.co/1200x800/374151/E5E7EB?text=${encodeURIComponent(
-    `${project.title}\n${label}`
-  )}`;
+function ProjectGallery({ project }) {
+  if (!project.gallery?.length) {
+    return (
+      <p className="rounded-lg border border-dashed border-black/10 px-4 py-8 text-center text-xs text-gray-500 dark:border-white/10 dark:text-gray-400">
+        Project images belum tersedia.
+      </p>
+    );
+  }
 
   return (
-    <figure className="space-y-3">
-      <div
-        className={`overflow-hidden rounded-xl border border-black/10 bg-gray-700 shadow-sm dark:border-white/10 ${aspectRatio}`}
-      >
-        <img
-          src={imageUrl}
-          alt={`${project.title} ${label} mockup placeholder`}
-          loading="lazy"
-          decoding="async"
-          className="h-full w-full object-cover"
-        />
-      </div>
-      <figcaption className="flex items-center justify-center gap-2 text-[11px] text-gray-500 dark:text-gray-400">
-        <Icon size={13} aria-hidden="true" />
-        {label}
-      </figcaption>
-    </figure>
+    <div className="space-y-5">
+      {project.gallery.map((image, index) => (
+        <figure key={`${image}-${index}`} className="space-y-2">
+          <div className="overflow-hidden rounded-xl border border-black/10 bg-black/5 dark:border-white/10 dark:bg-white/5">
+            <img
+              src={image}
+              alt={`${project.title} project image ${index + 1}`}
+              loading={index === 0 ? "eager" : "lazy"}
+              decoding="async"
+              className="block h-auto w-full"
+            />
+          </div>
+          <figcaption className="text-center text-[11px] text-gray-500 dark:text-gray-400">
+            {project.title} · Image {index + 1}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
   );
 }
 
@@ -50,7 +49,7 @@ export default function ProjectDetail({ project }) {
         <Reveal delay={0.06}>
           <header className="space-y-4">
             <p className="text-[11px] font-medium uppercase tracking-[0.18em] text-gray-500 dark:text-gray-400">
-              {project.year} · Case study
+              {project.year} · Project details
             </p>
             <div className="space-y-2">
               <h1 className="text-2xl font-bold tracking-tight text-black dark:text-white">
@@ -86,14 +85,12 @@ export default function ProjectDetail({ project }) {
         <section aria-labelledby="gallery-heading" className="space-y-6">
           <Reveal delay={0.12}>
             <h2 id="gallery-heading" className="text-sm font-bold text-black dark:text-white">
-              Interface gallery
+              Project images
             </h2>
           </Reveal>
-          {MOCKUP_SIZES.map((mockup, index) => (
-            <Reveal key={mockup.label} delay={0.16 + index * 0.06}>
-              <MockupPlaceholder project={project} {...mockup} />
-            </Reveal>
-          ))}
+          <Reveal delay={0.16}>
+            <ProjectGallery project={project} />
+          </Reveal>
         </section>
       </div>
     </main>
