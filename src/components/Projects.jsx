@@ -1,7 +1,7 @@
 import Reveal from "./Reveal";
 import { ArrowUpRight } from "lucide-react";
 
-const PROJECTS = [
+export const PROJECTS = [
   {
     id: 1,
     year: "2026",
@@ -72,7 +72,11 @@ function Projects() {
           <li key={project.id}>
             <Reveal delay={index * 0.08}>
               <article className="flex gap-4 items-start">
-                <div className="w-36 shrink-0">
+                <a
+                  href={`#project-${project.id}`}
+                  aria-label={`View details for ${project.title}`}
+                  className="w-36 shrink-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black"
+                >
                   <div className="aspect-video rounded-lg overflow-hidden bg-white/5">
                     <img
                       src={project.image}
@@ -81,18 +85,23 @@ function Projects() {
                       height="180"
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     />
                   </div>
                   <p className="text-[10px] dark:text-gray-500 text-gray-400 text-center mt-1.5">
                     {project.year}
                   </p>
-                </div>
+                </a>
                 <div className="space-y-2 flex-1 min-w-0">
                   <div className="space-y-0.5">
                     <div className="flex items-center gap-2">
                       <h3 className="text-sm font-semibold dark:text-white text-black truncate">
-                        {project.title}
+                        <a
+                          href={`#project-${project.id}`}
+                          className="rounded-sm hover:text-blue-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                        >
+                          {project.title}
+                        </a>
                       </h3>
                       {project.link && (
                         <a
@@ -117,6 +126,12 @@ function Projects() {
                   <p className="text-xs dark:text-gray-400 text-gray-700 text-justify leading-relaxed">
                     {project.desc}
                   </p>
+                  <a
+                    href={`#project-${project.id}`}
+                    className="inline-flex rounded-sm text-xs font-medium text-blue-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400"
+                  >
+                    View case study
+                  </a>
                   <div className="flex flex-wrap gap-1.5">
                     {project.tags.map((tag) => (
                       <span

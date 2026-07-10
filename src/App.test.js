@@ -61,6 +61,10 @@ test("runs reveal animation only once when content enters the viewport", () => {
   );
 });
 
+afterEach(() => {
+  window.location.hash = "";
+});
+
 test("renders updated projects in the requested order", () => {
   render(<App />);
 
@@ -88,4 +92,14 @@ test("renders updated projects in the requested order", () => {
     screen.getByRole("link", { name: /open mbk hibiscusefsya katalog/i })
   ).toHaveAttribute("href", "https://bodycare.hibiscusefsya.com/");
   expect(screen.queryByText("Bunching Label Plant 1")).not.toBeInTheDocument();
+});
+
+test("renders a project detail page from a project hash", () => {
+  window.location.hash = "#project-2";
+  render(<App />);
+
+  expect(screen.getByRole("heading", { name: "Hibiscusefsya Landingpage" })).toBeInTheDocument();
+  expect(screen.getByRole("heading", { name: "Interface gallery" })).toBeInTheDocument();
+  expect(screen.getByRole("link", { name: /back to projects/i })).toHaveAttribute("href", "#Projects");
+  expect(screen.getAllByRole("img")).toHaveLength(3);
 });
