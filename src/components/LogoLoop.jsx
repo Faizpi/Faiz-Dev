@@ -256,9 +256,8 @@ export const LogoLoop = memo(
           return (
             <li
               className={cx(
-                'flex-none text-[length:var(--logoloop-logoHeight)] leading-[1]',
-                isVertical ? 'mb-[var(--logoloop-gap)]' : 'mr-[var(--logoloop-gap)]',
-                scaleOnHover && 'overflow-visible group/item'
+                'flex-none overflow-visible text-[length:var(--logoloop-logoHeight)] leading-[1] group/item',
+                isVertical ? 'mb-[var(--logoloop-gap)]' : 'mr-[var(--logoloop-gap)]'
               )}
               key={key}
               role="listitem"
@@ -273,11 +272,11 @@ export const LogoLoop = memo(
         const content = isNodeItem ? (
           <span
             className={cx(
-              'inline-flex items-center',
+              'inline-flex items-center opacity-70 grayscale contrast-75',
+              'transition-[filter,opacity,transform] duration-300 ease-out',
+              'group-hover/item:opacity-100 group-hover/item:grayscale-0 group-hover/item:contrast-100',
               'motion-reduce:transition-none',
-              'grayscale dark:invert dark:brightness-200',
-              scaleOnHover &&
-                'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
+              scaleOnHover && 'group-hover/item:scale-110'
             )}
             aria-hidden={!!item.href && !item.ariaLabel}
           >
@@ -286,13 +285,13 @@ export const LogoLoop = memo(
         ) : (
           <img
             className={cx(
-              'h-[var(--logoloop-logoHeight)] w-auto block object-contain',
+              'h-[var(--logoloop-logoHeight)] w-auto block object-contain opacity-70 grayscale contrast-75',
               '[-webkit-user-drag:none] pointer-events-none',
               '[image-rendering:-webkit-optimize-contrast]',
+              'transition-[filter,opacity,transform] duration-300 ease-out',
+              'group-hover/item:opacity-100 group-hover/item:grayscale-0 group-hover/item:contrast-100',
               'motion-reduce:transition-none',
-              'grayscale dark:invert dark:brightness-200',
-              scaleOnHover &&
-                'transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] group-hover/item:scale-120'
+              scaleOnHover && 'group-hover/item:scale-110'
             )}
             src={item.src}
             srcSet={item.srcSet}

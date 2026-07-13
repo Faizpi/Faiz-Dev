@@ -41,10 +41,12 @@ export default function Skills() {
           logos={skillLogos}
           speed={60}
           direction="left"
-          logoHeight={28}
-          gap={32}
+          logoHeight={30}
+          gap={40}
           hoverSpeed={0}
           fadeOut
+          scaleOnHover
+          className="rounded-xl border border-gray-200/70 bg-gray-50/50 py-4 dark:border-white/10 dark:bg-white/[0.025] sm:py-5"
           ariaLabel="Technical skills"
         />
       </Reveal>

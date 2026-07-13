@@ -87,7 +87,7 @@ function Projects() {
                       height="180"
                       loading="lazy"
                       decoding="async"
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      className="h-full w-full object-contain transition-transform duration-300 hover:scale-105"
                     />
                   </div>
                   <p className="text-[10px] dark:text-gray-500 text-gray-400 text-center mt-1.5">
