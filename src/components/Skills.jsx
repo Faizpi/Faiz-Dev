@@ -46,7 +46,7 @@ export default function Skills() {
           hoverSpeed={0}
           fadeOut
           scaleOnHover
-          className="rounded-xl border border-gray-200/70 bg-gray-50/50 py-4 dark:border-white/10 dark:bg-white/[0.025] sm:py-5"
+          className="py-4 sm:py-5"
           ariaLabel="Technical skills"
         />
       </Reveal>
