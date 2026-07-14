@@ -8,6 +8,12 @@ function Links() {
 
   const links = [
     {
+      label: "CV",
+      name: "Download CV",
+      href: `${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`,
+      download: true,
+    },
+    {
       label: "GitHub",
       name: "@Faizpi",
       href: "https://github.com/Faizpi",
@@ -58,6 +64,7 @@ function Links() {
                 href={link.href}
                 target={isExternalLink(link.href) ? "_blank" : undefined}
                 rel={isExternalLink(link.href) ? "noopener noreferrer" : undefined}
+                download={link.download}
                 className="rounded-sm text-sm dark:text-white text-gray-900 transition-colors hover:text-blue-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black"
               >
                 {link.name}{isExternalLink(link.href) ? " ↗" : ""}

@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import Clock from "./Clock";
-import SocialButtons from "./SocialButtons";
 import { useLang } from "../../context/LanguageContext";
 import translations from "../../context/translations";
 
@@ -56,7 +55,6 @@ export default function Intro() {
 
 
         <Clock />
-        <SocialButtons />
       </div>
     </div>
   );
