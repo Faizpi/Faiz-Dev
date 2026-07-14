@@ -43,7 +43,7 @@ const translations = {
         {
           logo: "kit.png",
           alt: "Krakatau IT Logo",
-          period: "May 2026 – Present",
+          period: "May 2026",
           title: "Digital Transformation – Internship",
           company: "PT Krakatau Information Technology · Cilegon, Banten · On-site",
           bullets: [
@@ -55,7 +55,7 @@ const translations = {
         {
           logo: "SIK.png",
           alt: "Sumi Indo Kabel Logo",
-          period: "Aug 2025 – Present",
+          period: "Aug 2025 – Oct 2025",
           title: "IT Department – Internship",
           company: "PT Sumi Indo Kabel Tbk · Tangerang, Banten",
           bullets: [
@@ -67,6 +67,18 @@ const translations = {
 
       // Education entries
       education: [
+        {
+          logo: "Untirta.png",
+          alt: "Untirta",
+          period: "2023 – Present",
+          title: "S1 Informatics",
+          institution: "Universitas Sultan Ageng Tirtayasa · Cilegon, Banten",
+          bullets: [
+            "GPA 3.91 / 4.00",
+            "Focused on Software Engineering and Web Development",
+            "Active in organizational activities and projects",
+          ],
+        },
         {
           logo: "DBS.png",
           alt: "DBS Foundation",
@@ -84,18 +96,6 @@ const translations = {
           bullets: [
             "Completed Intermediate & Expert level tracks",
             "Focused on Flutter-based multi-platform app development with AI integration",
-          ],
-        },
-        {
-          logo: "Untirta.png",
-          alt: "Untirta",
-          period: "2023 – Present",
-          title: "S1 Informatics",
-          institution: "Universitas Sultan Ageng Tirtayasa · Cilegon, Banten",
-          bullets: [
-            "GPA 3.87 / 4.00",
-            "Focused on Software Engineering and Web Development",
-            "Active in organizational activities and projects",
           ],
         },
       ],
@@ -172,7 +172,7 @@ const translations = {
         {
           logo: "kit.png",
           alt: "Logo Krakatau IT",
-          period: "Mei 2026 – Sekarang",
+          period: "Mei 2026",
           title: "Transformasi Digital – Magang",
           company: "PT Krakatau Information Technology · Cilegon, Banten · Onsite",
           bullets: [
@@ -184,7 +184,7 @@ const translations = {
         {
           logo: "SIK.png",
           alt: "Logo Sumi Indo Kabel",
-          period: "Agu 2025 – Sekarang",
+          period: "Agu 2025 – Okt 2025",
           title: "Departemen IT – Magang",
           company: "PT Sumi Indo Kabel Tbk · Tangerang, Banten",
           bullets: [
@@ -196,6 +196,18 @@ const translations = {
 
       // Education entries
       education: [
+        {
+          logo: "Untirta.png",
+          alt: "Untirta",
+          period: "2023 – Sekarang",
+          title: "S1 Informatika",
+          institution: "Universitas Sultan Ageng Tirtayasa · Cilegon, Banten",
+          bullets: [
+            "IPK 3,91 / 4,00",
+            "Fokus pada Rekayasa Perangkat Lunak dan Pengembangan Web",
+            "Aktif dalam kegiatan organisasi dan proyek",
+          ],
+        },
         {
           logo: "DBS.png",
           alt: "DBS Foundation",
@@ -213,18 +225,6 @@ const translations = {
           bullets: [
             "Menyelesaikan jalur Intermediate & Expert",
             "Fokus pada pengembangan aplikasi multi-platform berbasis Flutter dengan integrasi AI",
-          ],
-        },
-        {
-          logo: "Untirta.png",
-          alt: "Untirta",
-          period: "2023 – Sekarang",
-          title: "S1 Informatika",
-          institution: "Universitas Sultan Ageng Tirtayasa · Cilegon, Banten",
-          bullets: [
-            "IPK 3,87 / 4,00",
-            "Fokus pada Rekayasa Perangkat Lunak dan Pengembangan Web",
-            "Aktif dalam kegiatan organisasi dan proyek",
           ],
         },
       ],

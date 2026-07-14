@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaLinkedin, FaGithub, FaFileAlt, FaEnvelope } from "react-icons/fa";
+import { FaFileAlt } from "react-icons/fa";
 import { useLang } from "../../context/LanguageContext";
 import translations from "../../context/translations";
 
@@ -20,27 +20,10 @@ export default function SocialButtons() {
 
   const buttons = [
     {
-      href: "https://www.linkedin.com/in/faiz-pratama/",
-      label: t.linkedin,
-      icon: <FaLinkedin size={12} aria-hidden="true" />,
-      external: true,
-    },
-    {
-      href: "https://github.com/Faizpi",
-      label: t.github,
-      icon: <FaGithub size={12} aria-hidden="true" />,
-      external: true,
-    },
-    {
       href: `${process.env.PUBLIC_URL}/Muhammad Faiz Bintang Pratama - CV.pdf`,
       label: t.downloadCV,
       icon: <FaFileAlt size={12} aria-hidden="true" />,
       download: true,
-    },
-    {
-      href: "mailto:faizbintang1244@gmail.com",
-      label: t.emailMe,
-      icon: <FaEnvelope size={12} aria-hidden="true" />,
     },
   ];
 
@@ -61,7 +44,7 @@ export default function SocialButtons() {
                      hover:border-white/50 
                      transition-all duration-300
                      focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black
-                     flex-1 basis-[48%] h-8"
+                      w-full h-8"
           style={glassStyle}
         >
           {btn.icon} {btn.label}
