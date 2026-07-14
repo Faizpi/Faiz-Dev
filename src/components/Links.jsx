@@ -67,7 +67,7 @@ function Links() {
                 download={link.download}
                 className="rounded-sm text-sm dark:text-white text-gray-900 transition-colors hover:text-blue-400 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black"
               >
-                {link.name}{isExternalLink(link.href) ? " ↗" : ""}
+                {link.name} ↗
               </a>
             </div>
           </Reveal>

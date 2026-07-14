@@ -53,7 +53,7 @@ export default function App() {
               id="main-content"
               className="bg-black/70 dark:bg-black/70 bg-white/70 backdrop-blur-sm relative z-10"
             >
-              <div className="max-w-md mx-auto space-y-20 px-4 py-12 pb-24">
+              <div className="max-w-md mx-auto space-y-14 px-4 py-12 pb-24">
                 <section id="Intro" aria-label="Introduction"><Intro /></section>
                 <section id="About" aria-label="About"><About /></section>
                 <section id="Experience" aria-label="Experience"><Experience /></section>
