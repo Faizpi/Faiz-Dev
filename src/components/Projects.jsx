@@ -10,7 +10,7 @@ export const PROJECTS = [
     title: "Hibiscus Efsya POS",
     subtitle: "POS System Web & Mobile Application",
     desc: "Aplikasi Web dan Mobile untuk mengelola sistem point of sale mulai dari penjualan, pembelian, biaya, kunjungan, invoice, export data excel dan pdf, dll.",
-    tags: ["Laravel", "Bootstrap", "MySQL", "Flutter", "Rest API"],
+    tags: ["Laravel", "MySQL", "Flutter", "Rest API"],
     link: "https://github.com/Faizpi/",
   },
   {

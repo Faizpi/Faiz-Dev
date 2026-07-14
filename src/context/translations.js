@@ -48,7 +48,6 @@ const translations = {
           company: "PT Krakatau Information Technology · Cilegon, Banten · On-site",
           bullets: [
             "Contributed to digital transformation initiatives and software development activities.",
-            "Assisted in developing and improving digital solutions to support business processes.",
           ],
           tags: ["Flutter", "Mobile Applications"],
         },
@@ -61,7 +60,7 @@ const translations = {
           bullets: [
             "Developed Website System STB Label for Automobile Cable Plant 1 using Laravel.",
           ],
-          tags: [],
+          tags: ["Laravel", "MySQL"],
         },
       ],
 
@@ -177,7 +176,6 @@ const translations = {
           company: "PT Krakatau Information Technology · Cilegon, Banten · Onsite",
           bullets: [
             "Berkontribusi dalam inisiatif transformasi digital dan kegiatan pengembangan perangkat lunak.",
-            "Membantu mengembangkan dan meningkatkan solusi digital untuk mendukung proses bisnis.",
           ],
           tags: ["Flutter", "Aplikasi Mobile"],
         },
@@ -190,7 +188,7 @@ const translations = {
           bullets: [
             "Mengembangkan Sistem Website STB Label untuk Pabrik Kabel Otomotif Plant 1 menggunakan Laravel.",
           ],
-          tags: [],
+          tags: ["Laravel", "MySQL"],
         },
       ],
 
