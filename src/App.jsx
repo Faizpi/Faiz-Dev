@@ -9,6 +9,7 @@ import ScrollButtons from "./components/ScrollButtons";
 import BottomNavbar from "./components/BottomNavbar";
 import Cursor from "./components/Cursor";
 import Projects, { PROJECTS } from "./components/Projects";
+import GitHubContributions from "./components/GitHubContributions";
 import ProjectDetail from "./components/ProjectDetail";
 import ThemeToggle from "./components/ThemeToggle";
 import { LanguageProvider } from "./context/LanguageContext";
@@ -59,6 +60,9 @@ export default function App() {
                 <section id="Experience" aria-label="Experience"><Experience /></section>
                 <section id="Projects" aria-label="Projects">
                   <Projects />
+                </section>
+                <section id="Contributions" aria-label="GitHub Contributions">
+                  <GitHubContributions />
                 </section>
                 <section id="Skills" aria-label="Skills"><Skills /></section>
                 <section id="Links" aria-label="Links"><Links /></section>

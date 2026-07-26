@@ -116,6 +116,26 @@ const translations = {
       ],
     },
 
+    // GitHub Contributions
+    contributions: {
+      title: "GitHub Contributions",
+      activity: "GitHub activity",
+      total: (count) => `${count.toLocaleString("en-US")} contributions`,
+      yearFilter: "Filter contributions by year",
+      calendar: (year) => `GitHub contribution calendar for ${year}`,
+      day: (count, date) => `${count} contributions on ${date}`,
+      summary: (count, year) => `${count.toLocaleString("en-US")} contributions in ${year}`,
+      intensity: "Contribution intensity",
+      less: "Less",
+      more: "More",
+      monday: "Mon",
+      wednesday: "Wed",
+      friday: "Fri",
+      error: "Contribution data could not be loaded.",
+      retry: "Try again",
+      profile: "View GitHub profile",
+    },
+
     // Skills
     skills: {
       title: "Skills",
@@ -242,6 +262,26 @@ const translations = {
           ],
         },
       ],
+    },
+
+    // GitHub Contributions
+    contributions: {
+      title: "Kontribusi GitHub",
+      activity: "Aktivitas GitHub",
+      total: (count) => `${count.toLocaleString("id-ID")} kontribusi`,
+      yearFilter: "Filter kontribusi berdasarkan tahun",
+      calendar: (year) => `Kalender kontribusi GitHub tahun ${year}`,
+      day: (count, date) => `${count} kontribusi pada ${date}`,
+      summary: (count, year) => `${count.toLocaleString("id-ID")} kontribusi pada ${year}`,
+      intensity: "Intensitas kontribusi",
+      less: "Sedikit",
+      more: "Banyak",
+      monday: "Sen",
+      wednesday: "Rab",
+      friday: "Jum",
+      error: "Data kontribusi tidak dapat dimuat.",
+      retry: "Coba lagi",
+      profile: "Lihat profil GitHub",
     },
 
     // Skills
