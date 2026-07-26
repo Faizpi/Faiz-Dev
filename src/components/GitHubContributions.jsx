@@ -45,10 +45,10 @@ function getMonthLabels(weeks, lang) {
 function ContributionSkeleton() {
   return (
     <div className="space-y-2" aria-hidden="true">
-      <div className="h-3 w-3/4 animate-pulse rounded bg-black/10 dark:bg-white/10" />
-      <div className="grid grid-flow-col grid-rows-7 gap-1 overflow-hidden">
-        {Array.from({ length: 112 }, (_, index) => (
-          <span key={index} className="h-2.5 w-2.5 animate-pulse rounded-[2px] bg-black/10 dark:bg-white/10" />
+      <div className="h-2 w-3/4 animate-pulse rounded bg-black/10 dark:bg-white/10" />
+      <div className="grid grid-flow-col grid-rows-7 gap-[2px]">
+        {Array.from({ length: 371 }, (_, index) => (
+          <span key={index} className="aspect-square min-w-0 animate-pulse rounded-[1px] bg-black/10 dark:bg-white/10" />
         ))}
       </div>
     </div>
@@ -152,44 +152,47 @@ function GitHubContributions() {
 
           {status === "success" && (
             <>
-              <div className="overflow-x-auto pb-2">
-                <div className="min-w-[430px]">
-                  <div
-                    className="mb-1 grid gap-1 pl-4 text-[9px] text-gray-400 dark:text-gray-500"
-                    style={{ gridTemplateColumns: `repeat(${weeks.length}, minmax(0, 1fr))` }}
-                    aria-hidden="true"
-                  >
-                    {monthLabels.map((month, index) => (
-                      <span key={`${month}-${index}`} className="whitespace-nowrap">{month}</span>
-                    ))}
-                  </div>
+              <div className="pb-2">
+                <div
+                  className="mb-1 grid gap-[2px] pl-4 text-[8px] leading-none text-gray-400 dark:text-gray-500"
+                  style={{ gridTemplateColumns: `repeat(${weeks.length}, minmax(0, 1fr))` }}
+                  aria-hidden="true"
+                >
+                  {monthLabels.map((month, index) => (
+                    <span key={`${month}-${index}`} className="overflow-visible whitespace-nowrap">{month}</span>
+                  ))}
+                </div>
 
-                  <div className="flex gap-1">
-                    <div className="grid grid-rows-7 gap-1 pt-[1px] text-[8px] text-gray-400 dark:text-gray-500" aria-hidden="true">
-                      <span />
-                      <span>{t.monday}</span>
-                      <span />
-                      <span>{t.wednesday}</span>
-                      <span />
-                      <span>{t.friday}</span>
-                      <span />
-                    </div>
-                    <div className="grid flex-1 grid-flow-col grid-rows-7 gap-1" role="grid" aria-label={t.calendar(selectedYear)}>
-                      {weeks.flatMap((week) => week.contributionDays).map((day) => {
-                        const level = getContributionLevel(day.contributionCount, maximum);
-                        const label = t.day(day.contributionCount, DATE_FORMATTERS[lang].format(new Date(`${day.date}T00:00:00Z`)));
-                        return (
-                          <span
-                            key={day.date}
-                            role="gridcell"
-                            tabIndex={0}
-                            aria-label={label}
-                            title={label}
-                            className={`aspect-square min-h-2 min-w-2 rounded-[2px] ${LEVEL_CLASSES[level]} focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-1 focus-visible:ring-offset-white dark:focus-visible:ring-offset-black`}
-                          />
-                        );
-                      })}
-                    </div>
+                <div className="flex gap-[3px]">
+                  <div className="grid w-3 shrink-0 grid-rows-7 gap-[2px] text-[6px] leading-none text-gray-400 dark:text-gray-500" aria-hidden="true">
+                    <span />
+                    <span>{t.monday}</span>
+                    <span />
+                    <span>{t.wednesday}</span>
+                    <span />
+                    <span>{t.friday}</span>
+                    <span />
+                  </div>
+                  <div
+                    className="grid min-w-0 flex-1 grid-flow-col grid-rows-7 gap-[2px]"
+                    style={{ gridTemplateColumns: `repeat(${weeks.length}, minmax(0, 1fr))` }}
+                    role="grid"
+                    aria-label={t.calendar(selectedYear)}
+                  >
+                    {weeks.flatMap((week) => week.contributionDays).map((day) => {
+                      const level = getContributionLevel(day.contributionCount, maximum);
+                      const label = t.day(day.contributionCount, DATE_FORMATTERS[lang].format(new Date(`${day.date}T00:00:00Z`)));
+                      return (
+                        <span
+                          key={day.date}
+                          role="gridcell"
+                          tabIndex={0}
+                          aria-label={label}
+                          title={label}
+                          className={`aspect-square min-w-0 rounded-[1px] ${LEVEL_CLASSES[level]} focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-blue-400`}
+                        />
+                      );
+                    })}
                   </div>
                 </div>
               </div>
