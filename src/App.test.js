@@ -68,7 +68,7 @@ afterEach(() => {
 test("renders updated projects in the requested order", () => {
   render(<App />);
 
-  expect(screen.getByText("5 projects")).toBeInTheDocument();
+  expect(screen.getByText("6 projects")).toBeInTheDocument();
 
   const projectsSection = screen.getByRole("heading", { name: "Projects" }).closest("section");
   expect(projectsSection).not.toBeNull();
@@ -78,6 +78,7 @@ test("renders updated projects in the requested order", () => {
     .map((heading) => heading.textContent);
 
   expect(projectTitles).toEqual([
+    "Yulia APP",
     "Hibiscus Efsya POS",
     "Hibiscusefsya Landingpage",
     "MBK Hibiscusefsya Katalog",
@@ -103,11 +104,27 @@ test("renders a project detail page from a project hash", () => {
   expect(screen.getByText("Company Profile Landing Page")).toBeInTheDocument();
   expect(screen.getByRole("link", { name: /back to projects/i })).toHaveAttribute("href", "#Projects");
   expect(screen.getAllByRole("img")).toHaveLength(1);
-  expect(screen.getByRole("img")).toHaveAttribute("src", "/projek4.png");
+  expect(screen.getByRole("img")).toHaveAttribute(
+    "src",
+    "/Hibiscusefsya Landingpage/detail-project/1.png"
+  );
+});
+
+test("renders Yulia APP details from its project hash", () => {
+  window.location.hash = "#project-6";
+  render(<App />);
+
+  expect(screen.getByRole("heading", { name: "Yulia APP" })).toBeInTheDocument();
+  expect(screen.getByText("Aplikasi Manajemen Tenaga Alih Daya PLN")).toBeInTheDocument();
+  expect(screen.getAllByRole("img")).toHaveLength(2);
+  expect(screen.getAllByRole("img")[0]).toHaveAttribute(
+    "src",
+    "/Yulia APP/detail-project/1.png"
+  );
 });
 
 test("shows an empty image state when a project has no configured gallery", () => {
-  window.location.hash = "#project-3";
+  window.location.hash = "#project-4";
   render(<App />);
 
   expect(screen.getByText("Project images belum tersedia.")).toBeInTheDocument();

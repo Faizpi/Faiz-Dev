@@ -3,10 +3,29 @@ import { ArrowUpRight } from "lucide-react";
 
 export const PROJECTS = [
   {
+    id: 6,
+    year: "2026",
+    image: `${process.env.PUBLIC_URL}/Yulia APP/thumbnail.png`,
+    gallery: [
+      `${process.env.PUBLIC_URL}/Yulia APP/detail-project/1.png`,
+      `${process.env.PUBLIC_URL}/Yulia APP/detail-project/2.png`,
+    ],
+    title: "Yulia APP",
+    subtitle: "Aplikasi Manajemen Tenaga Alih Daya PLN",
+    desc: "Aplikasi Flutter dan Laravel untuk mendukung operasional tenaga alih daya PLN, mulai dari absensi harian, input kegiatan, pengajuan lembur, SPPD atau perjalanan dinas, histori aktivitas, hingga rekap data operasional.",
+    tags: ["Flutter", "Laravel", "Rest API"],
+  },
+  {
     id: 1,
     year: "2026",
-    image: `${process.env.PUBLIC_URL}/hibiscusefsya1.png`,
-    gallery: [`${process.env.PUBLIC_URL}/hibiscusefsya1.png`],
+    image: `${process.env.PUBLIC_URL}/Hibiscus Efsya POS/thumbnail.png`,
+    gallery: [
+      `${process.env.PUBLIC_URL}/Hibiscus Efsya POS/detail-project/hibiscusefsya1.png`,
+      `${process.env.PUBLIC_URL}/Hibiscus Efsya POS/detail-project/2.png`,
+      `${process.env.PUBLIC_URL}/Hibiscus Efsya POS/detail-project/3.png`,
+      `${process.env.PUBLIC_URL}/Hibiscus Efsya POS/detail-project/4.png`,
+      `${process.env.PUBLIC_URL}/Hibiscus Efsya POS/detail-project/5.png`,
+    ],
     title: "Hibiscus Efsya POS",
     subtitle: "POS System Web & Mobile Application",
     desc: "Aplikasi Web dan Mobile untuk mengelola sistem point of sale mulai dari penjualan, pembelian, biaya, kunjungan, invoice, export data excel dan pdf, dll.",
@@ -16,8 +35,8 @@ export const PROJECTS = [
   {
     id: 2,
     year: "2026",
-    image: `${process.env.PUBLIC_URL}/projek4.png`,
-    gallery: [`${process.env.PUBLIC_URL}/projek4.png`],
+    image: `${process.env.PUBLIC_URL}/Hibiscusefsya Landingpage/thumbnail.png`,
+    gallery: [`${process.env.PUBLIC_URL}/Hibiscusefsya Landingpage/detail-project/1.png`],
     title: "Hibiscusefsya Landingpage",
     subtitle: "Company Profile Landing Page",
     desc: "Landing page resmi Hibiscusefsya yang terintegrasi dengan admin panel CMS untuk mengelola konten website, profil brand, produk unggulan, dan informasi bisnis.",
@@ -27,7 +46,11 @@ export const PROJECTS = [
   {
     id: 3,
     year: "2026",
-    image: `${process.env.PUBLIC_URL}/projek5.png`,
+    image: `${process.env.PUBLIC_URL}/MBK Hibiscusefsya Katalog/thumbnail.png`,
+    gallery: [
+      `${process.env.PUBLIC_URL}/MBK Hibiscusefsya Katalog/detail-project/1.png`,
+      `${process.env.PUBLIC_URL}/MBK Hibiscusefsya Katalog/detail-project/2.png`,
+    ],
     title: "MBK Hibiscusefsya Katalog",
     subtitle: "Online Product Catalog",
     desc: "Katalog online produk bodycare Hibiscusefsya yang terhubung dengan admin panel CMS untuk mengelola produk, kategori, dan informasi katalog secara dinamis.",
@@ -37,7 +60,7 @@ export const PROJECTS = [
   {
     id: 4,
     year: "2026",
-    image: `${process.env.PUBLIC_URL}/amara.png`,
+    image: `${process.env.PUBLIC_URL}/Amara Baby Shop/thumbnail.png`,
     title: "Amara Baby Shop",
     subtitle: "Manajemen Inventaris & POS Toko Perlengkapan Bayi",
     desc: "Aplikasi mobile untuk membantu toko perlengkapan bayi mengelola stok, penjualan, dan operasional toko dengan lebih praktis.",
@@ -47,7 +70,7 @@ export const PROJECTS = [
   {
     id: 5,
     year: "2025",
-    image: `${process.env.PUBLIC_URL}/sik1.png`,
+    image: `${process.env.PUBLIC_URL}/STB Label Cable Plant 1/thumbnail.png`,
     title: "STB Label Cable Plant 1",
     subtitle: "Industrial Web Application",
     desc: "Aplikasi Web Based untuk memberi label pada kabel automobile dengan fitur barcode scanning dan export data.",
