@@ -28,7 +28,7 @@ export const PROJECTS = [
     ],
     title: "Hibiscus Efsya Accounting, POS & Inventory App",
     subtitle: "Web & Mobile Accounting, POS, and Inventory Management System",
-    desc: "Aplikasi web dan mobile untuk mengelola seluruh proses operasional bisnis dalam satu sistem terintegrasi. Fitur yang tersedia mencakup transaksi penjualan, invoice, pembayaran piutang, pembelian, penerimaan barang, pembayaran hutang, manajemen stok multi-gudang, stock opname, pengelolaan produk, biaya, kas dan bank, serta berbagai laporan akuntansi seperti neraca, laba rugi, arus kas, buku besar, jurnal, dan neraca saldo. Aplikasi ini juga dilengkapi workflow approval multi-role, pencatatan kunjungan sales, batch dan tanggal kedaluwarsa produk, export laporan, serta dokumen siap cetak atau thermal-ready.",
+    desc: "Aplikasi web dan mobile untuk mengelola akuntansi dan operasional bisnis, meliputi penjualan, invoice, piutang, pembelian, hutang, biaya, kas dan bank, stok multi-gudang, stock opname, serta produk dengan batch dan tanggal kedaluwarsa. Sistem ini menyediakan laporan neraca, laba rugi, arus kas, buku besar, jurnal, dan neraca saldo, lengkap dengan approval multi-role, kunjungan sales, export laporan, dan dokumen siap cetak atau thermal-ready.",
     tags: ["Laravel", "MySQL", "Flutter", "Rest API"],
     link: "https://github.com/Faizpi/",
   },
