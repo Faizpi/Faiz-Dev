@@ -26,7 +26,7 @@ export const PROJECTS = [
       `${process.env.PUBLIC_URL}/Hibiscus Efsya POS/detail-project/4.png`,
       `${process.env.PUBLIC_URL}/Hibiscus Efsya POS/detail-project/5.png`,
     ],
-    title: "Hibiscus Efsya POS",
+    title: "Hibiscus Efsya Accounting, POS & Inventory App",
     subtitle: "POS System Web & Mobile Application",
     desc: "Aplikasi Web dan Mobile untuk mengelola sistem point of sale mulai dari penjualan, pembelian, biaya, kunjungan, invoice, export data excel dan pdf, dll.",
     tags: ["Laravel", "MySQL", "Flutter", "Rest API"],

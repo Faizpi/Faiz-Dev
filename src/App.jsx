@@ -43,7 +43,7 @@ export default function App() {
         >
           Skip to main content
         </a>
-        <ThemeToggle />
+        {!selectedProject && <ThemeToggle />}
         <Cursor />
 
         {selectedProject ? (

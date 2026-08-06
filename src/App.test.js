@@ -79,7 +79,7 @@ test("renders updated projects in the requested order", () => {
 
   expect(projectTitles).toEqual([
     "Yulia APP",
-    "Hibiscus Efsya POS",
+    "Hibiscus Efsya Accounting, POS & Inventory App",
     "Hibiscusefsya Landingpage",
     "MBK Hibiscusefsya Katalog",
     "Amara Baby Shop",
